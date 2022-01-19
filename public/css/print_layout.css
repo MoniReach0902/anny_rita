@@ -53,13 +53,13 @@
 .header h5 {
     line-height: 34px;
     font-size: 22px;
-    font-family: 'Khmer OS Muol Light';
+    font-family: 'Khmer M1';
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
 .header p {
-    font-family: 'Khmer OS Muol Light';
+    font-family: 'Khmer M1';
 }
 
 .content-center {
@@ -80,4 +80,20 @@
 
 .small-txt p {
     font-size: 11px;
+}
+
+.image-passport p {
+    font-family: 'Kanyanut uni';
+    font-size: 33px;
+    position: absolute;
+    color: black;
+    font-weight: 500;
+}
+
+.image-passport h5 {
+    font-family: 'Kanyanut uni';
+    font-size: 38px;
+    position: absolute;
+    color: black;
+    font-weight: 500;
 }
