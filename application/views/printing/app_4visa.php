@@ -39,12 +39,31 @@
                             <p style=" top: 660px; left: 385px;"><?php echo $user->expired_date ?></p>
                             <div class="address-box" style="position: absolute; top: 840px;  left: 45px; text-transform: uppercase; ;">
                                 <i>
-                                    <p style="width: 465px; word-break: break-all; line-height: 30px; "><?php echo "PH." . $user->c_village . ",  KH." . $user->c_communes.",  DIS.".$user->c_districts.",  PRO.".$user->c_provinces ?></p>
+                                    <p style="width: 465px; word-break: break-all; line-height: 30px; "><?php echo "PH." . $user->c_village . ",  KH." . $user->c_communes . ",  DIS." . $user->c_districts . ",  PRO." . $user->c_provinces ?></p>
                                 </i>
                             </div>
                             <h5 style=" top: 1036px; left: 620px; font-size: 32px;"><?php echo $user->e_lname . ' ' . $user->e_fname ?></h5>
+                            <i>
+                                <p style=" top: 450px; left: 550px;font-size: 20px;text-transform: uppercase; font-family: 'Kantumruy Light; te"><?php echo $company['e_name'] ?></p>
+                            </i>
+                            <b> <span style=" top: 480px; left: 550px; font-size:18px; color:black; position:absolute;">Address: </span></b>
+                            <i>
+
+                                <p style=" top: 480px;left: 630px;font-size: 25px;text-transform: uppercase;line-height:22px"><?php echo $company['add1'] ?></p>
+                            </i>
+                            <i>
+                                <p style=" top: 715px; left: 550px;font-size: 20px;text-transform: uppercase; font-family: 'Kantumruy Light; te"><?php echo $company['e_name'] ?></p>
+                            </i>
+                            <b> <span style=" top: 745px; left: 550px; font-size:18px; color:black; position:absolute;">Address: </span></b>
+                            <i>
+
+                                <p style=" top: 745px;left: 630px;font-size: 25px;text-transform: uppercase;line-height:22px"><?php echo $company['add1'] ?></p>
+                            </i>
+                            <p style=" top: 786px;left: 740px;"><?php echo $company['mobile'] ?></p>
                         </div>
-                        <div class="visa-box">1</div>
+                        <div class="visa-box">
+                            <img src="<?php echo base_url('/images/worker_docs/'.$user->file_name) ?>" alt="" style="height: 70%; margin-top: 130px; margin-left: 120px;">
+                        </div>
 
                         <!-- this row will not appear when printing -->
                         <div class=" row no-print">

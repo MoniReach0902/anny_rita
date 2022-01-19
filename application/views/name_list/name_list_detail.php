@@ -13,7 +13,7 @@
                         <thead>
                             <div class="btn-group mb-5">
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Printing</button>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu" style="font-family: 'Khmer OS Battambang';">
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/BioPrint/' . $listId) ?>" target="_blank">
                                         <span class="text-success">BiO INTERVIEW</span></a>
                                     <div class="dropdown-divider"></div>
@@ -25,10 +25,10 @@
                                         <span class="text-info">ទំរងសុំទិដ្ឋាការ</span>
                                     </a>
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/app_4visa/' . $listId) ?>" target="_blank">
-                                        <span class="text-info">Application For Visa</span>
+                                        <span class="text-info">ស្មើរសុំ Visa</span>
                                     </a>
-                                    <a class="dropdown-item" href="" target="_blank">
-                                        <span class="text-info">Print Visa</span>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/user_form/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">ប្រវត្តិរូបសង្ខេប</span>
                                     </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href=""><span class="text-danger">Deativate</span></a>

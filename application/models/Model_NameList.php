@@ -102,18 +102,28 @@ class Model_NameList extends CI_Model {
     }
     public function getData($id){
         $query=$this->db->query("SELECT workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,
-worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
-communes.en_name as c_communes ,districts.en_name as c_districts,provinces.en_name as c_provinces,worker_attached.file_name 
-FROM workers 
-JOIN provinces ON workers.birth_province=provinces.id 
-JOIN worker_attached on workers.id=worker_attached.worker_id
-JOIN villages on villages.id=workers.cur_add_village
-JOIN communes on communes.id=workers.cur_add_commune
-JOIN districts on districts.id=workers.cur_add_district
-WHERE workers.name_list_id='$id'");
+                                    worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
+                                    communes.en_name as c_communes ,districts.en_name as c_districts,provinces.en_name as c_provinces,worker_attached.file_name 
+                                    FROM workers 
+                                    JOIN provinces ON workers.birth_province=provinces.id 
+                                    JOIN worker_attached on workers.id=worker_attached.worker_id
+                                    JOIN villages on villages.id=workers.cur_add_village
+                                    JOIN communes on communes.id=workers.cur_add_commune
+                                    JOIN districts on districts.id=workers.cur_add_district
+                                    WHERE workers.name_list_id='$id'");
         $data=$query->result();
         if(!empty($data)){
             return $data;
         }
+    }
+    public function getCompany4Visa($id){
+        $query=$this->db->query( "SELECT e_name,add1,mobile FROM employers WHERE id='$id'");
+        $result_arr=$query->result_array();
+        if(!empty($result_arr)){
+            return $result_arr[0];
+        }
+    }
+    public function getUserData($id){
+        
     }
 }

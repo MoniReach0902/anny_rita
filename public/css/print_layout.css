@@ -34,6 +34,17 @@
     margin-top: 179px;
 }
 
+.content-box1 {
+    overflow: hidden;
+    padding: 0 30px;
+    margin-top: 179px;
+}
+
+.content-box1 p {
+    font-size: 19px;
+    font-family: 'Khmer OS Content';
+}
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -53,13 +64,13 @@
 .header h5 {
     line-height: 34px;
     font-size: 22px;
-    font-family: 'Khmer M1';
+    font-family: 'Khmer OS Muol Light';
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
 .header p {
-    font-family: 'Khmer M1';
+    font-family: 'Khmer OS Muol Light';
 }
 
 .content-center {

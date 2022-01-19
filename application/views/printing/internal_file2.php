@@ -20,14 +20,24 @@
                                 <div class="page-header">
                                     <div class="text-center">
                                         <span class="khmer_os_header">ព្រះរាជាណាចក្រកម្ពុជា<br /><br />ជាតិ&#9;សាសនា&#9;ព្រះមហាក្សត្រ</span><br /><br /><br />
-                                        <span class="khmer_os_header"><b>ពាក្យសុំផ្តល់លិខិតធ្វើដំណើរ ពលករកម្ពុជា ធ្វើការនៅបរទេស</span></b><br />
-                                        <span class="khmer_os_header"><b>សូមគោរពជូន</span></b><br />
-                                        <span class="khmer_os_header"><b>រដ្ឋមន្ត្រីក្រសួងមហាផ្ទៃ</span></b>
+                                       
                                     </div>
                                 </div>
                             </div>
                         </div> -->
-                    <div class="content-box">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12" style="margin-top: 15px;">
+                            <div class="page-headers">
+                                <div class="text-center">
+                                    <span class="khmer_os_header">ព្រះរាជាណាចក្រកម្ពុជា<br /><br />ជាតិ&#9;សាសនា&#9;ព្រះមហាក្សត្រ</span><br /><br /><br />
+                                   <img src="<?php echo base_url('/images/tactieng.png') ?>" alt="" style="width: 200px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-box" style="margin-top: 10px;">
+
                         <div class="top">
                             <p>លេខ៖ <?php echo $num_date['arm_num2'] ?> ARM </p>
                             <p>រាជធានីភ្នំពេញ ថ្ងៃទី<?php echo $num_date['day'] ?> ខែ<?php echo $num_date['month'] ?> ឆ្នាំ<?php echo $num_date['year'] ?></p>
@@ -46,7 +56,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                             echo 0;
                                                                                                                                                                                                                                                                                                                                                                                                         } else {
                                                                                                                                                                                                                                                                                                                                                                                                             echo $companyName['e_name'];
-                                                                                                                                                                                                                                                                                                                                                                        } ?></b> នៃព្រះរាជាណាចក្រថៃឡង់ដ៏។</p>
+                                                                                                                                                                                                                                                                                                                                                                                                        } ?></b> នៃព្រះរាជាណាចក្រថៃឡង់ដ៏។</p>
                         </div>
 
                         <div class="content-center">
