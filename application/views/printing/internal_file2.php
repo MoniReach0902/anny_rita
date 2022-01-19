@@ -33,13 +33,10 @@
                             <p>រាជធានីភ្នំពេញ ថ្ងៃទី<?php echo $num_date['day'] ?> ខែ<?php echo $num_date['month'] ?> ឆ្នាំ<?php echo $num_date['year'] ?></p>
                         </div>
                         <div class="header" style="width: 800px;">
-
                             <h5>
                                 អគ្គនាយកក្រុមហ៊ុនអាន់នី រីតា បេស មេនផៅវ័រ <br>
                                 សូមគោរពជូន <br>
                                 ឯកឧត្តមរដ្ឋមន្ត្រីក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ
-
-
                             </h5>
                         </div>
                         <div class="content-center">
@@ -49,7 +46,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                             echo 0;
                                                                                                                                                                                                                                                                                                                                                                                                         } else {
                                                                                                                                                                                                                                                                                                                                                                                                             echo $companyName['e_name'];
-                                                                                                                                                                                                                                                                                                                                                                                                        } ?></b> នៃព្រះរាជាណាចក្រថៃឡង់ដ៏។</p>
+                                                                                                                                                                                                                                                                                                                                                                        } ?></b> នៃព្រះរាជាណាចក្រថៃឡង់ដ៏។</p>
                         </div>
 
                         <div class="content-center">

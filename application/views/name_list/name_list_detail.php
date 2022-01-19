@@ -24,8 +24,8 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/internalFile2/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ទំរងសុំទិដ្ឋាការ</span>
                                     </a>
-                                    <a class="dropdown-item" href="" target="_blank">
-                                        <span class="text-info">Print Worker Request</span>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/app_4visa/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">Application For Visa</span>
                                     </a>
                                     <a class="dropdown-item" href="" target="_blank">
                                         <span class="text-info">Print Visa</span>

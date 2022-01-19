@@ -148,4 +148,8 @@ class NameListPrint extends CI_Controller{
             return;
         }
     }
+    public function app_4visa($id){
+        
+    }
+
 }
