@@ -45,6 +45,20 @@
     font-family: 'Khmer OS Content';
 }
 
+.content-box1 h5 {
+    font-family: 'Khmer OS Fasthand';
+    font-size: 18px;
+    text-decoration: underline;
+    padding: 0 15px;
+    font-weight: 600;
+    color: black;
+    text-decoration-style: dotted;
+}
+
+.content-box1 span {
+    background-color: rgb(255, 255, 255);
+}
+
 .top {
     display: flex;
     justify-content: space-between;

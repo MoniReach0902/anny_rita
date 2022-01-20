@@ -94,7 +94,7 @@ class Model_NameList extends CI_Model {
     }
     public function getCompanyName($id)
     {
-        $query = $this->db->query("SELECT employers.e_name,employers.add1 FROM employers JOIN name_list on employers.id=name_list.company_name WHERE name_list.id='$id'");
+        $query = $this->db->query("SELECT employers.e_name,employers.add1,industries.name FROM employers JOIN name_list on employers.id=name_list.company_name JOIN industries on industries.id=employers.business_industry WHERE name_list.id='$id'");
         $result_arr = $query->result_array();
         if (!empty($result_arr)) {
             return $result_arr[0];
@@ -124,6 +124,15 @@ class Model_NameList extends CI_Model {
         }
     }
     public function getUserData($id){
-        
+        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.dob,workers.nationality,villages.name as v_name,communes.name as c_name,districts.name as d_name,provinces.name as p_name,worker_attached.number,job_title.name,workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,districts.name as cd_name,provinces.name as cp_name,worker_parents.f_k_fname,worker_parents.f_k_lname,worker_parents.m_k_fname,worker_parents.m_k_lname,worker_parents.f_mobile FROM workers
+JOIN worker_attached on workers.id=worker_attached.worker_id 
+JOIN provinces ON workers.birth_province=provinces.id 
+JOIN communes on workers.birth_commune=communes.id
+JOIN districts on workers.birth_district=districts.id 
+JOIN villages on workers.birth_village=villages.id 
+JOIN job_title on job_title.id = workers.job_title 
+JOIN worker_parents on worker_parents.worker_id = workers.id 
+WHERE workers.name_list_id='$id' order by workers.id ");
+return $query->result();
     }
 }
