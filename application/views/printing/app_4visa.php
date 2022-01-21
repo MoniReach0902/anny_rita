@@ -12,7 +12,12 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-
+                <!-- this row will not appear when printing -->
+                <div class=" row no-print">
+                    <div class="col-12">
+                        <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                    </div>
+                </div>
                 <?php foreach ($userDoc as $user) {
                 ?>
                     <section class="invoice printableArea">
@@ -62,15 +67,11 @@
                             <p style=" top: 786px;left: 740px;"><?php echo $company['mobile'] ?></p>
                         </div>
                         <div class="visa-box">
-                            <img src="<?php echo base_url('/images/worker_docs/'.$user->file_name) ?>" alt="" style="height: 70%; margin-top: 130px; margin-left: 120px;">
+                            <img src="<?php echo base_url('/images/worker_docs/' . $user->file_name) ?>" alt="" style="height: 70%; margin-top: 130px; margin-left: 120px;">
                         </div>
 
                         <!-- this row will not appear when printing -->
-                        <div class=" row no-print">
-                            <div class="col-12">
-                                <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
-                            </div>
-                        </div>
+                        
                     </section>
                 <?php
                 } ?>

@@ -7,13 +7,19 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ទំរងសុំទិដ្ឋាការ </h3>
-                <a href="" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
+                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ប្រវត្តិរូបសង្ខេប </h3>
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+                <!-- this row will not appear when printing -->
+                <div class=" row no-print">
+                    <div class="col-12">
+                        <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                    </div>
+                </div>
 
-                <?php foreach ($userInfo as $key=> $user) {
+                <?php foreach ($userInfo as $key => $user) {
                 ?>
                     <section class="invoice printableArea">
                         <!-- title row -->
@@ -93,13 +99,18 @@
                                 <p>មុខរបរ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->name ?>&nbsp;&nbsp;&nbsp;&nbsp;​&nbsp;&nbsp;&nbsp; </h5>
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
-                                <?php $lang = $user->race ?>
-                                <p>អាចប្រើប្រាស់ភាសាបានក្រៅពីភាសាខ្មែរ </p>
-                                <i class="fa fa-check-square-o" style="font-size: 25px;"></i>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10-10-2021&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+
+                                <p><?php $lang = $user->flanguage ?>អាចប្រើប្រាស់ភាសាបានក្រៅពីភាសាខ្មែរ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <i class="fa fa-<?php echo ($lang == 'th') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
+                                <p>ថៃ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <i class="fa fa-<?php echo ($lang == 'ch') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
+                                <p>ចិន &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <i class="fa fa-<?php echo ($lang == 'en') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
+                                <p>អង់គ្លេស &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <i class="fa fa-<?php echo ($lang == '') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
                                 <p>ភាសាផ្សេងៗ ៖ </p>
 
                             </div>
@@ -210,20 +221,16 @@
                             </div>
                             <div class="top" ​ style="margin-right: -220px; margin-top: 500px; float: right;">
                                 <p> </p>
-                                
-                                <p><?php echo $company['e_name'].' - '.$totalCount['total'].' -  '. ($key+1) ?></p>
+
+                                <p><?php echo $company['e_name'] . ' - ' . $totalCount['total'] . ' -  ' . ($key + 1) ?></p>
                             </div>
                         </div>
 
-                        <!-- this row will not appear when printing -->
-                        <div class=" row no-print">
-                            <div class="col-12">
-                                <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
-                            </div>
-                        </div>
+
                     </section>
                 <?php
                 } ?>
+
                 <!-- /.content -->
             </div>
             <!-- /.box-body -->

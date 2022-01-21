@@ -30,8 +30,10 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/user_form/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ប្រវត្តិរូបសង្ខេប</span>
                                     </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=""><span class="text-danger">Deativate</span></a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/request_doc/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">ឯកសារព្រំដែន</span>
+                                    </a>
+
                                 </div>
                             </div>
                             <tr>

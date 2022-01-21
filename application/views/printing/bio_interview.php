@@ -8,10 +8,16 @@
         <section class="content">
             <div class="box box-solid bg-dark">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><span class="khmer_font">  </span> &#921; Prining Bio Interview </h3>
+                    <h3 class="box-title"><span class="khmer_font"> </span> &#921; Prining Bio Interview </h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+                    <!-- this row will not appear when printing -->
+                    <div class=" row no-print">
+                        <div class="col-12">
+                            <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                        </div>
+                    </div>
 
                     <section class="invoice printableArea">
                         <!-- title row -->
@@ -109,18 +115,14 @@
                                         </tr>
                                         <tr>
                                             <td>Code No. : </td>
-                                            <td><?php echo $key+1 ?></td>
+                                            <td><?php echo $key + 1 ?></td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <!-- this row will not appear when printing -->
-                        <div class="row no-print">
-                            <div class="col-12">
-                                <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
-                            </div>
-                        </div>
+                        
                     </section>
                     <!-- /.content -->
                 </div>

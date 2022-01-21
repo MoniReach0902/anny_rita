@@ -12,6 +12,12 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+                <!-- this row will not appear when printing -->
+                <div class=" row no-print">
+                    <div class="col-12">
+                        <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                    </div>
+                </div>
 
                 <section class="invoice printableArea">
                     <!-- title row -->
@@ -30,7 +36,7 @@
                             <div class="page-headers">
                                 <div class="text-center">
                                     <span class="khmer_os_header">ព្រះរាជាណាចក្រកម្ពុជា<br /><br />ជាតិ&#9;សាសនា&#9;ព្រះមហាក្សត្រ</span><br /><br /><br />
-                                   <img src="<?php echo base_url('/images/tactieng.png') ?>" alt="" style="width: 200px;">
+                                    <img src="<?php echo base_url('/images/tactieng.png') ?>" alt="" style="width: 200px;">
 
                                 </div>
                             </div>
@@ -88,12 +94,7 @@
                         </div>
                     </div>
 
-                    <!-- this row will not appear when printing -->
-                    <div class=" row no-print">
-                        <div class="col-12">
-                            <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
-                        </div>
-                    </div>
+
                 </section>
                 <!-- /.content -->
             </div>
