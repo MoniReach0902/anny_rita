@@ -112,6 +112,13 @@ class Model_NameList extends CI_Model {
         }
 
     }
+    public function getCom($id){
+        $query=$this->db->query("SELECT employers.e_name FROM employers JOIN name_list on employers.id=name_list.company_name WHERE name_list.id='$id'");
+        $result_arr = $query->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
     public function getData($id){
         $query=$this->db->query("SELECT workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,
                                     worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
@@ -151,6 +158,28 @@ class Model_NameList extends CI_Model {
     public function r_form($id, $arm_num, $date1, $month1, $year1, $date2, $month2, $year2, $people)
     {
         $query = $this->db->query("UPDATE name_list SET r_arm_num='$arm_num', r_date1='$date1', r_date2='$date2', r_month1='$month1', r_month2='$month2', r_year1='$year1', r_year2='$year2', k_total='$people' WHERE id='$id'");
+    }
+    public function c_form(
+        $id,
+        $c_arm_num,
+        $date1,
+        $month1,
+        $year1,
+        $date2,
+        $month2,
+        $year2,
+        $people,
+        $ct_arm_num,
+        $ct_date1,
+        $ct_month1,
+        $ct_year1,
+        $ct_date2,
+        $ct_month2,
+        $ct_year2)
+    {
+        $query = $this->db->query("UPDATE name_list SET c_arm_num='$c_arm_num', r_date1='$date1', r_date2='$date2', r_month1='$month1', r_month2='$month2', r_year1='$year1', r_year2='$year2', k_total='$people',
+         ct_arm_num='$ct_arm_num', ct_date1='$ct_date1', ct_date2='$ct_date2', ct_month1='$ct_month1', ct_month2= '$ct_month2',
+         ct_year1='$ct_year1', ct_year2='$ct_year2' WHERE id='$id'");
     }
     
 }

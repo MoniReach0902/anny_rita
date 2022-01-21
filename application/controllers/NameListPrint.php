@@ -55,6 +55,7 @@ class NameListPrint extends CI_Controller{
         $this->load->model('Model_NameList');
         $data['company']=$this->Model_NameList->getCompany();
         $data['vals'] = $this->Model_NameList->getValue($id);
+        $data['comName'] = $this->Model_NameList->getCom($id);
         $data['listId']=$id;
        
 
@@ -247,6 +248,78 @@ class NameListPrint extends CI_Controller{
             $this->load->model('Model_NameList');
             $this->Model_NameList->r_form($id, $arm_num, $date1, $month1, $year1, $date2, $month2, $year2, $people);
             return redirect(base_url('index.php/NameListPrint/request_doc/' . $id));
+        } else {
+            return;
+        }
+    }
+    public function confirm_workers($id){
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+
+        $data['listId'] = $id;
+        // $data['userInfo'] = $this->Model_NameList->getUserData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
+        $data['totalCount'] = $this->Model_NameList->getCount($id);
+        $data['num_date'] = $this->Model_NameList->getNumDate($id);
+        $data['vals'] = $this->Model_NameList->getValue($id);
+
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/confirm_workers', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function add_c_form($id){
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+        $data['company'] = $this->Model_NameList->getCompany();
+        $data['vals'] = $this->Model_NameList->getValue($id);
+        $data['listId'] = $id;
+
+
+        // $data['userDoc'] = $this->Model_NameList->getDoc($id);
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('name_list/add_c_form', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function store_c_form($id){
+        $this->form_validation->set_rules('c_arm_num', 'ARM Number', 'required');
+        $this->form_validation->set_rules('ct_arm_num', 'ARM Thai', 'required');
+       
+        if ($this->form_validation->run()) {
+
+            $c_arm_num = $this->input->post('c_arm_num');
+            $date1 = $this->input->post('date1');
+            $month1 = $this->input->post('month1');
+            $year1 = $this->input->post('year1');
+            $date2 = $this->input->post('date2');
+            $month2 = $this->input->post('month2');
+            $year2 = $this->input->post('year2');
+            $people = $this->input->post('people');
+            $ct_arm_num = $this->input->post('ct_arm_num');
+            $ct_date1 = $this->input->post('ct_date1');
+            $ct_month1 = $this->input->post('ct_month1');
+            $ct_year1 = $this->input->post('ct_year1');
+            $ct_date2 = $this->input->post('ct_date2');
+            $ct_month2 = $this->input->post('ct_month2');
+            $ct_year2 = $this->input->post('ct_year2');
+
+            $this->load->model('Model_NameList');
+            $this->Model_NameList->c_form($id, $c_arm_num, $date1, 
+            $month1, $year1, $date2, $month2, $year2, $people,$ct_arm_num,
+            $ct_date1,$ct_month1,$ct_year1,$ct_date2,$ct_month2,$ct_year2);
+            return redirect(base_url('index.php/NameListPrint/confirm_workers/' . $id));
         } else {
             return;
         }

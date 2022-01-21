@@ -33,6 +33,9 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/request_doc/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ឯកសារព្រំដែន</span>
                                     </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/confirm_workers/' . $listId) ?>" target="_blank">
+                                        <span class="text-info"> លិខិតទទួលពលករ </span>
+                                    </a>
 
                                 </div>
                             </div>
