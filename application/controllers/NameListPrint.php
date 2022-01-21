@@ -158,7 +158,8 @@ class NameListPrint extends CI_Controller{
         $data['listId'] = $id;
 
         $data['userDoc'] = $this->Model_NameList->getData($id);
-        $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
         $this->load->view('included/aside');
@@ -175,7 +176,8 @@ class NameListPrint extends CI_Controller{
        
         $data['listId'] = $id;
         $data['userInfo']=$this->Model_NameList->getUserData($id);
-        $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
         $data['totalCount'] = $this->Model_NameList->getCount($id);
 
         $this->load->view('included/head');
@@ -184,6 +186,73 @@ class NameListPrint extends CI_Controller{
         $this->load->view('printing/user_form',$data);
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
+    }
+    public function request_doc($id)
+    {
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+
+        $data['listId'] = $id;
+        // $data['userInfo'] = $this->Model_NameList->getUserData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
+        $data['totalCount'] = $this->Model_NameList->getCount($id);
+        $data['num_date'] = $this->Model_NameList->getNumDate($id);
+
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/request_doc',$data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function add_r_form($id){
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+        $data['company'] = $this->Model_NameList->getCompany();
+        $data['listId'] = $id;
+
+
+        // $data['userDoc'] = $this->Model_NameList->getDoc($id);
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('name_list/add_r_form', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function store_r_form($id){
+        $this->form_validation->set_rules('arm_num', 'ARM Number', 'required');
+        $this->form_validation->set_rules('date1', 'Date', 'required');
+        $this->form_validation->set_rules('month1', 'Month', 'required');
+        $this->form_validation->set_rules('year1', 'Year', 'required');
+        $this->form_validation->set_rules('date2', 'Date', 'required');
+        $this->form_validation->set_rules('month2', 'Month', 'required');
+        $this->form_validation->set_rules('year2', 'Year', 'required');
+        $this->form_validation->set_rules('people', 'People', 'required');
+        if ($this->form_validation->run()) {
+
+            $arm_num = $this->input->post('arm_num');
+            $date1 = $this->input->post('date1');
+            $month1 = $this->input->post('month1');
+            $year1 = $this->input->post('year1');
+            $date2 = $this->input->post('date2');
+            $month2 = $this->input->post('month2');
+            $year2 = $this->input->post('year2');
+            $people = $this->input->post('people');
+
+            $this->load->model('Model_NameList');
+            $this->Model_NameList->r_form($id, $arm_num, $date1, $month1, $year1, $date2, $month2, $year2, $people);
+            return redirect(base_url('index.php/NameListPrint/request_doc/' . $id));
+        } else {
+            return;
+        }
     }
 
 }
