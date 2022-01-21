@@ -85,6 +85,10 @@ class Model_NameList extends CI_Model {
         $query=$this->db->query("UPDATE name_list SET arm_num='$arm_num', day='$date', month='$month', year='$year', company_name='$company_name' WHERE id='$id'");
 
     }
+    public function saveForm2($id, $arm_num)
+    {
+        $query = $this->db->query("UPDATE name_list SET arm_num2='$arm_num' WHERE id='$id'");
+    }
     public function getNumDate($id){
         $query=$this->db->query("SELECT *FROM name_list WHERE id='$id'");
         $result_arr=$query->result_array();
@@ -99,6 +103,14 @@ class Model_NameList extends CI_Model {
         if (!empty($result_arr)) {
             return $result_arr[0];
         }
+    }
+    public function getValue($id){
+        $query=$this->db->query("SELECT *FROM name_list WHERE id='$id'");
+        $result_arr = $query->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+
     }
     public function getData($id){
         $query=$this->db->query("SELECT workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,

@@ -54,6 +54,7 @@ class NameListPrint extends CI_Controller{
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
         $data['company']=$this->Model_NameList->getCompany();
+        $data['vals'] = $this->Model_NameList->getValue($id);
         $data['listId']=$id;
        
 
@@ -115,6 +116,7 @@ class NameListPrint extends CI_Controller{
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
         $data['company'] = $this->Model_NameList->getCompany();
+        $data['vals'] = $this->Model_NameList->getValue($id);
         $data['listId'] = $id;
 
 
@@ -122,28 +124,22 @@ class NameListPrint extends CI_Controller{
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
         $this->load->view('included/aside');
-        $this->load->view('name_list/add_info_form1', $data);
+        $this->load->view('name_list/add_info_form2', $data);
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }
     public function storeForm2($id)
     {
         $this->form_validation->set_rules('arm_num', 'ARM Number', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
-        $this->form_validation->set_rules('month', 'Month', 'required');
-        $this->form_validation->set_rules('year', 'Year', 'required');
-        $this->form_validation->set_rules('company_name', 'Compnay Name', 'required');
+    
         if ($this->form_validation->run()) {
 
             $arm_num = $this->input->post('arm_num');
-            $date = $this->input->post('date');
-            $month = $this->input->post('month');
-            $year = $this->input->post('year');
-            $company_name = $this->input->post('company_name');
+        
 
             $this->load->model('Model_NameList');
-            $this->Model_NameList->saveForm1($id, $arm_num, $date, $month, $year, $company_name);
-            return redirect(base_url('index.php/NameListPrint/internalFile1/' . $id));
+            $this->Model_NameList->saveForm2($id, $arm_num);
+            return redirect(base_url('index.php/NameListPrint/internalFile2/' . $id));
         } else {
             return;
         }
@@ -216,6 +212,7 @@ class NameListPrint extends CI_Controller{
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
         $data['company'] = $this->Model_NameList->getCompany();
+        $data['vals'] = $this->Model_NameList->getValue($id);
         $data['listId'] = $id;
 
 

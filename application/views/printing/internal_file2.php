@@ -8,7 +8,7 @@
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
                 <h3 class="box-title"><span class="khmer_font"> </span> &#921; ទំរងសុំទិដ្ឋាការ </h3>
-                <a href="<?php echo site_url('NameListPrint/add_info_form1/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
+                <a href="<?php echo site_url('NameListPrint/add_info_form2/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
