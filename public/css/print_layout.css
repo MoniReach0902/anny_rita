@@ -126,9 +126,19 @@
 .img-box {
     width: 49%;
     float: left;
-    overflow: hidden;
     margin: 0 3px 2px 0;
     background-color: red;
+    padding: 0;
+    height: 330px;
+}
+
+.img-box1 {
+    width: 49%;
+    float: left;
+    margin: 0 3px 2px 0;
+    background-color: chartreuse;
+    padding: 0;
+    height: 330px;
 }
 
 .img-box h3 {

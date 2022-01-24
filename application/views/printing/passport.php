@@ -10,7 +10,6 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-
                 <section class="invoice printableArea">
                     <!-- title row -->
 
@@ -22,27 +21,25 @@
                             <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
                         </div>
                     </div>
-                    <div class="space" style="margin-top: 100px;">&nbsp;</div>
-                    <div class="img">
-
-                        <?php foreach ($userDoc as $key => $user) {
-                        ?>
-                          
-                                <img src="<?php echo base_url('/images/worker_docs/'.$user->file_name)?>" width="" height="500px"   style="transform: rotate(90deg);float: left;margin: 0; padding: 0; border: 3px solid black;" >                               
-                           
-                        <?php
-                        } ?>
+                    <!-- <div class="space" style="margin-top: px;">&nbsp;</div> -->
 
 
+                    <?php foreach ($userDoc as $key => $user) {
+                    ?>
+                        <div class="img-box">
+                            <img src="<?php echo base_url('/images/worker_docs/' . $user->file_name); ?>" alt="" style="border: 4px solid black; transform: rotate(0deg);width: 100%; height: 330px; margin:0 5px 5px 0;">
+
+                        </div>
+                    <?php
+                    } ?>
 
 
-                    </div>
-                   
+
+
+
+
 
                 </section>
-                
-
-
                 <!-- /.content -->
 
                 <!-- /.box-body -->

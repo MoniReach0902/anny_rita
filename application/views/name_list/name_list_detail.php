@@ -42,6 +42,9 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/passport/' . $listId) ?>" target="_blank">
                                         <span class="text-info"> Passport ក្រោយ Sticker </span>
                                     </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/goOutDoc/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">ពាក្យសុំផ្ដល់លិខិតធ្វើដំណើរ</span>
+                                    </a>
 
                                 </div>
                             </div>
