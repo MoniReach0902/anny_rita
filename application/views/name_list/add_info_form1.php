@@ -40,7 +40,9 @@
                             <label for="name" class="col-sm-2 col-form-label text-right"><span class="khmer_font">ឈ្មោះក្រុមហ៊ុន<br /></span> Company Name <span class="text-danger">&#9734;</span></label>
                             <div class="col-sm-10">
                                 <select name="company_name" id="" class="form-control">
-                                    <option value="<?php echo $vals['company_name'] ?>"><?php echo $comName['e_name'] ?></option>
+                                    <option value="<?php echo $vals['company_name'] ?>"><?php if (!empty($company['e_name'])) {
+                                                                                            echo $company['e_name'];
+                                                                                        } ?></option>
                                     <?php foreach ($company as $name) {
                                     ?>
                                         <option value="<?php echo $name->id ?>"><?php echo $name->e_name ?></option>

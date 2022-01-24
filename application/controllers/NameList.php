@@ -65,7 +65,7 @@ class NameList extends CI_Controller {
                 'month'=>'0',
                 'year'=>'0',
                 'arm_num'=>'0',
-                'company_name'=>'0',
+                'company_name'=>'1',
             ];
             $this->load->model('Model_NameList');
             $this->Model_NameList->insertData($data);

@@ -50,7 +50,9 @@
 
                             <p style="text-align: justify;">សំណើសុំការអនុញ្ញាតជាគោលការណ៍ឱ្យពលករខ្មែរចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total']  ?>នាក់ <?php if (!empty($num_date['k_total'])) {
                                                                                                                                                                                             echo ' ( ' . $num_date['k_total'] . ' ) ';
-                                                                                                                                                                                        } ?> </strong> ឱ្យធ្វើការក្នុងរោង <?php echo $company['e_name'] ?> នៃព្រះរាជាណាចក្រថៃឡង់ដ៍</p>
+                                                                                                                                                                                        } ?> </strong> ឱ្យធ្វើការក្នុងរោង <?php if (!empty($company['e_name'])) {
+                                                                                                                                                                                                                                echo $company['e_name'];
+                                                                                                                                                                                                                            } ?> នៃព្រះរាជាណាចក្រថៃឡង់ដ៍</p>
                         </div>
 
                         <div class="content-center">

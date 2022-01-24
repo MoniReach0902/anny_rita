@@ -222,7 +222,7 @@
                             <div class="top" ​ style="margin-right: -220px; margin-top: 500px; float: right;">
                                 <p> </p>
 
-                                <p><?php echo $company['e_name'] . ' - ' . $totalCount['total'] . ' -  ' . ($key + 1) ?></p>
+                                <p><?php  if(!empty($company['e_name'])){echo $company['e_name'];}?><?php echo' - ' . $totalCount['total'] . ' -  ' . ($key + 1) ?></p>
                             </div>
                         </div>
 

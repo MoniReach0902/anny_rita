@@ -60,18 +60,24 @@
                         <p style="text-align: justify; margin-left: 285px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b></p>
                         <div class="content-center">
                             <p style="margin: 0 40 0 0; width: 295px; margin-left: 45px;"> ភ្ជាប់មកជាមួយនូវ៖</p>
-                            <p style=" ">បញ្ជីឈ្មោះ ពលករ-ពលការិនីខ្មែររបស់រោងចក្រ <b style="font-weight: bold;"><?php echo $company['e_name'] ?> </b> ចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total'] ?> នាក់ <?php echo ' ( ' . $vals['k_total'] . ' ) '; ?></strong></p>
+                            <p style=" ">បញ្ជីឈ្មោះ ពលករ-ពលការិនីខ្មែររបស់រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
+                                                                                                                    echo $company['e_name'];
+                                                                                                                } ?> </b> ចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total'] ?> នាក់ <?php echo ' ( ' . $vals['k_total'] . ' ) '; ?></strong></p>
 
                         </div>
 
                         <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងតាម លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b> របស់ក្រុមហ៊ុន / </p>
-                        <p>រោងចក្រ <b style="font-weight: bold;"><?php echo $company['e_name'] ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ ។ ។</p>
+                        <p>រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
+                                                                        echo $company['e_name'];
+                                                                    } ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ ។ ។</p>
 
 
 
                         <p style="text-align: justify;margin: 0 55px;"><b style="font-weight: bold;">ក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO.,LTD)</b> មានកិត្តិយស </p>
                         <p>សូមជម្រាបជូនថាៈ នៅថ្ងៃទី<b style="font-weight: bold;"> <?php echo $vals['r_date1'] ?> ខែ<?php echo $vals['r_month1'] ?> ឆ្នាំ <?php echo $vals['r_year1'] ?></b> ក្រុមហ៊ុនយើងខ្ញុំបានបញ្ជូន ពលករ-ពលការិនីខ្មែរចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total'] ?> នាក់ <?php echo ' ( ' . $vals['k_total'] . ' ) '; ?></strong> ដើម្បីចូលបម្រើការងារនៅក្នុង ក្រុមហ៊ុន/រោងចក្រ
-                            <b style="font-weight: bold;"><?php echo $company['e_name'] ?> </b>
+                            <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
+                                                                echo $company['e_name'];
+                                                            } ?> </b>
                         </p>
                         <p style="text-align: justify;margin: 0 55px;">អាស្រ័យហេតុនេះសូមលោកប្រធានគណៈកម្មការក្រុមហ៊ុន/រោងចក្រ មេត្តាជួយសម្រួល </p>
                         <p>និង ចុះហត្ថលេខាដើម្បី បញ្ជាក់នូវការទទួលបានយកពលកររបស់ក្រុមហ៊ុនយើងខ្ញុំ ដោយក្តីអនុគ្រោះ ។
