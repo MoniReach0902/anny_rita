@@ -105,6 +105,7 @@
                     <!-- this row will not appear when printing -->
 
                 </section>
+                <br><br><br><br>
                 <section class="invoice printableArea">
                     <!-- title row -->
                     <!-- <div class="row">
@@ -119,10 +120,12 @@
                                 </div>
                             </div>
                         </div> -->
-                    <div class="content-box" style="margin-top: 160px;">
-                        <div class="top" style="margin-bottom: 40px;">
-                            <p>เลขที่…0294/20…ARM</p>
-                            <p>วันที่ 16 มีนาคม 2020</p>
+                        
+                    <div class="content-box" style="margin-top: 500px;">
+                    <div>&nbsp;</div>
+                        <div class="top" style="margin-bottom: 40px; margin-top: 210px;">
+                            <p>เลขที่…<?php echo $vals['ct_arm_num'] ?>…ARM</p>
+                            <p>วันที่ <?php echo $vals['ct_date1'] . ' ' . $vals['ct_month1'] . ' ' . $vals['ct_year1'] ?></p>
                         </div>
 
                         <div class="content-center">
@@ -143,16 +146,22 @@
                         </div>
                         <p style="text-align: justify; margin-left: 285px;">- หนังสือแต่งตั้ง (Power of Attorney)</p>
                         <p style="text-align: justify; margin-left: 285px;">- สัญญาจ้างแรงงาน (Labor Contract)</p>
-                        <p>สิ่งที่ส่งมาด้วย บัญชีรายชื่อแรงงานกัมพูชา ของบริษัท THAI FOODS SWINE INTERNATIONAL CO.,LTD. จำนวน 17 คน</p>
+                        <p>สิ่งที่ส่งมาด้วย บัญชีรายชื่อแรงงานกัมพูชา ของบริษัท <?php if (!empty($company['e_name'])) {
+                                                                                    echo $company['e_name'];
+                                                                                } ?>. จำนวน <?php echo $totalCount['total'] ?> คน</p>
                         <div class="content-center">
                             <p style="margin: 0 55 0 0; width: 205px; margin-left: 55px;"> </p>
                             <p style="text-align: justify; ">จากการที่บริษัทของท่านได้ทำ หนังสือความต้องการแรงงาน (Demand Letter)</p>
 
                         </div>
-                        <p>ผ่านกรมจัดหางานของไทย และกระทรวงแรงงานของกัมพูชา ของบริษัท THAI FOODS SWINE INTERNATIONAL CO.,LTD. โดยมีเนื้อหาให้ บริษัท ANNY RITA BEST MANPOWER CO., LTD. จัดหาแรงงาน ตามกฎหมาย MOU ซึ่งแรงงานสามารถทำงานในประเทศไทย ด้วยมีอายุการทำงาน 2 ปี นั้น</p>
+                        <p>ผ่านกรมจัดหางานของไทย และกระทรวงแรงงานของกัมพูชา ของบริษัท <?php if (!empty($company['e_name'])) {
+                                                                                            echo $company['e_name'];
+                                                                                        } ?>. โดยมีเนื้อหาให้ บริษัท ANNY RITA BEST MANPOWER CO., LTD. จัดหาแรงงาน ตามกฎหมาย MOU ซึ่งแรงงานสามารถทำงานในประเทศไทย ด้วยมีอายุการทำงาน 2 ปี นั้น</p>
 
                         <p style="margin-left:55px;">บริษัท ANNY RITA BEST MANPOWER CO., LTD จึงมีการจัดส่งแรงงานสัญชาติ กัมพูชาให้เข้าไปทำงาน</p>
-                        <p>ที่ บริษัท THAI FOODS SWINE INTERNATIONAL CO.,LTD. ในวันที่ 17 มีนาคม 2020 จำนวน 17 คน และเมื่อแรงงานเดินทางเข้าถึงบริษัทของท่านแล้ว ทางกระผม ขอให้ท่านยืนยันว่าแรงงานดังกล่าวนั้นได้เข้าทำงานในบริษัทของท่านเป็นที่เรียบร้อยแล้ว</p>
+                        <p>ที่ บริษัท <?php if (!empty($company['e_name'])) {
+                                            echo $company['e_name'];
+                                        } ?> ในวันที่ <?php echo $vals['ct_date2'].' '.$vals['ct_month2'].' '.$vals['ct_year2'] ?> จำนวน <?php echo $totalCount['total'] ?> คน และเมื่อแรงงานเดินทางเข้าถึงบริษัทของท่านแล้ว ทางกระผม ขอให้ท่านยืนยันว่าแรงงานดังกล่าวนั้นได้เข้าทำงานในบริษัทของท่านเป็นที่เรียบร้อยแล้ว</p>
 
 
 

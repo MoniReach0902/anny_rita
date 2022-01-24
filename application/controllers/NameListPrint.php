@@ -26,7 +26,7 @@ class NameListPrint extends CI_Controller{
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }
-    public function internalFile1($id)
+    public function internalFile1($id) 
     {
         $userdata['user_name'] = $this->session->fname;
         $userdata['user_email'] = $this->session->email;
@@ -323,6 +323,50 @@ class NameListPrint extends CI_Controller{
         } else {
             return;
         }
+    }
+    public function card($id){
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+
+        $data['listId'] = $id;
+        // $data['userInfo'] = $this->Model_NameList->getUserData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
+        $data['totalCount'] = $this->Model_NameList->getCount($id);
+        $data['num_date'] = $this->Model_NameList->getNumDate($id);
+        $data['vals'] = $this->Model_NameList->getValue($id);
+        $data['userDoc'] = $this->Model_NameList->getData($id);
+
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/card', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function passport($id)
+    {
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+
+        $data['listId'] = $id;
+        // $data['userInfo'] = $this->Model_NameList->getUserData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+       
+        $data['userDoc'] = $this->Model_NameList->getData($id);
+
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/passport', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
     }
 
 }

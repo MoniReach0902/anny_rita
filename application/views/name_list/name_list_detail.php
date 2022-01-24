@@ -36,6 +36,12 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/confirm_workers/' . $listId) ?>" target="_blank">
                                         <span class="text-info"> លិខិតទទួលពលករ </span>
                                     </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/card/' . $listId) ?>" target="_blank">
+                                        <span class="text-info"> Sticker Card </span>
+                                    </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/passport/' . $listId) ?>" target="_blank">
+                                        <span class="text-info"> Passport ក្រោយ Sticker </span>
+                                    </a>
 
                                 </div>
                             </div>

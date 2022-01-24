@@ -53,7 +53,7 @@ class Model_NameList extends CI_Model {
         ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
          JOIN affiliates ON affiliates.id=workers.affiliate WHERE worker_attached.doc_type=2 AND 
          workers.name_list_id='$id'");
-        return $query->result();
+        return $query->result(); 
     }
     public function getCount($id){
         $query=$this->db->query("SELECT COUNT(*) as total FROM workers INNER JOIN worker_attached 
@@ -120,7 +120,7 @@ class Model_NameList extends CI_Model {
         }
     }
     public function getData($id){
-        $query=$this->db->query("SELECT workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,
+        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,worker_attached.file_name,
                                     worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
                                     communes.en_name as c_communes ,districts.en_name as c_districts,provinces.en_name as c_provinces,worker_attached.file_name 
                                     FROM workers 
