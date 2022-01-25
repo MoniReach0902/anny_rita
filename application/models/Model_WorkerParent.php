@@ -43,4 +43,22 @@ class Model_WorkerParent extends CI_Model
 			return $result_arr[0];
 		}
 	}
+	public function getAdd($id){
+		$sql = 'Select worker_parents.*, ';
+		$sql .= 'provinces.name empname, ';
+		$sql .= 'districts.name emdname, ';
+		$sql .= 'communes.name emcname, ';
+		$sql .= 'villages.name emvname ';
+		$sql .= 'FROM worker_parents ';
+		$sql .= 'INNER JOIN provinces ON (worker_parents.pcur_add_province = provinces.id) ';
+		$sql .= 'INNER JOIN districts ON (worker_parents.pcur_add_district = districts.id) ';
+		$sql .= 'INNER JOIN communes ON (worker_parents.pcur_add_commune = communes.id) ';
+		$sql .= 'INNER JOIN villages ON (worker_parents.pcur_add_village = villages.id) ';
+		$sql .= "WHERE worker_id = {$id}";
+		$result_set = $this->db->query($sql);
+		$result_arr = $result_set->result_array();
+		if (!empty($result_arr)) {
+			return $result_arr[0];
+		}
+	}
 }

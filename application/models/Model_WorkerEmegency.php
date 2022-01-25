@@ -24,7 +24,7 @@ class Model_WorkerEmegency extends CI_Model
 		}
 	}
 	
-	public function get_detail($id)
+	public function get_detail($id) 
 	{
 		$sql = 'Select worker_emergency.*, ';
 		$sql .= 'provinces.name empname, ';

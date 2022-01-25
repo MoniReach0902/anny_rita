@@ -97,7 +97,7 @@ class Model_Worker extends CI_Model
 	}
 
 
-	public function all_country()
+	public function all_country() 
    	{
 		$result_set = $this->db->get('countries');
 		return $result_set->result_array();
@@ -245,6 +245,13 @@ class Model_Worker extends CI_Model
 		$where['id'] = $id;
 		$result = $this->db->update('workers', $new_data, $where);
 		return $result;
+	}
+	public function getDocType($id){
+		$query=$this->db->query("SELECT worker_attached.doc_type,worker_attached.number,worker_attached.issue_date,worker_attached.expired_date from worker_attached INNER JOIN workers on workers.id=worker_attached.worker_id WHERE workers.id='$id'");
+		$result_arr = $query->result_array();
+		if (!empty($result_arr)) {
+			return $result_arr[0];
+		}
 	}
 	
 	

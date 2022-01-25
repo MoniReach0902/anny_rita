@@ -14,7 +14,7 @@ class Workers extends CI_Controller
 				
 		$this->load->view('included/head'); 
 		$this->load->view('included/main_header', $userdata);
-		$this->load->view('included/aside', $data);
+		$this->load->view('included/aside', $data); 
 		$this->load->view('workers/l_workers', $data);
 		$this->load->view('included/footer');
 		$this->load->view('included/scripts');

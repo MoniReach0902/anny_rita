@@ -28,10 +28,10 @@ class Model_Affiliate extends CI_Model
 	
 	public function get_affiliate_branch($branch)
 	{
-		$sql = "Select affiliates.*, branches.name branch_name ";
-		$sql .= "FROM affiliates ";
-		$sql .= "INNER JOIN branches ON affiliates.branch = branches.id ";
-		$sql .= "WHERE affiliates.branch = {$branch} ";
+		$sql = "Select affiliates.*, branches.name as branch_name FROM 
+		affiliates INNER JOIN branches ON affiliates.branch = branches.id 
+		WHERE affiliates.branch = '$branch' ";
+		
 		$result_set = $this->db->query($sql);
 		return $result_set->result_array();
 	}

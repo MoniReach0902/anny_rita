@@ -37,7 +37,7 @@
 									'Date of Birth' => 'ថ្ងៃខែឆ្នាំកំណើត',
 									'Nationality' => 'សញ្ជាតិ',
 									'Race' => 'ជនជាតិ',
-									'Religion' => 'សាសនា',
+									'Religion' => 'សាសនា', 
 									'Title' => 'ងារ',
 									'Marital Status' => 'ស្ថានភាពគ្រួសារ',
 									'Job Title' => 'តួនាទីការងារ',

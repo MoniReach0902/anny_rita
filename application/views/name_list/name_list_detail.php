@@ -52,22 +52,24 @@
                                 <?php $theads = array(
                                     'Cancel' => '',
                                     'Photo' => 'រូបភាព',
-                                    'ID' => 'លេខកូដ', 'Group' => 'ក្រុម', 'Country' => 'ប្រទេស',
+                                    'ID' => 'លេខកូដ',
+                                    'សាខា' => '',
+                                    'តំណាង' => '',
+                                    'Group' => 'ក្រុម',
                                     'Khmer First Name' => 'គោត្តនាម',
                                     'Khmer Last name' => 'នាម',
                                     'Latin First Name' => 'គោត្តនាមអក្សរឡាតាំង',
                                     'Latin Last name' => 'នាមអក្សរឡាតាំង',
                                     'Gender' => 'ភេទ',
                                     'Date of Birth' => 'ថ្ងៃខែឆ្នាំកំណើត',
-                                    'Nationality' => 'សញ្ជាតិ',
-                                    'Race' => 'ជនជាតិ',
-                                    'Religion' => 'សាសនា',
+                                    'Age' => 'អាយុ',
                                     'Title' => 'ងារ',
+                                    'Nationality' => 'សញ្ជាតិ',
                                     'Marital Status' => 'ស្ថានភាពគ្រួសារ',
+                                    'Country' => 'ប្រទេស',
                                     'Job Title' => 'តួនាទីការងារ',
                                     'Job Type' => 'ប្រភេទការងារ',
                                     'Phone Number' => 'លេខទូរស័ព្ទ',
-                                    'Email' => 'សារអេឡិចត្រូនិច',
                                     'Place of Birth Province' => 'ខេត្ត',
                                     'District' => 'ស្រុក',
                                     'Commune' => 'ឃុំ',
@@ -76,8 +78,24 @@
                                     'Add Distr' => 'អាស័យ. ស្រុក',
                                     'Add Comm' => 'អាស័យ. ឃុំ',
                                     'Add Vill' => 'អាស័យ. ភូមិ',
-                                    'RefDoc' => 'ឯកសារ',
-                                    'Action' => ''
+                                    'Document Type' => '',
+                                    'Document No' => '',
+                                    'Issued Date ' => '',
+                                    'Expired Date ' => '',
+                                    'Father fName In Khmer ' => '',
+                                    'Father lName In Khmer ' => '',
+                                    'Father fName In Latin ' => '',
+                                    'Father lName In Latin ' => '',
+                                    'Mother fName In Khmer ' => '',
+                                    'Mother lName In Khmer ' => '',
+                                    'Mother fName In Latin ' => '',
+                                    'Mother lName In Latin ' => '',
+                                    'Parents Current Address ' => '',
+                                    'Contact Name in Khmer ' => '',
+                                    'Contact Phone ' => '',
+                                    'Contact Address ' => '',
+                                    
+
                                 ) ?>
                                 <?php foreach ($theads as $key => $thead) { ?>
                                     <th><span class="khmer_font"><?php echo $thead; ?><br /></span><?php echo $key; ?></th>
@@ -111,17 +129,26 @@
                                         ?>
                                     </td>
                                     <td><?php echo $worker['id']; ?></td>
+                                    <td><?php $aff_id = $worker['affiliate'];
+                                        $aff_name = $this->Model_Affiliate->get_affiliate_by($aff_id);
+                                        if (!empty($aff_name)) {
+                                            echo $aff_name['name'];
+                                        }
+                                        ?></td>
+                                    <td><?php $b_id = $aff_name['branch'];
+                                        echo $b_id;
+                                        $branch_name = $this->Model_Affiliate->get_affiliate_branch($b_id);
+                                        // if (!empty($branch_name)) {
+                                        //     echo $branch_name['branch_name '];
+                                        // }
+                                        ?></td>
                                     <?php $group_id = $worker['group_id']; ?>
                                     <?php $group_name = $this->Model_Group->get_group_by($group_id); ?>
                                     <td><?php if (!empty($group_name['name'])) {
                                             echo $group_name['name'];
                                         } ?></td>
 
-                                    <?php $country_id = $worker['country']; ?>
-                                    <?php $countryname = $this->Model_Worker->getcountryname($country_id); ?>
-                                    <td><?php if (!empty($countryname['name'])) {
-                                            echo $countryname['name'];
-                                        } ?></td>
+
 
                                     <td><?php echo $worker['k_fname']; ?></td>
                                     <td><?php echo $worker['k_lname']; ?></td>
@@ -129,15 +156,23 @@
                                     <td><?php echo $worker['e_lname']; ?></td>
                                     <td><?php echo $worker['gender']; ?></td>
                                     <td><?php echo $worker['dob']; ?></td>
-                                    <td><?php echo $worker['nationality']; ?></td>
-                                    <td><?php echo $worker['race']; ?></td>
-                                    <td><?php echo $worker['religion']; ?></td>
+                                    <td><?php $y = date('Y', strtotime($worker['dob']));
+                                        echo $age = date('Y') - $y; ?></td>
                                     <td><?php echo $worker['title']; ?></td>
+                                    <td><?php echo $worker['nationality']; ?></td>
                                     <td><?php echo $worker['marital']; ?></td>
+                                    <?php $country_id = $worker['country']; ?>
+                                    <?php $countryname = $this->Model_Worker->getcountryname($country_id); ?>
+                                    <td><?php if (!empty($countryname['name'])) {
+                                            echo $countryname['name'];
+                                        } ?></td>
+
+
+
                                     <td><?php echo $worker['job_title']; ?></td>
                                     <td><?php echo $worker['industry']; ?></td>
                                     <td><?php echo $worker['mobile']; ?></td>
-                                    <td><?php echo $worker['email']; ?></td>
+
 
                                     <?php if (!isset($worker['birth_province'])) {
                                         $worker['birth_province'] = NULL;
@@ -211,32 +246,150 @@
                                                                         echo $cvillagec['name'];
                                                                     } ?></span></td>
                                     <td>
-                                        <a href="<?php echo site_url('workers/show_file/' . $worker['id']); ?>" target="_blank"><span class="text-info">File Detail</span></a>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $type = $this->Model_Worker->getDocType($id);
+                                        if (!empty($type)) {
+                                            echo $type['doc_type'] == 2 ? "Passport" : "National ID";
+                                        }
+                                        ?>
                                     </td>
                                     <td>
-                                        <div class="btn-group mb-5">
-                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="<?php echo site_url('Workers/update_detail/' . $worker['id']); ?>" target="_blank">
-                                                    <span class="text-success">Edit Worker Detail</span></a>
-                                                <div class="dropdown-divider"></div>
-
-                                                <a class="dropdown-item" href="<?php echo site_url('Printing/f_bio/' . $worker['id']); ?>" target="_blank">
-                                                    <span class="text-info">Print Bio</span>
-                                                </a>
-                                                <a class="dropdown-item" href="<?php echo site_url('Printing/request/' . $worker['id']); ?>" target="_blank">
-                                                    <span class="text-info">Print Worker Request</span>
-                                                </a>
-                                                <a class="dropdown-item" href="<?php echo site_url('Printing/visa/' . $worker['id']); ?>" target="_blank">
-                                                    <span class="text-info">Print Visa</span>
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="<?php //echo $baseurl; 
-                                                                                ?>delete_admin&&id=<?php //echo h($admin->id); 
-                                                                                                    ?>"><span class="text-danger">Deativate</span></a>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $type = $this->Model_Worker->getDocType($id);
+                                        if (!empty($type)) {
+                                            echo $type['number'];;
+                                        }
+                                        ?>
                                     </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $type = $this->Model_Worker->getDocType($id);
+                                        if (!empty($type)) {
+                                            echo $type['issue_date'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $type = $this->Model_Worker->getDocType($id);
+                                        if (!empty($type)) {
+                                            echo $type['expired_date'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['f_k_fname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['f_k_lname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['f_e_fname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['f_e_lname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['m_k_fname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['m_k_lname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['m_e_fname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['m_e_lname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerParent->getAdd($id);
+                                        if (!empty($parent)) {
+                                            echo 'ភូមិ' . $parent['emvname'] . ' ឃំ/សង្កាត់ ' . $parent['emcname'] . ' ស្រុក/ខណ្ឌ' . $parent['emdname'] . ' ខេត្ត' . $parent['empname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerEmegency->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['sos_fname'] . ' ' . $parent['sos_lname'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerEmegency->get_by($id);
+                                        if (!empty($parent)) {
+                                            echo $parent['sos_mobile'];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $id = $worker['id'];
+                                        $parent = $this->Model_WorkerEmegency->get_detail($id);
+                                        if (!empty($parent)) {
+                                            echo 'ភូមិ' . $parent['emvname'] . ' ឃំ/សង្កាត់ ' . $parent['emcname'] . ' ស្រុក/ខណ្ឌ' . $parent['emdname'] . ' ខេត្ត' . $parent['empname'];
+                                        }
+                                        ?>
+                                    </td>
+
                                 </tr>
                             <?php
                             } ?>

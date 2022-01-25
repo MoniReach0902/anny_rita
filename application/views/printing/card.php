@@ -22,7 +22,7 @@
                             <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
                         </div>
                     </div>
-                    <div class="space" style="margin-top: 100px;">&nbsp;</div>
+                    <div class="space" style="margin-top: 160px;">&nbsp;</div>
                     <div class="img" style="position: relative;">
 
                         <?php foreach ($userDoc as $key => $user) {
