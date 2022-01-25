@@ -8,7 +8,7 @@ class Model_Worker extends CI_Model
 		$this->db = $this->load->database('default', TRUE);
 	}
 	
-	public function get($id)
+	public function get($id) 
 	{
 		$where['id'] = $id;
 		$result_set = $this->db->get_where('workers', $where);
@@ -252,6 +252,9 @@ class Model_Worker extends CI_Model
 		if (!empty($result_arr)) {
 			return $result_arr[0];
 		}
+	}
+	public function db(){
+		
 	}
 	
 	
