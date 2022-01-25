@@ -377,9 +377,9 @@ class NameListPrint extends CI_Controller{
 
         $data['listId'] = $id;
 
-        $data['userDoc'] = $this->Model_NameList->getData($id);
-        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
-        $data['company'] = $this->Model_NameList->getCompanyName($id);
+        
+        $data['users'] = $this->Model_NameList->ocw($id);
+       
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
         $this->load->view('included/aside');

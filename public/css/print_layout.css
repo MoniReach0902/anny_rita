@@ -158,3 +158,10 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
 }
+
+.outDoc p {
+    font-family: 'Khmer OS System', 'Khmer OS';
+    font-size: 22px;
+    position: absolute;
+    color: black;
+}

@@ -19,9 +19,12 @@
                     </div>
                 </div>
 
-                <section class="invoice printableArea">
-                    <!-- title row -->
-                    <!-- <div class="row">
+
+                <?php foreach ($users as $user) {
+                ?>
+                    <section class="invoice printableArea">
+                        <!-- title row -->
+                        <!-- <div class="row">
                             <div class="col-xl-12 col-lg-12">
                                 <div class="page-header">
                                     <div class="text-center">
@@ -33,29 +36,45 @@
                                 </div>
                             </div>
                         </div> -->
-                    <div class="image-passport" style="position: relative;">
-                        <img src="<?php echo base_url('images/Scan.png') ?>" alt="" style="width: 110%; height: 100%; position: relative;margin: 0;padding: 0;margin-top: -90px;margin-left: -50px;">
-                        <p style=" top: 270px; left: 230px;">AAAA</p>
-                        <p style=" top: 270px; left: 660px;">AAAA</p>
-                        <p style=" top: 310px; left: 200px;">AA</p>
-                        <p style=" top: 310px; left: 260px;">AA</p>
-                        <p style=" top: 310px; left: 340px;">AA</p>
-                        <p style=" top: 310px; left: 450px;">AAa</p>
-                        <p style=" top: 310px; left: 610px;">kh</p>
-                        <p style=" top: 310px; left: 760px;">kh</p>
-                        <p style=" top: 360px; left: 320px;">dob</p>
-                        <p style=" top: 360px; left: 560px;">dob</p>
-                        <p style=" top: 350px; left: 860px;">dob</p>
-  
+                        <div class="outDoc" style="position: relative; ">
+                            <img src="<?php echo base_url('images/Scan.png') ?>" alt="" style="width: 110%; height: 100%; position: relative;margin: 0;padding: 0;margin-top: -90px;margin-left: -50px;visibility: hidden;">
+                            <p style=" top: 280px; left: 230px;"><?php echo $user->k_fname . ' ' . $user->k_lname ?></p>
+                            <p style=" top: 275px; left: 705px;"><?php echo $user->e_fname . ' ' . $user->e_lname ?></p>
+                            <p style=" top: 320px; left: 230px;"><?php echo $date = date('d', strtotime($user->dob)); ?></p>
+                            <p style=" top: 320px; left: 290px;"><?php echo $date = date('m', strtotime($user->dob)); ?></p>
+                            <p style=" top: 320px; left: 370px;"><?php echo $date = date('Y', strtotime($user->dob)); ?></p>
+                            <p style=" top: 320px; left: 505px;"><?php $gender = $user->gender;
+                                                                    $gender == 'Male' ? $g = 'ប្រុស' : $g = 'ស្រី';
+                                                                    echo $g; ?></p>
+                            <p style=" top: 320px; left: 675px;">ខ្មែរ</p>
+                            <p style=" top: 320px; left: 845px;">ខ្មែរ</p>
+                            <p style=" top: 365px; left: 320px;"><?php echo $user->d_name ?></p>
+                            <p style=" top: 365px; left: 575px;"><?php echo $user->c_name ?></p>
+                            <p style=" top: 365px; left: 895px;"><?php echo $user->p_name ?></p>
+                            <p style=" top: 400px; left: 540px;"><?php echo $user->cv_name ?></p>
+                            <p style=" top: 400px; left: 895px;"><?php echo $user->cd_name ?></p>
+                            <p style=" top: 445px; left: 200px;"><?php echo $user->cc_name ?></p>
+                            <p style=" top: 445px; left: 570px;"><?php echo $user->cp_name ?></p>
+                            <p style=" top: 475px; left: 180px;"><?php echo $user->name ?></p>
+                            <p style=" top: 485px; left: 890px;"><?php echo $user->mobile ?></p>
+                            <p style=" top: 610px; left: 280px;"><?php echo $user->marital ?></p>
+                            <p style=" top: 647px; left: 190px;"><?php echo $user->f_k_fname.' '.$user->f_k_lname ?></p>
+                            <p style=" top: 690px; left: 190px;"><?php echo $user->m_k_fname . ' ' . $user->m_k_lname ?></p>
+                            <p style=" top: 778px; left: 490px;"><?php echo $user->sos_fname.' '.$user->sos_lname ?></p>
+                            <p style=" top: 815px; left: 880px;"><?php echo $user->contact ?></p>
+
+                            <!-- this row will not appear when printing -->
 
 
-                        <!-- this row will not appear when printing -->
+                            <!-- /.content -->
+                        </div>
+                        <!-- /.box-body -->
+                    </section>
+                <?php
+                } ?>
 
-
-                        <!-- /.content -->
-                    </div>
-                    <!-- /.box-body -->
             </div>
+        </div>
     </section>
 
 
