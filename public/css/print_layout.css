@@ -1,15 +1,10 @@
 .box_layout {
-    width: 100%;
-    height: 600px;
     /* background-color: blue; */
+    width: 60%;
     transform: rotate(90deg);
-    margin-top: 50px;
-    margin-left: 160px;
-}
-
-.box_layout img {
-    width: 650px;
-    margin-bottom: 50px;
+    margin-left: 200px;
+    margin-top: -250px;
+    padding: 0;
 }
 
 .box_layout h1 {
@@ -42,11 +37,11 @@
 
 .content-box1 p {
     font-size: 19px;
-    font-family: 'Khmer OS Content';
+    font-family: 'Khmer OS System', 'Khmer OS';
 }
 
 .content-box1 h5 {
-    font-family: 'Khmer OS Fasthand';
+    font-family: 'Khmer OS System', 'Khmer OS';
     font-size: 18px;
     text-decoration: underline;
     padding: 0 15px;
@@ -66,7 +61,7 @@
 
 .content-box p {
     font-size: 21px;
-    font-family: 'Khmer OS';
+    font-family: 'Khmer OS System', 'Khmer OS';
 }
 
 .header {

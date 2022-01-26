@@ -251,12 +251,10 @@ class Model_Worker extends CI_Model
 		$result_arr = $query->result_array();
 		if (!empty($result_arr)) {
 			return $result_arr[0];
-		}
-	}
-	public function db(){
-		
+		} 
 	}
 	
+	 
 	
 	   
-}
+} 

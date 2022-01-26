@@ -44,6 +44,7 @@ class NameList extends CI_Controller {
         $userdata['avata'] = $this->session->image_file;
 
         $data['groups'] = $this->Model_Group->all();
+       
 
         //print_r($data['groups']);
         //	  print_r($group['0']['name']);

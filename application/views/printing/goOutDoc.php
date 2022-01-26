@@ -18,7 +18,7 @@
                         <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
                     </div>
                 </div>
-
+ 
 
                 <?php foreach ($users as $user) {
                 ?>

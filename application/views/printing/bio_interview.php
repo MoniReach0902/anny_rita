@@ -3,22 +3,22 @@
 <link rel="stylesheet" href="<?php echo base_url('public/css/print_layout.css') ?>">
 <div class="content-wrapper">
     <!-- Main content -->
-    <?php foreach ($userDoc as $key => $info) {
-    ?>
-        <section class="content">
-            <div class="box box-solid bg-dark">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><span class="khmer_font"> </span> &#921; Prining Bio Interview </h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <!-- this row will not appear when printing -->
-                    <div class=" row no-print">
-                        <div class="col-12">
-                            <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
-                        </div>
-                    </div>
 
+    <section class="content">
+        <div class="box box-solid bg-dark">
+            <div class="box-header with-border">
+                <h3 class="box-title"><span class="khmer_font"> </span> &#921; Prining Bio Interview </h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <!-- this row will not appear when printing -->
+                <div class=" row no-print">
+                    <div class="col-12">
+                        <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                    </div>
+                </div>
+                <?php foreach ($userDoc as $key => $info) {
+                ?>
                     <section class="invoice printableArea">
                         <!-- title row -->
                         <!-- <div class="row">
@@ -33,103 +33,109 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="khmer_font_bio">
+                        <div class="area" style="width: 100%; height: 100%; margin: 0;padding: 0;">
+                            <div class="row">
+                                <div class="col-12">
+
                                     <div class="rotate">
-                                        <div>
-                                            <img src="<?php echo base_url('/images/worker_docs/' . $info->file_name) ?>" alt="" style="max-width: 60%;transform: rotate(90deg);height: 70%;padding: 40px 0; top:0;margin-left: 200px;margin-top: -170px;float: left;">
+                                        <div style="height: 50%;margin: 0;padding: 0; background-color: red;">
+                                            <img src="<?php echo base_url('/images/worker_docs/' . $info->file_name) ?>" alt="" style="width: 18cm;transform: rotate(90deg);height: 22cm;margin-left: 200px;float: left;border: 2px solid black;">
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="box_layout">
-                                    <table>
-                                        <tr><img src="<?php echo base_url('/images/ARITA _logo.png') ?>" alt=""></tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Passport No. : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->number ?></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Name (KH) : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Name (ENG) : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->e_fname . ' ' . $info->e_lname ?></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Gender : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->gender ?></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Date of Birth : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->dob ?></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h2>Place of Birth : </h2>
-                                            </td>
-                                            <td>
-                                                <p><?php echo $info->name ?></p>
-                                            </td>
-                                        </tr>
+                            <br><br><br><br><br><br>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="box_layout" style="float: left;">
+                                        <table>
+                                            <tr><img src="<?php echo base_url('/images/ARITA _logo.png') ?>" alt=""></tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Passport No. : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->number ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Name (KH) : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Name (ENG) : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->e_fname . ' ' . $info->e_lname ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Gender : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->gender ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Date of Birth : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->dob ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Place of Birth : </h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $info->name ?></p>
+                                                </td>
+                                            </tr>
 
-                                    </table>
-                                    <h1>INTERVIEWS-INFO</h1>
-                                    <h3>Height : </h3>
-                                    <h3>Language : </h3>
-                                    <h3>Work experience : </h3>
-                                    <table class="tbl-bottom">
-                                        <tr>
-                                            <td>តំណាងឈ្មោះ ៖ </td>
-                                            <td><?php echo $info->aname ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>ទូរស័ព្ទលេខ : </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Code No. : </td>
-                                            <td><?php echo $key + 1 ?></td>
-                                        </tr>
-                                    </table>
+                                        </table>
+                                        <h1>INTERVIEWS-INFO</h1>
+                                        <h3>Height : </h3>
+                                        <h3>Language : </h3>
+                                        <h3>Work experience : </h3>
+                                        <table class="tbl-bottom">
+                                            <tr>
+                                                <td>តំណាងឈ្មោះ ៖ </td>
+                                                <td><?php echo $info->aname ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ទូរស័ព្ទលេខ : </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Code No. : </td>
+                                                <td><?php echo $key + 1 ?></td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                         <!-- this row will not appear when printing -->
-                        
+
                     </section>
-                    <!-- /.content -->
-                </div>
-                <!-- /.box-body -->
+                <?php
+                } ?>
+                <!-- /.content -->
             </div>
-        </section>
-    <?php
-    } ?>
+            <!-- /.box-body -->
+        </div>
+    </section>
+
 </div>
 <!-- /.content-wrapper -->
