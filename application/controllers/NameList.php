@@ -44,10 +44,12 @@ class NameList extends CI_Controller {
         $userdata['avata'] = $this->session->image_file;
 
         $data['groups'] = $this->Model_Group->all();
-       
+
 
         //print_r($data['groups']);
         //	  print_r($group['0']['name']);
+        $this->load->model('Model_NameList');
+        $data['company'] = $this->Model_NameList->getCompany();
 
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
@@ -66,7 +68,7 @@ class NameList extends CI_Controller {
                 'month'=>'0',
                 'year'=>'0',
                 'arm_num'=>'0',
-                'company_name'=>'1',
+                'company_name'=>$this->input->post('company_name'),
             ];
             $this->load->model('Model_NameList');
             $this->Model_NameList->insertData($data);
@@ -133,6 +135,8 @@ class NameList extends CI_Controller {
 
         $this->load->model('Model_NameList');
         $data['edit_data']=$this->Model_NameList->edit($id);
+        $data['company'] = $this->Model_NameList->getCompany();
+        $data['comName'] = $this->Model_NameList->getCom($id);
 
 
         $this->load->view('included/head');
