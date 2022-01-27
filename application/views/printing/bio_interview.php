@@ -50,7 +50,7 @@
                                 <div class="col-12">
                                     <div class="box_layout" style="float: left;">
                                         <table>
-                                            <tr><img src="<?php echo base_url('/images/ARITA _logo.png') ?>" alt=""></tr>
+                                            <tr><img src="<?php echo base_url('/images/1.png') ?>" alt=""></tr>
                                             <tr>
                                                 <td>
                                                     <h2>Passport No. : </h2>
@@ -64,7 +64,7 @@
                                                     <h2>Name (KH) : </h2>
                                                 </td>
                                                 <td>
-                                                    <p><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -96,7 +96,7 @@
                                                     <h2>Place of Birth : </h2>
                                                 </td>
                                                 <td>
-                                                    <p><?php echo $info->en_name ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->en_name ?></p>
                                                 </td>
                                             </tr>
 
@@ -107,11 +107,11 @@
                                         <h3>Work experience : </h3>
                                         <table class="tbl-bottom">
                                             <tr>
-                                                <td>តំណាងឈ្មោះ ៖ </td>
-                                                <td><?php echo $info->aname ?></td>
+                                                <td style="font-family: 'Khmer OS System';">តំណាងឈ្មោះ ៖ </td>
+                                                <td style="font-family: 'Khmer OS System';"><?php echo $info->aname ?></td>
                                             </tr>
                                             <tr>
-                                                <td>ទូរស័ព្ទលេខ : </td>
+                                                <td style="font-family: 'Khmer OS System';">ទូរស័ព្ទលេខ : </td>
                                                 <td></td>
                                             </tr>
                                             <tr>

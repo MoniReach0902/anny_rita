@@ -64,7 +64,7 @@
                                                     <h2>Name (KH) : </h2>
                                                 </td>
                                                 <td>
-                                                    <p><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->k_fname . ' ' . $info->k_lname ?></p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -104,7 +104,7 @@
                                                     <h2>Place of Birth : </h2>
                                                 </td>
                                                 <td>
-                                                    <p><?php echo $info->name ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->name ?></p>
                                                 </td>
                                             </tr>
                                             <tr>

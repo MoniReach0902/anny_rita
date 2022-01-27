@@ -31,7 +31,11 @@
                                 <label for="description" class="col-sm-2 col-form-label text-right"><span class="khmer_font">ក្រុមហ៊ុន<br /></span>Company *</label>
                                 <div class="col-sm-10">
                                     <select name="company_name" id="" class="form-control">
-                                        <option value="<?php echo $edit->company_name ?>"><?php echo $comName['e_name'] ?></option>
+                                        <option value="<?php echo $edit->company_name ?>"><?php if(empty($comName['e_name'])){
+                                            echo "None";
+                                        }else{
+                                        echo $comName['e_name'];
+                                        } ?></option>
                                         <?php foreach ($company as $name) {
                                         ?>
                                             <option value="<?php echo $name->id ?>"><?php echo $name->e_name ?></option>
