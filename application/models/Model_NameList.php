@@ -6,6 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_NameList extends CI_Model {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->db = $this->load->database('default', TRUE);
+    }
+	
     public function fetch(){
         // $this->db->from('name_list');
         // $this->db->order_by("id", "desc");
@@ -42,14 +48,14 @@ class Model_NameList extends CI_Model {
         $query=$this->db->get_where('name_list',$where);
         return $query->result();
     }
-    public function update($name,$note,$id){
-        $query=$this->db->query("UPDATE name_list set name='$name',note='$note' WHERE id='$id'");
+    public function update($name,$note, $company,$id){
+        $query=$this->db->query("UPDATE name_list set name='$name',note='$note',company_name='$company' WHERE id='$id'");
     }
     
     public function getDoc($id){
         $query=$this->db->query("SELECT worker_attached.file_name,worker_attached.number,workers.k_fname,
         workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.dob,workers.birth_province,
-        provinces.name,affiliates.name as aname FROM workers INNER JOIN worker_attached 
+        provinces.name,provinces.en_name,affiliates.name as aname FROM workers INNER JOIN worker_attached 
         ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
          JOIN affiliates ON affiliates.id=workers.affiliate WHERE worker_attached.doc_type=2 AND 
          workers.name_list_id='$id'");
@@ -98,7 +104,7 @@ class Model_NameList extends CI_Model {
     }
     public function getCompanyName($id)
     {
-        $query = $this->db->query("SELECT employers.e_name,employers.add1,industries.name,employers.mobile FROM employers JOIN name_list on employers.id=name_list.company_name JOIN industries on industries.id=employers.business_industry WHERE name_list.id='$id'");
+        $query = $this->db->query("SELECT employers.id,employers.e_name,employers.add1,industries.name,employers.mobile FROM employers JOIN name_list on employers.id=name_list.company_name JOIN industries on industries.id=employers.business_industry WHERE name_list.id='$id'");
         $result_arr = $query->result_array();
         if (!empty($result_arr)) {
             return $result_arr[0];
@@ -120,7 +126,7 @@ class Model_NameList extends CI_Model {
         }
     }
     public function getData($id){
-        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,provinces.en_name,workers.dob,worker_attached.number,worker_attached.file_name,
+        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.marital,provinces.en_name,workers.dob,worker_attached.number,worker_attached.file_name,
                                     worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
                                     communes.en_name as c_communes ,districts.en_name as c_districts,provinces.en_name as c_provinces,worker_attached.file_name 
                                     FROM workers 
@@ -148,7 +154,7 @@ class Model_NameList extends CI_Model {
         districts.name as d_name,provinces.name as p_name,worker_attached.number,job_title.name,
         workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,
         districts.name as cd_name,provinces.name as cp_name,worker_parents.f_k_fname,worker_parents.f_k_lname,
-        worker_parents.m_k_fname,worker_parents.m_k_lname,worker_parents.f_mobile,worker_education.flanguage 
+        worker_parents.m_k_fname,worker_parents.m_k_lname,worker_parents.f_mobile,worker_education.flanguage,worker_attached.issue_date
         FROM workers
         JOIN worker_attached on workers.id=worker_attached.worker_id 
         JOIN provinces ON workers.birth_province=provinces.id 

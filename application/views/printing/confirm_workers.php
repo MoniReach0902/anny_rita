@@ -56,25 +56,25 @@
                             <p style="text-align: justify; margin-left: 75px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b></p>
 
                         </div>
-                        <p style="text-align: justify; margin-left: 285px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b></p>
-                        <p style="text-align: justify; margin-left: 285px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b></p>
+                        <p style="text-align: justify; margin-left: 285px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Power of Attorney)</b></p>
+                        <p style="text-align: justify; margin-left: 285px;">- លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Labor Contract)</b></p>
                         <div class="content-center">
                             <p style="margin: 0 40 0 0; width: 295px; margin-left: 45px;"> ភ្ជាប់មកជាមួយនូវ៖</p>
                             <p style=" ">បញ្ជីឈ្មោះ ពលករ-ពលការិនីខ្មែររបស់រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                                                                     echo $company['e_name'];
-                                                                                                                } ?> </b> ចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total'] ?> នាក់ <?php echo ' ( ' . $vals['k_total'] . ' ) '; ?></strong></p>
+                                                                                                                } ?> </b> ចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total'].' នាក់ '.' ('.$vals['ct_arm_num'].') ' ; ?></strong></p>
 
                         </div>
 
                         <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងតាម លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b> របស់ក្រុមហ៊ុន / </p>
                         <p>រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                         echo $company['e_name'];
-                                                                    } ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ ។ ។</p>
+                                                                    } ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ  ។</p>
 
 
 
                         <p style="text-align: justify;margin: 0 55px;"><b style="font-weight: bold;">ក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO.,LTD)</b> មានកិត្តិយស </p>
-                        <p>សូមជម្រាបជូនថាៈ នៅថ្ងៃទី<b style="font-weight: bold;"> <?php echo $vals['r_date1'] ?> ខែ<?php echo $vals['r_month1'] ?> ឆ្នាំ <?php echo $vals['r_year1'] ?></b> ក្រុមហ៊ុនយើងខ្ញុំបានបញ្ជូន ពលករ-ពលការិនីខ្មែរចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total'] ?> នាក់ <?php echo ' ( ' . $vals['k_total'] . ' ) '; ?></strong> ដើម្បីចូលបម្រើការងារនៅក្នុង ក្រុមហ៊ុន/រោងចក្រ
+                        <p>សូមជម្រាបជូនថាៈ នៅថ្ងៃទី<b style="font-weight: bold;"> <?php echo $vals['r_date1'] ?> ខែ<?php echo $vals['r_month1'] ?> ឆ្នាំ <?php echo $vals['r_year1'] ?></b> ក្រុមហ៊ុនយើងខ្ញុំបានបញ្ជូន ពលករ-ពលការិនីខ្មែរចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total'] ; ?></strong> ដើម្បីចូលបម្រើការងារនៅក្នុង ក្រុមហ៊ុន/រោងចក្រ
                             <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                 echo $company['e_name'];
                                                             } ?> </b>
@@ -87,7 +87,7 @@
 
                         <div class="top">
                             <p> </p>
-                            <p style="margin: 55px 40px 20px 0;"><span>ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងៃទី <?php echo $num_date['r_date2'] ?> ខែ <?php echo $num_date['r_month2'] ?> ឆ្នាំ <?php echo $num_date['r_year2'] ?> </span></p>
+                            <p style="margin: 55px 40px 20px 0;font-weight:normal ;font-family: 'Khmer OS System';"><span style="font-weight: normal;font-family: 'Khmer OS System';">ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងៃទី <?php echo $num_date['r_date2'] ?> ខែ <?php echo $num_date['r_month2'] ?> ឆ្នាំ <?php echo $num_date['r_year2'] ?> </span></p>
                         </div>
                         <div class="top">
                             <p> </p>
@@ -120,11 +120,11 @@
                                 </div>
                             </div>
                         </div> -->
-                        
+
                     <div class="content-box" style="margin-top: 500px;">
-                    <div>&nbsp;</div>
+                        <div>&nbsp;</div>
                         <div class="top" style="margin-bottom: 40px; margin-top: 210px;">
-                            <p>เลขที่…<?php echo $vals['ct_arm_num'] ?>…ARM</p>
+                            <p>เลขที่…<?php echo $vals['c_arm_num'] ?>…ARM</p>
                             <p>วันที่ <?php echo $vals['ct_date1'] . ' ' . $vals['ct_month1'] . ' ' . $vals['ct_year1'] ?></p>
                         </div>
 
@@ -148,7 +148,7 @@
                         <p style="text-align: justify; margin-left: 285px;">- สัญญาจ้างแรงงาน (Labor Contract)</p>
                         <p>สิ่งที่ส่งมาด้วย บัญชีรายชื่อแรงงานกัมพูชา ของบริษัท <?php if (!empty($company['e_name'])) {
                                                                                     echo $company['e_name'];
-                                                                                } ?>. จำนวน <?php echo $totalCount['total'] ?> คน</p>
+                                                                                } ?>. จำนวน <?php echo $vals['k_total'] ?> คน</p>
                         <div class="content-center">
                             <p style="margin: 0 55 0 0; width: 205px; margin-left: 55px;"> </p>
                             <p style="text-align: justify; ">จากการที่บริษัทของท่านได้ทำ หนังสือความต้องการแรงงาน (Demand Letter)</p>
@@ -156,12 +156,12 @@
                         </div>
                         <p>ผ่านกรมจัดหางานของไทย และกระทรวงแรงงานของกัมพูชา ของบริษัท <?php if (!empty($company['e_name'])) {
                                                                                             echo $company['e_name'];
-                                                                                        } ?>. โดยมีเนื้อหาให้ บริษัท ANNY RITA BEST MANPOWER CO., LTD. จัดหาแรงงาน ตามกฎหมาย MOU ซึ่งแรงงานสามารถทำงานในประเทศไทย ด้วยมีอายุการทำงาน 2 ปี นั้น</p>
+                                                                                        } ?>. โดยมีเนื้อหาให้ บริษัท ANNY RITA BEST MANPOWER CO., LTD. จัดหาแรงงาน ตามกฎหมาย MOU ซึ่งแรงงานสามารถทำงานในประเทศไทย ด้วยมีอายุการทำงาน ២ ปี นั้น</p>
 
                         <p style="margin-left:55px;">บริษัท ANNY RITA BEST MANPOWER CO., LTD จึงมีการจัดส่งแรงงานสัญชาติ กัมพูชาให้เข้าไปทำงาน</p>
                         <p>ที่ บริษัท <?php if (!empty($company['e_name'])) {
                                             echo $company['e_name'];
-                                        } ?> ในวันที่ <?php echo $vals['ct_date2'].' '.$vals['ct_month2'].' '.$vals['ct_year2'] ?> จำนวน <?php echo $totalCount['total'] ?> คน และเมื่อแรงงานเดินทางเข้าถึงบริษัทของท่านแล้ว ทางกระผม ขอให้ท่านยืนยันว่าแรงงานดังกล่าวนั้นได้เข้าทำงานในบริษัทของท่านเป็นที่เรียบร้อยแล้ว</p>
+                                        } ?> ในวันที่ <?php echo $vals['ct_date2'] . ' ' . $vals['ct_month2'] . ' ' . $vals['ct_year2'] ?> จำนวน <?php echo $totalCount['total'] ?> คน และเมื่อแรงงานเดินทางเข้าถึงบริษัทของท่านแล้ว ทางกระผม ขอให้ท่านยืนยันว่าแรงงานดังกล่าวนั้นได้เข้าทำงานในบริษัทของท่านเป็นที่เรียบร้อยแล้ว</p>
 
 
 

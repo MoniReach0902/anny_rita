@@ -160,3 +160,7 @@
     position: absolute;
     color: black;
 }
+
+table#bio tr {
+    height: 80px;
+}

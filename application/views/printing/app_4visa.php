@@ -7,8 +7,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ពាក្យសុំរបស់ក្រុមហ៊ុន </h3>
-                <a href="<?php echo site_url('NameListPrint/add_info_form1/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
+                <h3 class="box-title"><span class="khmer_font"> </span> &#921; </h3>
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -35,8 +35,21 @@
                             </div>
                         </div> -->
                         <div class="image-passport" style="position: relative;">
-                            <img src="<?php echo base_url('images/alert/app_4visa.png') ?>" alt="" style="width: 100%; height: 100%; position: relative;">
-                            <h5 style=" top: 322px; left: 290px;"><?php echo $user->e_lname . ' ' . $user->e_fname ?></h5>
+
+                            <img src="<?php echo base_url('images/VISAapp.png') ?>" alt="" style="width: 100%; height: 100%; position: relative;">
+
+
+                            <?php $gender = $user->gender;
+                            $marital = $user->marital; ?>
+                            <p style=" top: 320px; left: 40px;"> <i class="fa fa-<?php echo ($gender == 'Male') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i></p>
+                            <p style=" top: 320px; left: 60px;font-family: 'Time New Roman';font-size: 22px;">&nbsp;&nbsp;&nbsp;Mr. &nbsp;&nbsp;&nbsp;</p>
+                            <p style=" top: 320px; left: 120px;"> <i class="fa fa-<?php echo ($gender == 'Female' && $marital == 'married') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i></p>
+                            <p style=" top: 320px; left: 140px;font-family: 'Time New Roman';font-size: 22px;">&nbsp;&nbsp;&nbsp;Ms. &nbsp;&nbsp;&nbsp;</p>
+                            <p style=" top: 320px; left: 200px;"> <i class="fa fa-<?php echo ($gender == 'Female' && $marital == 'single') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i></p>
+                            <p style=" top: 320px; left: 210px;font-family: 'Time New Roman';font-size: 22px;">&nbsp;&nbsp;&nbsp;Miss. &nbsp;&nbsp;&nbsp;</p>
+
+
+                            <h5 style=" top: 322px; left: 340px;"><?php echo $user->e_lname . ' ' . $user->e_fname ?></h5>
                             <p style=" top: 490px; left: 150px;"><?php echo $user->en_name ?></p>
                             <p style=" top: 534px; left: 200px;"><?php echo $user->dob ?></p>
                             <p style=" top: 618px; left: 105px;"><?php echo $user->number ?></p>
@@ -48,11 +61,11 @@
                                 </i>
                             </div>
                             <h5 style=" top: 1036px; left: 620px; font-size: 32px;"><?php echo $user->e_lname . ' ' . $user->e_fname ?></h5>
-                            <i>
-                                <p style=" top: 450px; left: 550px;font-size: 20px;text-transform: uppercase; font-family: 'Kantumruy Light; te"><?php if (!empty($company['e_name'])) {
-                                                                                                                                                        echo $company['e_name'];
-                                                                                                                                                    } ?></p>
-                            </i>
+
+                            <p style=" top: 450px; left: 600px;font-size: 19px;text-transform: uppercase; font-family: 'Time New Roman';text-align: center;"><b style="font-weight: 900;"><?php if (!empty($company['e_name'])) {
+                                                                                                                                                                                                echo $company['e_name'];
+                                                                                                                                                                                            } ?></b></p>
+
                             <b> <span style=" top: 480px; left: 550px; font-size:18px; color:black; position:absolute;">Address: </span></b>
                             <i>
 
@@ -60,19 +73,19 @@
                                                                                                                                     echo $company['add1'];
                                                                                                                                 } ?></p>
                             </i>
-                            <i>
-                                <p style=" top: 715px; left: 550px;font-size: 20px;text-transform: uppercase; font-family: 'Kantumruy Light; te"><?php if (!empty($company['e_name'])) {
-                                                                                                                                                        echo $company['e_name'];
-                                                                                                                                                    } ?></p>
-                            </i>
-                            <b> <span style=" top: 745px; left: 550px; font-size:18px; color:black; position:absolute;">Address: </span></b>
+
+                            <p style=" top: 715px; left: 610px;font-size: 19px;text-transform: uppercase; font-family: 'Time New Roman';text-align: center;"><b style="font-weight: 900;"><?php if (!empty($company['e_name'])) {
+                                                                                                                                                                                                echo $company['e_name'];
+                                                                                                                                                                                            } ?></b></p>
+
+                            <b> <span style=" top: 745px; left: 510px; font-size:18px; color:black; position:absolute;">Address: </span></b>
                             <i>
 
-                                <p style=" top: 745px;left: 630px;font-size: 25px;text-transform: uppercase;line-height:22px"><?php if (!empty($company['add1'])) {
+                                <p style=" top: 745px;left: 630px;font-size: 23px;text-transform: uppercase;line-height:21px"><?php if (!empty($company['add1'])) {
                                                                                                                                     echo $company['add1'];
                                                                                                                                 } ?></p>
                             </i>
-                            <p style=" top: 786px;left: 740px;"><?php if (!empty($company['mobile'])) {
+                            <p style=" top: 786px;left: 770px;"><?php if (!empty($company['mobile'])) {
                                                                     echo $company['mobile'];
                                                                 } ?> </p>
                         </div>

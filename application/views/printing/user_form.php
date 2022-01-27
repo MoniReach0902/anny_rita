@@ -40,12 +40,14 @@
                                         <span class="khmer_os_header">ព្រះរាជាណាចក្រកម្ពុជា<br /><br />ជាតិ&#9;សាសនា&#9;ព្រះមហាក្សត្រ</span><br /><br /><br />
                                         <img src="<?php echo base_url('/images/tactieng.png') ?>" alt="" style="width: 200px;">
 
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="content-box1" style="margin-top: 10px; text-align: start;">
-                            <div class="top" style="margin-top: 110px;margin-bottom: 50px;">
+                        <img src="<?php echo base_url('/images/arm_logo.png') ?>" alt="" style="width: 200px;">
+                        <div class="content-box1" style="margin-top: -100px; text-align: start;">
+                            <div class="top" style="margin-top: 50px;margin-bottom: 50px;">
                                 <h2 style="margin: auto; font-family: 'Khmer OS Muol Light';">ប្រវត្តិរូបសង្ខេប</h2>
 
                             </div>
@@ -57,9 +59,9 @@
                                 <p>ជាអក្សរឡាតាំង៖ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->e_fname . '  ' . $user->e_lname ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                                 <p>ភេទ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $gender = $user->gender;
-                                                                    $gender == 'Male' ? $g = 'ប្រុស' : $g = 'ស្រី';
-                                                                    echo $g; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $gender = $user->gender;
+                                                                                                                                $gender == 'Male' ? $g = 'ប្រុស' : $g = 'ស្រី';
+                                                                                                                                echo $g; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>ថ្ងៃ-ខែ-ឆ្នាំកំណើត៖</p>
@@ -89,17 +91,17 @@
                                 <p>សៀវភៅគ្រួសារ/អត្តសញ្ញាណប័ណ្ណ/លិខិតឆ្លងដែនលេខ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->number ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ចុះថ្ងៃទី </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php echo date('d', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;</h5>
                                 <p> ខែ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date('m', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;</h5>
                                 <p>ឆ្នាំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date('Y', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>មុខរបរ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->name ?>&nbsp;&nbsp;&nbsp;&nbsp;​&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->name ?>&nbsp;&nbsp;&nbsp;&nbsp; </h5>
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង </p>
-                                <h5>&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
 
@@ -185,7 +187,7 @@
 
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង គ្រួសារ</p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->f_mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->f_mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
 
 
                             </div>
@@ -195,34 +197,36 @@
                             <div class="top" ​ style="margin-right: 150px; float: right; margin-top: 60px;">
                                 <p> </p>
                                 <p>រាជធានីភ្នំពេញ ថ្ងៃទី
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;<?php echo date('d'); ?>&nbsp;&nbsp;</h5>
                                 </p>
                                 <p>ខែ</p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;<?php echo date('m'); ?>&nbsp;&nbsp;</h5>
                                 </p>
                                 <p>ឆ្នាំ</p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;<?php echo date('Y'); ?>&nbsp;&nbsp;</h5>
                             </div>
                             <br>
-                            <div class="top" ​ style="margin-right: -240px; margin-top: 80px; float: right;">
+                            <div class="top" style="margin-right: -240px; margin-top: 80px; float: right;">
                                 <p> </p>
 
                                 <p>ស្នាមមេដៃសាមីខ្លួន</p>
                             </div>
-                            <div class="top" ​ style="margin-right: -240px; margin-top: 170px; float: right;">
+                            <div class="top" style="margin-right: -240px; margin-top: 265px; float: right;">
                                 <p> </p>
 
                                 <p><?php echo $user->k_fname . '  ' . $user->k_lname ?></p>
                             </div>
-                            <div class="top" ​ style="margin-right: -240px; margin-top: 220px; float: right;">
+                            <div class="top" style="margin-right: -260px; margin-top: 290px; float: right;">
                                 <p> </p>
 
                                 <p><?php echo $user->e_fname . '  ' . $user->e_lname ?></p>
                             </div>
-                            <div class="top" ​ style="margin-right: -220px; margin-top: 500px; float: right;">
+                            <div class="top" style="margin-right: -520px; margin-top: 450px; float: right;">
                                 <p> </p>
 
-                                <p><?php  if(!empty($company['e_name'])){echo $company['e_name'];}?><?php echo' - ' . $totalCount['total'] . ' -  ' . ($key + 1) ?></p>
+                                <p><?php if (!empty($company['e_name'])) {
+                                        echo $company['e_name'];
+                                    } ?><?php echo ' -' . $totalCount['total'] . ' -  ' . ($key + 1) ?></p>
                             </div>
                         </div>
 

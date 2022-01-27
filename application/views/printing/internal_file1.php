@@ -56,30 +56,33 @@
 
                         <div class="content-center">
                             <p style="margin: 0 55px; width: 240px; "> យោង ៖ </p>
-                            <p style="text-align: justify;">ប្រកាសលេខ ០១៣/១៥ ក.ប/ប្រ.ក ចុះថៃ្ងទី១៣ ខែមករា ឆ្នាំ២០១៥ របស់ក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ ស្តីពីការអនុញ្ញាតឱ្យក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ ធ្វើការជ្រើសរើស បណ្តុះបណ្តាល បញ្ជូន និងគ្រប់គ្រងពលករខ្មែរទៅធ្វើការនៅ ព្រះរាជាណាចក្រថៃឡង់ដ៏</p>
+                            <p style="text-align: justify;">ប្រកាសលេខ ១២៦/២០ ក.ប/ប្រ.ក ចុះថៃ្ងទី៣០ ខែមីនា ឆ្នាំ២០២២ របស់ក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ ស្តីពីការអនុញ្ញាតឱ្យក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ ធ្វើការជ្រើសរើស បណ្តុះបណ្តាល បញ្ជូន និងគ្រប់គ្រងពលករខ្មែរទៅធ្វើការនៅ ព្រះរាជាណាចក្រថៃឡង់ដ៏</p>
                         </div>
-                        <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងខាងលើ ខ្ញុំមានកិត្តិយសដ៍ខ្ពង់ខ្ពស់ សូមគោរពជម្រាបជូន </p>
+                        <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងខាងលើ ខ្ញុំមានកិត្តិយសដ៏ខ្ពង់ខ្ពស់ សូមគោរពជម្រាបជូន </p>
                         <p><span>ឯកឧត្តមប្រតិភូរាជរដ្ឋាភិបាល</span> មេត្តាជ្រាបថា <span>ក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ</span> បានជ្រើសរើសពលករខ្មែរចំនួន <b style="font-weight: bold;"><?php echo $total ?> នាក់</b> ដូចមានបញ្ជីរាយនាមភ្ជាប់ជូនទៅធ្វើការងារនៅព្រះរាជាណាចក្រថៃឡង់ដ៏ដោយឆ្លងកាត់ តាមរយៈក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ។</p>
                         <p style="margin-left:55px;">អាស្រ័យដូចបានគោរពជម្រាបជូនខាងលើ ខ្ញុំមានកិត្តិយសសុំការអនុញ្ញាត <span>ឯកឧត្តមប្រតិភូរាជ</span> </p>
-                        <p><span>រដ្ឋាភិបាល </span>មេត្តាពិនិត្យ និង អនុញ្ញាតឱ្យ ក្រុមហ៊ុន <span>អាន់នី រីតា បេស មេនផៅវ័រ</span> បានបញ្ជូនឈ្មោះពលករខ្មែរទាំង <b style="font-weight: bold;"><?php echo $total ?> នាក់</b ទៅធ្វើប័ណ្ណការងារនៅព្រះរាជាណាចក្រថៃឡង់ដ៏ ដើម្បីបម្រើការងារនៅក្រុមហ៊ុនដូចខាងក្រោម៖</p>
+                        <p><span>រដ្ឋាភិបាល </span>មេត្តាពិនិត្យ និង អនុញ្ញាតឱ្យ ក្រុមហ៊ុន <span>អាន់នី រីតា បេស មេនផៅវ័រ</span> បានបញ្ជូនឈ្មោះពលករខ្មែរទាំង <b style="font-weight: bold;"><?php echo $total ?> នាក់</b> ទៅធ្វើប័ណ្ណការងារនៅព្រះរាជាណាចក្រថៃឡង់ដ៏ ដើម្បីបម្រើការងារនៅក្រុមហ៊ុនដូចខាងក្រោម៖</p>
                         <div class="content-center">
+                            <?php
+                                
+                            ?>
                             <p style="margin: 0 55px; width: 110px;">ក្រុមហ៊ុន ៖</p>
-                            <p style="text-align: justify;"><?php if (empty($companyName['e_name'])) {
+                            <p style="text-align: justify; font-weight: bold;font-family: 'Times New Roman', Times, serif;font-size: 25px;"><?php if (empty($companyName['e_name'])) {
                                                                 echo 0;
                                                             } else {
-                                                                echo $companyName['e_name'];
+                                                                echo $companyName['e_name'].' (ផ្នែក  '.$companyName['name'].')';
                                                             } ?></p>
                         </div>
 
                         <div class="content-center">
                             <p style="margin: 0 55px; width: 160px; "> អាសយដ្ឋាន ៖ </p>
-                            <p style="text-align: justify; width: 650px;"><?php if (empty($companyName['add1'])) {
+                            <p style="text-align: justify; width: 650px;font-family: 'Times New Roman', Times, serif;font-weight: bold;font-size: 24px;"><?php if (empty($companyName['add1'])) {
                                                                                 echo 0;
                                                                             } else {
                                                                                 echo $companyName['add1'];
                                                                             } ?></p>
                         </div>
-                        <p style="text-align: justify;margin: 0 55px;">សូម <span>ឯកឧត្តមប្រតិភូរាជរដ្ឋាភិបាល</span> មេត្តាទទួលនូវសេក្តីគោរពដ៍ខ្ពង់ខ្ពស់អំពីខ្ញុំ៕</p>
+                        <p style="text-align: justify;margin: 0 55px;">សូម <span>ឯកឧត្តមប្រតិភូរាជរដ្ឋាភិបាល</span> មេត្តាទទួលនូវសេក្តីគោរពដ៏ខ្ពង់ខ្ពស់អំពីខ្ញុំ៕</p>
                         <div class="top">
                             <p> </p>
                             <p style="margin: 55px 80px 100px 0;"><span>អគ្គនាយកក្រុមហ៊ុន</span></p>

@@ -150,8 +150,9 @@ class NameList extends CI_Controller {
     public function update($id){
         $name=$this->input->post('name');
         $note=$this->input->post('note');
+        $company = $this->input->post('company_name');
         $this->load->model('Model_NameList');
-        $this->Model_NameList->update($name,$note,$id);
+        $this->Model_NameList->update($name,$note, $company,$id);
         return redirect(base_url('index.php/NameList'));
     }
 }

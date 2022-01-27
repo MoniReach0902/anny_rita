@@ -45,12 +45,12 @@
 
                                 </div>
                             </div>
-                            <br><br><br><br><br><br>
+                            <br><br><br><br><br><br><br><br>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="box_layout" style="float: left;">
-                                        <table>
-                                            <tr><img src="<?php echo base_url('/images/ARITA _logo.png') ?>" alt=""></tr>
+                                        <table id="bio">
+                                            <tr><img src="<?php echo base_url('/images/1.png') ?>" alt=""></tr>
                                             <tr>
                                                 <td>
                                                     <h2>Passport No. : </h2>
@@ -77,6 +77,14 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <h2>Name (TH) : </h2>
+                                                </td>
+                                                <td>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <h2>Gender : </h2>
                                                 </td>
                                                 <td>
@@ -96,29 +104,20 @@
                                                     <h2>Place of Birth : </h2>
                                                 </td>
                                                 <td>
-                                                    <p><?php echo $info->en_name ?></p>
+                                                    <p><?php echo $info->name ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Code No. :</h2>
+                                                </td>
+                                                <td>
+                                                    <p><?php echo $key + 1 ?></p>
                                                 </td>
                                             </tr>
 
                                         </table>
-                                        <h1>INTERVIEWS-INFO</h1>
-                                        <h3>Height : </h3>
-                                        <h3>Language : </h3>
-                                        <h3>Work experience : </h3>
-                                        <table class="tbl-bottom">
-                                            <tr>
-                                                <td>តំណាងឈ្មោះ ៖ </td>
-                                                <td><?php echo $info->aname ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>ទូរស័ព្ទលេខ : </td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Code No. : </td>
-                                                <td><?php echo $key + 1 ?></td>
-                                            </tr>
-                                        </table>
+
                                     </div>
                                 </div>
                             </div>

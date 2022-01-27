@@ -48,8 +48,8 @@
                         <div class="content-center">
                             <p style="margin: 0 55px; width: 130px;">កម្មវត្តុ ៖</p>
 
-                            <p style="text-align: justify;">សំណើសុំការអនុញ្ញាតជាគោលការណ៍ឱ្យពលករខ្មែរចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total']  ?>នាក់ <?php if (!empty($num_date['k_total'])) {
-                                                                                                                                                                                            echo ' ( ' . $num_date['k_total'] . ' ) ';
+                            <p style="text-align: justify;">សំណើសុំការអនុញ្ញាតជាគោលការណ៍ឱ្យពលករខ្មែរចំនួន <strong style="font-weight: bold;"><?php echo $num_date['k_total']  ?>នាក់ <?php if (!empty($num_date['ct_arm_num'])) {
+                                                                                                                                                                                            echo ' ( ' . $num_date['ct_arm_num'] . ' ) ';
                                                                                                                                                                                         } ?> </strong> ឱ្យធ្វើការក្នុងរោង <?php if (!empty($company['e_name'])) {
                                                                                                                                                                                                                                 echo $company['e_name'];
                                                                                                                                                                                                                             } ?> នៃព្រះរាជាណាចក្រថៃឡង់ដ៍</p>
@@ -57,11 +57,11 @@
 
                         <div class="content-center">
                             <p style="margin: 0 55px; width: 100px; "> យោង ៖ </p>
-                            <p style="text-align: justify;">ប្រកាសលេខៈ ០១៣ / ១៥ ក.ប ប្រ.ក ចុះថ្ងៃទី ១៣ ខែ មករា ឆ្នាំ ២០១៥ របស់ ក្រសួងការងារ និង បណ្តុះបណ្តាលវិជ្ជាជីវៈ</p>
+                            <p style="text-align: justify;">ប្រកាសលេខៈ ១២៦ / ២០ ក.ប ប្រ.ក ចុះថ្ងៃទី ៣០ ខែ មីនា ឆ្នាំ ២០២២ របស់ ក្រសួងការងារ និង បណ្តុះបណ្តាលវិជ្ជាជីវៈ</p>
                         </div>
                         <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងខាងលើ ខ្ញុំមានកិត្តិយសដ៍ខ្ពង់ខ្ពស់ សូមគោរពជម្រាបជូន </p>
-                        <p><span>លោកប្រធាន ប៉ុស្តិ៍ត្រួតពិនិត្យច្រកទ្វារព្រំដែនអន្ដរជាតិប៉ោយប៉ែត</span> មេត្តាជ្រាបថាៈ នៅ <strong style="font-weight: bold;">ថ្ងៃទី <?php echo $num_date['r_date1'] ?> ខែ <?php echo $num_date['r_month1'] ?> ឆ្នាំ <?php echo $num_date['r_year1'] ?></strong> ប្រកាសក្រុមហ៊ុន យើងខ្ញុំត្រូវបញ្ជូនពលករចំនួន <strong style="font-weight: bold;"><?php echo $totalCount['total']  ?>នាក់ <?php if (!empty($num_date['k_total'])) {
-                                                                                                                                                                                                                                                                                                                                                                                                                            echo '( ' . $num_date['k_total'] . ' )';
+                        <p><span>លោកប្រធាន ប៉ុស្តិ៍ត្រួតពិនិត្យច្រកទ្វារព្រំដែនអន្ដរជាតិប៉ោយប៉ែត</span> មេត្តាជ្រាបថាៈ នៅ <strong style="font-weight: bold;">ថ្ងៃទី <?php echo $num_date['r_date1'] ?> ខែ <?php echo $num_date['r_month1'] ?> ឆ្នាំ <?php echo $num_date['r_year1'] ?></strong> ប្រកាសក្រុមហ៊ុន យើងខ្ញុំត្រូវបញ្ជូនពលករចំនួន <strong style="font-weight: bold;"><?php echo $num_date['k_total'] ?>នាក់ <?php if (!empty($num_date['ct_arm_num'])) {
+                                                                                                                                                                                                                                                                                                                                                                                                                            echo '( ' . $num_date['ct_arm_num'] . ' )';
                                                                                                                                                                                                                                                                                                                                                                                                                         } ?> </strong> ទៅធ្វើការនៅ ព្រះរាជាណាចក្រថៃឡង់ដ៍ តាមច្រកទ្វារអន្តរជាតិព្រំដែនប៉ោយប៉ែត ។ សូមភ្ជាប់មកជាមួយនូវបញ្ជីរាយនាមពលករខ្មែរចំនួន ០១ ច្បាប់ ។</p>
                         <p style="margin-left:55px;">អាស្រ័យហេតុនេះសូម <span>លោកប្រធាន ប៉ុស្តិ៍ត្រួតពិនិត្យច្រកទ្វារព្រំដែនអន្ដរជាតិប៉ោយប៉ែត </span> </p>
                         <p>មេត្តាជ្រាប និង ជួយសម្រួលដោយក្តីអនុគ្រោះ ។</p>
@@ -72,7 +72,7 @@
                         <p>គោរពដ៏ខ្ពង់ខ្ពស់ អំពីខ្ញុំបាទ ។ </p>
                         <div class="top">
                             <p> </p>
-                            <p style="margin: 55px 40px 20px 0;"><span>ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងៃទី <?php echo $num_date['r_date2'] ?> ខែ <?php echo $num_date['r_month2'] ?> ឆ្នាំ <?php echo $num_date['r_year2'] ?> </span></p>
+                            <p style="margin: 55px 40px 20px 0;"><span style="font-family: 'Khmer OS System';">ធ្វើនៅរាជធានីភ្នំពេញ ថ្ងៃទី <?php echo $num_date['r_date2'] ?> ខែ <?php echo $num_date['r_month2'] ?> ឆ្នាំ <?php echo $num_date['r_year2'] ?> </span></p>
                         </div>
                         <div class="top">
                             <p> </p>

@@ -41,7 +41,7 @@
 
                         </div>
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Thai ARm Number *</span>
+                            <span class="input-group-text">ចំនួនពលករ ជាអក្សរខ្មែរ *</span>
                             <input type="text" class="form-control" value="<?php echo $vals['ct_arm_num'] ?>" placeholder="លេខ​ ៖" aria-label="Username" name="ct_arm_num">
 
                         </div>
@@ -65,7 +65,7 @@
                             <button type="submit" class="btn btn-info" style="float: right;">Save</button>
                         </div>
                     </div>
-                   
+
 
                 </div>
                 <!-- /.row -->

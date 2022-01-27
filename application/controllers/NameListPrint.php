@@ -10,7 +10,22 @@ class NameListPrint extends CI_Controller{
         
         $this->load->database();
     }
+    public function Bio($id)
+    {
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
 
+        $data['userDoc'] = $this->Model_NameList->getDoc($id);
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/bio', $data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
     public function BioPrint($id){
         $userdata['user_name'] = $this->session->fname;
         $userdata['user_email'] = $this->session->email;
@@ -152,7 +167,7 @@ class NameListPrint extends CI_Controller{
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
         
-        $data['listId'] = $id;
+        $data['listId'] = $id; 
 
         $data['userDoc'] = $this->Model_NameList->getData($id);
         // $data['company'] = $this->Model_NameList->getCompany4Visa($id);

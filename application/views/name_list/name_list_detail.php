@@ -14,6 +14,9 @@
                             <div class="btn-group mb-5">
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Printing</button>
                                 <div class="dropdown-menu" style="font-family: 'Khmer OS Battambang';">
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/Bio/' . $listId) ?>" target="_blank">
+                                        <span class="text-success">BiO </span></a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/BioPrint/' . $listId) ?>" target="_blank">
                                         <span class="text-success">BiO INTERVIEW</span></a>
                                     <div class="dropdown-divider"></div>
@@ -27,14 +30,13 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/app_4visa/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ស្មើរសុំ Visa</span>
                                     </a>
-                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/user_form/' . $listId) ?>" target="_blank">
-                                        <span class="text-info">ប្រវត្តិរូបសង្ខេប</span>
+
+
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/confirm_workers/' . $listId) ?>" target="_blank">
+                                        <span class="text-info"> លិខិតទទួលពលករ </span>
                                     </a>
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/request_doc/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ឯកសារព្រំដែន</span>
-                                    </a>
-                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/confirm_workers/' . $listId) ?>" target="_blank">
-                                        <span class="text-info"> លិខិតទទួលពលករ </span>
                                     </a>
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/card/' . $listId) ?>" target="_blank">
                                         <span class="text-info"> Sticker Card </span>
@@ -44,6 +46,9 @@
                                     </a>
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/goOutDoc/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ពាក្យសុំផ្ដល់លិខិតធ្វើដំណើរ</span>
+                                    </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/user_form/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">ប្រវត្តិរូបសង្ខេប</span>
                                     </a>
 
                                 </div>
@@ -94,7 +99,7 @@
                                     'Contact Name in Khmer ' => '',
                                     'Contact Phone ' => '',
                                     'Contact Address ' => '',
-                                    
+
 
                                 ) ?>
                                 <?php foreach ($theads as $key => $thead) { ?>
