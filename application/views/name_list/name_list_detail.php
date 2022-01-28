@@ -9,10 +9,13 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="table-responsive">
-                    <a href="<?php echo base_url('index.php/NameList/add_worker/'.$listId) ?>"><button class="btn btn-warning">Add Worker</button></a>
+
                     <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
                         <thead>
+                            <a href="<?php echo base_url('index.php/NameList/add_worker/' . $listId) ?>"><button class="btn btn-warning">Add Worker</button></a>
+                            <br><br>
                             <div class="btn-group mb-5">
+
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Printing</button>
                                 <div class="dropdown-menu" style="font-family: 'Khmer OS Battambang';">
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/Bio/' . $listId) ?>" target="_blank">
