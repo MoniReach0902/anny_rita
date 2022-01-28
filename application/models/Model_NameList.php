@@ -23,16 +23,24 @@ class Model_NameList extends CI_Model {
         $this->db->insert('name_list',$data);
     }
     public function workersList($id){
-        $query=$this->db->query("SELECT *FROM workers WHERE name_list_id='$id'");
+        $query=$this->db->query("SELECT *FROM workers WHERE name_list_id='$id' ORDER BY order_by");
         return $query->result_array();
     }
+    public function getOrderBy(){
+        $query = $this->db->query("SELECT order_by FROM `workers` order by order_by DESC");
+        $result_arr = $query->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
   
-    public function move_toList($user_id,$nameList_id){
-        $query=$this->db->query("UPDATE workers SET name_list_id='$nameList_id' WHERE id='$user_id'");
+    public function move_toList($user_id,$nameList_id,$oder_by){
+        
+        $query=$this->db->query("UPDATE workers SET name_list_id='$nameList_id',order_by='$oder_by'+1 WHERE id='$user_id'");
         
     }
     public function cancel_move($id){
-        $this->db->query("UPDATE workers SET name_list_id=0 WHERE id='$id'");
+        $this->db->query("UPDATE workers SET name_list_id=0,order_by=0 WHERE id='$id'");
 
     }
     public function getNameList($nl_id){
@@ -58,7 +66,7 @@ class Model_NameList extends CI_Model {
         provinces.name,provinces.en_name,affiliates.name as aname FROM workers INNER JOIN worker_attached 
         ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
          JOIN affiliates ON affiliates.id=workers.affiliate WHERE worker_attached.doc_type=2 AND 
-         workers.name_list_id='$id'");
+         workers.name_list_id='$id' ORDER BY order_by");
         return $query->result(); 
     }
     public function getCount($id){
@@ -135,7 +143,7 @@ class Model_NameList extends CI_Model {
                                     JOIN villages on villages.id=workers.cur_add_village
                                     JOIN communes on communes.id=workers.cur_add_commune
                                     JOIN districts on districts.id=workers.cur_add_district
-                                    WHERE workers.name_list_id='$id'");
+                                    WHERE workers.name_list_id='$id' ORDER BY order_by");
         $data=$query->result();
         if(!empty($data)){
             return $data;
@@ -164,7 +172,7 @@ class Model_NameList extends CI_Model {
         JOIN job_title on job_title.id = workers.job_title 
         JOIN worker_parents on worker_parents.worker_id = workers.id 
         JOIN worker_education on workers.id = worker_education.worker_id 
-        WHERE workers.name_list_id='$id' order by workers.id ");
+        WHERE workers.name_list_id='$id' ORDER BY order_by ");
             return $query->result();
     }
     public function r_form($id, $arm_num, $date1, $month1, $year1, $date2, $month2, $year2, $people)
@@ -211,7 +219,7 @@ class Model_NameList extends CI_Model {
         JOIN worker_parents on worker_parents.worker_id = workers.id 
         JOIN worker_education on workers.id = worker_education.worker_id 
         JOIN worker_emergency on workers.id = worker_emergency.worker_id 
-        WHERE workers.name_list_id='$id' order by workers.id ");
+        WHERE workers.name_list_id='$id' ORDER BY order_by ");
         return $query->result();
     }
     

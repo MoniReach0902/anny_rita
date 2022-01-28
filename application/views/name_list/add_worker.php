@@ -18,6 +18,7 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="table-responsive">
+                    <a href="<?php echo base_url('index.php/NameList/view_detail/'. $listId) ?>" class="btn btn-secondary">Back</a>
 
                     <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
                         <thead>
@@ -69,14 +70,14 @@
                             <?php foreach ($workers as $worker) { ?>
                                 <tr>
                                     <td>
-                                        <?php 
+                                        <?php
                                         if ($worker['name_list_id'] != '0') {
                                         ?>
                                             Added
                                         <?php
                                         } else {
                                         ?>
-                                            <a href="<?php echo base_url('index.php/NameList/move/' . $worker['id'] . '/' . $listId) ?>"><button class="btn btn-info">Add</button></a>
+                                            <a href="<?php echo base_url('index.php/NameList/move/' . $worker['id'] . '/' . $listId . '/' . $order_by['order_by']) ?>"><button class="btn btn-info">Add</button></a>
                                         <?php
                                         } ?>
                                     </td>
@@ -112,7 +113,7 @@
                                             echo $countryname['name'];
                                         } ?></td>
 
-                                    <td><?php echo $worker['k_fname']; ?></td>
+                                    <td><?php echo $order_by['order_by']; ?></td>
                                     <td><?php echo $worker['k_lname']; ?></td>
                                     <td><?php echo $worker['e_fname']; ?></td>
                                     <td><?php echo $worker['e_lname']; ?></td>

@@ -9,6 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="table-responsive">
+                    <a href="<?php echo base_url('index.php/NameList/add_worker/'.$listId) ?>"><button class="btn btn-warning">Add Worker</button></a>
                     <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
                         <thead>
                             <div class="btn-group mb-5">

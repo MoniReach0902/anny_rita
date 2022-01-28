@@ -103,9 +103,11 @@ class NameList extends CI_Controller {
         $userdata['user_email'] = $this->session->email;
         $userdata['user_id'] = $this->session->id;
         $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
 
         $data['workers'] = $this->Model_Worker->all_workers();
         $data['listId']=$id;
+        $data['order_by'] = $this->Model_NameList->getOrderBy();
         
    
 
@@ -116,9 +118,10 @@ class NameList extends CI_Controller {
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }
-    public function move($user_id,$nameList_id){
+    public function move($user_id,$nameList_id,$order_by){
         $this->load->model('Model_NameList');
-        $this->Model_NameList->move_toList($user_id,$nameList_id);
+        $data['order_by']=$this->Model_NameList->getOrderBy();
+        $this->Model_NameList->move_toList($user_id,$nameList_id,$order_by);
         return redirect(base_url('index.php/NameList/add_worker/'.$nameList_id));
     }
     public function cancel_move($user_id, $nameList_id)
