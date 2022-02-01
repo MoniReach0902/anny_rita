@@ -31,7 +31,7 @@ class Model_NameList extends CI_Model {
         $result_arr = $query->result_array();
         if (!empty($result_arr)) {
             return $result_arr[0];
-        }
+        } 
     }
   
     public function move_toList($user_id,$nameList_id,$oder_by){
@@ -220,6 +220,11 @@ class Model_NameList extends CI_Model {
         JOIN worker_education on workers.id = worker_education.worker_id 
         JOIN worker_emergency on workers.id = worker_emergency.worker_id 
         WHERE workers.name_list_id='$id' ORDER BY order_by ");
+        return $query->result();
+    }
+    public function passportNo($id){
+        $query=$this->db->query("SELECT worker_attached.number,workers.gender FROM worker_attached 
+        JOIN workers ON worker_attached.worker_id=workers.id WHERE workers.name_list_id='$id'");
         return $query->result();
     }
     

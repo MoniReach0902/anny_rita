@@ -87,7 +87,33 @@
                         <div class="top">
 
                             <div class="small-txt">
+                                <?php
+                                $nm = 0;
+                                $nf = 0;
+                                $tm = 0;
+                                $tf = 0;
+                                foreach ($psNo as $ps) {
+                                    $num = substr($ps->number, 0, 1);
+                                    $gender = $ps->gender;
+                                ?>
+                                    <?php if ($num == 'T' and $gender == 'Male') {
+                                        $tm += 1;
+                                    } elseif ($num == 'T' and $gender == 'Female') {
+                                        $tf += 1;
+                                    } elseif ($num == 'N' and $gender == 'Male') {
+                                        $nm += 1;
+                                    } elseif ($num == 'N' and $gender == 'Female') {
+                                        $nf += 1;
+                                    } ?>
+                                <?php
 
+                                } ?>
+                                <p><?php echo $tm . "t male"; ?></p>
+                                <p><?php echo $tf . "t female"; ?></p>
+                                <p><?php echo $nm . "n male"; ?></p>
+                                <p><?php echo $nf . "n female"; ?></p>
+                                <p><?php echo $ntotal=$nf+$nm; ?></p>
+                                <p><?php echo $ttotal=$tm+$tf; ?></p>
                             </div>
 
                             <p style="margin: 55px 110px 120px 0;"><span>សុខ ចំណាន</span></p>

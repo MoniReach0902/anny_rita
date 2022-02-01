@@ -114,6 +114,7 @@ class NameListPrint extends CI_Controller{
         $data['totalFemale'] = $this->Model_NameList->getCountFemale($id);
         $data['num_date'] = $this->Model_NameList->getNumDate($id);
         $data['companyName'] = $this->Model_NameList->getCompanyName($id);
+        $data['psNo'] = $this->Model_NameList->passportNo($id);
         $data['listId'] = $id;
 
         // $data['userDoc'] = $this->Model_NameList->getDoc($id);
