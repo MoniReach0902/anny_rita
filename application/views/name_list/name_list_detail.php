@@ -57,9 +57,12 @@
 
                                 </div>
                             </div>
+                            <br>
+                            <a href=""><button class="btn btn-info">Save</button></a>
                             <tr>
                                 <?php $theads = array(
                                     'Cancel' => '',
+                                    'Move up-down' => '',
                                     'Photo' => 'រូបភាព',
                                     'ID' => 'លេខកូដ',
                                     'សាខា' => '',
@@ -117,6 +120,9 @@
                                 <tr>
                                     <td>
                                         <a href="<?php echo base_url('index.php/NameList/cancel_move/' . $worker['id'] . '/' . $listId) ?>"><button class="btn btn-danger">Cancel</button></a>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="" style="width: 50px;">
                                     </td>
                                     <td>
                                         <?php

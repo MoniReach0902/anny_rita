@@ -40,7 +40,7 @@ class Model_NameList extends CI_Model {
         
     }
     public function cancel_move($id){
-        $this->db->query("UPDATE workers SET name_list_id=0,order_by=0 WHERE id='$id'");
+        $this->db->query("UPDATE workers SET name_list_id=0,order_by=0  WHERE id='$id'");
 
     }
     public function getNameList($nl_id){
