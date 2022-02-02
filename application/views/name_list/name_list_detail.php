@@ -54,6 +54,9 @@
                                     <a class="dropdown-item" href="<?php echo site_url('NameListPrint/user_form/' . $listId) ?>" target="_blank">
                                         <span class="text-info">ប្រវត្តិរូបសង្ខេប</span>
                                     </a>
+                                    <a class="dropdown-item" href="<?php echo site_url('NameListPrint/departure/' . $listId) ?>" target="_blank">
+                                        <span class="text-info">Departure Card</span>
+                                    </a>
 
                                 </div>
                             </div>

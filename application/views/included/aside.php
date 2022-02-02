@@ -58,7 +58,7 @@
         <ul class="treeview-menu">
           <li><a href="<?php echo site_url('Home/industries'); ?>">Workers by Industry</a></li>
           <li><a href="<?php echo site_url('Home/countries'); ?>">Workers by Country</a></li>
-          <li><a href="<?php echo site_url('Workers'); ?>">Workers List</a></li>
+          <li><a href="<?php echo site_url('Workers_reports'); ?>">Workers List</a></li>
           <li><a href="<?php echo site_url('Industries'); ?>">Industry List</a></li>
           <li><a href="<?php echo site_url('Employers'); ?>">Employer List</a></li>
         </ul>

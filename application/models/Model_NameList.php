@@ -227,5 +227,9 @@ class Model_NameList extends CI_Model {
         JOIN workers ON worker_attached.worker_id=workers.id WHERE workers.name_list_id='$id'");
         return $query->result();
     }
+    public function searchDate($f_date,$t_date){
+        $query=$this->db->query("SELECT * FROM workers WHERE created_date > DATE_FORMAT('$f_date','%Y-%m-%d') and created_date < DATE_FORMAT('$t_date','%Y-%m-%d')");
+        return $query->result();
+    }
     
 }
