@@ -390,10 +390,7 @@ class NameListPrint extends CI_Controller{
         $userdata['user_id'] = $this->session->id;
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
-
         $data['listId'] = $id;
-
-        
         $data['users'] = $this->Model_NameList->ocw($id);
        
         $this->load->view('included/head');
@@ -412,8 +409,9 @@ class NameListPrint extends CI_Controller{
 
         $data['listId'] = $id;
 
-
-        $data['users'] = $this->Model_NameList->ocw($id);
+        $data['userDoc'] = $this->Model_NameList->getData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
 
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
