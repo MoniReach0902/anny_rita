@@ -9,7 +9,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> Departure Card</span> </h3>
+                <!-- <h3 class="box-title"><span class="khmer_font"> </span> &#921; </h3> -->
 
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -19,9 +20,6 @@
                             <button id="print" class="btn btn-rounded btn-primary pull-right" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
                         </div>
                     </div>
-
-
-
                     <?php foreach ($userDoc as $user) {
                     ?>
                         <section class="invoice printableArea">

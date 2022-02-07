@@ -7,7 +7,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ពាក្យសុំរបស់ក្រុមហ៊ុន </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> លិខិតទទួលពលករ</span> </h3>
+                <!-- <h3 class="box-title"><span class="khmer_font"> </span> &#921; ពាក្យសុំរបស់ក្រុមហ៊ុន </h3> -->
                 <a href="<?php echo site_url('NameListPrint/add_c_form/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
             </div>
             <!-- /.box-header -->
@@ -62,19 +63,19 @@
                             <p style="margin: 0 40 0 0; width: 295px; margin-left: 45px;"> ភ្ជាប់មកជាមួយនូវ៖</p>
                             <p style=" ">បញ្ជីឈ្មោះ ពលករ-ពលការិនីខ្មែររបស់រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                                                                     echo $company['e_name'];
-                                                                                                                } ?> </b> ចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total'].' នាក់ '.' ('.$vals['ct_arm_num'].') ' ; ?></strong></p>
+                                                                                                                } ?> </b> ចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total'] . ' នាក់ ' . ' (' . $vals['ct_arm_num'] . ') '; ?></strong></p>
 
                         </div>
 
                         <p style="margin-left:55px;">សេចក្តីដូចមានចែងក្នុងកម្មវត្ថុ និងយោងតាម លិខិតតម្រូវការពលករ <b style="font-weight: bold;">(Demand Letter)</b> របស់ក្រុមហ៊ុន / </p>
                         <p>រោងចក្រ <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                         echo $company['e_name'];
-                                                                    } ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ  ។</p>
+                                                                    } ?> </b>មានខ្លឹមសារសំខាន់ ដែលបានស្នើសុំឱ្យក្រុមហ៊ុន <strong style="font-weight: bold;">អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO., LTD)</strong> ធ្វើការជ្រើសរើស និងរៀបចំបញ្ជូន ពលករ-ពលការិនីខ្មែរ ដើម្បីចូលបម្រើការងាររយៈពេល២ឆ្នាំ ។</p>
 
 
 
                         <p style="text-align: justify;margin: 0 55px;"><b style="font-weight: bold;">ក្រុមហ៊ុន អាន់នី រីតា បេស មេនផៅវ័រ (ANNY RITA BEST MANPOWER CO.,LTD)</b> មានកិត្តិយស </p>
-                        <p>សូមជម្រាបជូនថាៈ នៅថ្ងៃទី<b style="font-weight: bold;"> <?php echo $vals['r_date1'] ?> ខែ<?php echo $vals['r_month1'] ?> ឆ្នាំ <?php echo $vals['r_year1'] ?></b> ក្រុមហ៊ុនយើងខ្ញុំបានបញ្ជូន ពលករ-ពលការិនីខ្មែរចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total'] ; ?></strong> ដើម្បីចូលបម្រើការងារនៅក្នុង ក្រុមហ៊ុន/រោងចក្រ
+                        <p>សូមជម្រាបជូនថាៈ នៅថ្ងៃទី<b style="font-weight: bold;"> <?php echo $vals['r_date1'] ?> ខែ<?php echo $vals['r_month1'] ?> ឆ្នាំ <?php echo $vals['r_year1'] ?></b> ក្រុមហ៊ុនយើងខ្ញុំបានបញ្ជូន ពលករ-ពលការិនីខ្មែរចំនួន <strong style="font-weight: bold;"> <?php echo  $vals['k_total']; ?></strong> ដើម្បីចូលបម្រើការងារនៅក្នុង ក្រុមហ៊ុន/រោងចក្រ
                             <b style="font-weight: bold;"><?php if (!empty($company['e_name'])) {
                                                                 echo $company['e_name'];
                                                             } ?> </b>

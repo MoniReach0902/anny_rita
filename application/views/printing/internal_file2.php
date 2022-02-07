@@ -7,7 +7,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ទំរងសុំទិដ្ឋាការ </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> ទំរងសុំទិដ្ឋាការ</span> </h3>
+                <!-- <h3 class="box-title"><span class="khmer_font"> </span> &#921; ទំរងសុំទិដ្ឋាការ </h3> -->
                 <a href="<?php echo site_url('NameListPrint/add_info_form2/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
             </div>
             <!-- /.box-header -->
@@ -108,9 +109,11 @@
                                 <?php
 
                                 } ?>
-                               
-                                <p style="font-family: 'Times New Roman', Times, serif;font-size: 20px;">N=<?php echo $ntotal = $nf + $nm;echo "( M=".$nm.", F=".$nf.")"; ?></p>
-                                <p style="font-family: 'Times New Roman', Times, serif;font-size: 20px;">T=<?php echo $ttotal = $tm + $tf;echo "( M=".$tm.", F=".$tf.")"; ?></p>
+
+                                <p style="font-family: 'Times New Roman', Times, serif;font-size: 20px;">N=<?php echo $ntotal = $nf + $nm;
+                                                                                                            echo "( M=" . $nm . ", F=" . $nf . ")"; ?></p>
+                                <p style="font-family: 'Times New Roman', Times, serif;font-size: 20px;">T=<?php echo $ttotal = $tm + $tf;
+                                                                                                            echo "( M=" . $tm . ", F=" . $tf . ")"; ?></p>
                             </div>
 
                             <p style="margin: 55px 110px 120px 0;"><span>សុខ ចំណាន</span></p>

@@ -7,7 +7,7 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ពាក្យសុំរបស់ក្រុមហ៊ុន </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> ពាក្យសុំរបស់ក្រុមហ៊ុន</span> </h3>
                 <a href="<?php echo site_url('NameListPrint/add_info_form1/' . $listId) ?>" style="float: right;"><button class="btn btn-info">Add Infomation</button></a>
             </div>
             <!-- /.box-header -->
@@ -64,23 +64,23 @@
                         <p><span>រដ្ឋាភិបាល </span>មេត្តាពិនិត្យ និង អនុញ្ញាតឱ្យ ក្រុមហ៊ុន <span>អាន់នី រីតា បេស មេនផៅវ័រ</span> បានបញ្ជូនឈ្មោះពលករខ្មែរទាំង <b style="font-weight: bold;"><?php echo $total ?> នាក់</b> ទៅធ្វើប័ណ្ណការងារនៅព្រះរាជាណាចក្រថៃឡង់ដ៏ ដើម្បីបម្រើការងារនៅក្រុមហ៊ុនដូចខាងក្រោម៖</p>
                         <div class="content-center">
                             <?php
-                                
+
                             ?>
                             <p style="margin: 0 55px; width: 110px;">ក្រុមហ៊ុន ៖</p>
-                            <p style="text-align: justify; font-weight: bold;font-family: 'Times New Roman', Times, serif;font-size: 25px;"><?php if (empty($companyName['e_name'])) {
-                                                                echo 0;
-                                                            } else {
-                                                                echo $companyName['e_name'].' (ផ្នែក  '.$companyName['name'].')';
-                                                            } ?></p>
+                            <p style="text-align: justify; font-weight: bold;font-family: 'Khmer OS System', Times, serif;"><?php if (empty($companyName['e_name'])) {
+                                                                                                                                echo 0;
+                                                                                                                            } else {
+                                                                                                                                echo $companyName['e_name'] . ' (ផ្នែក  ' . $companyName['name'] . ')';
+                                                                                                                            } ?></p>
                         </div>
 
                         <div class="content-center">
                             <p style="margin: 0 55px; width: 160px; "> អាសយដ្ឋាន ៖ </p>
                             <p style="text-align: justify; width: 650px;font-family: 'Times New Roman', Times, serif;font-weight: bold;font-size: 24px;"><?php if (empty($companyName['add1'])) {
-                                                                                echo 0;
-                                                                            } else {
-                                                                                echo $companyName['add1'];
-                                                                            } ?></p>
+                                                                                                                                                                echo 0;
+                                                                                                                                                            } else {
+                                                                                                                                                                echo $companyName['add1'];
+                                                                                                                                                            } ?></p>
                         </div>
                         <p style="text-align: justify;margin: 0 55px;">សូម <span>ឯកឧត្តមប្រតិភូរាជរដ្ឋាភិបាល</span> មេត្តាទទួលនូវសេក្តីគោរពដ៏ខ្ពង់ខ្ពស់អំពីខ្ញុំ៕</p>
                         <div class="top">
@@ -100,7 +100,7 @@
                     </div>
 
                     <!-- this row will not appear when printing -->
-                    
+
                 </section>
                 <!-- /.content -->
             </div>

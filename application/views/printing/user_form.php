@@ -7,7 +7,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; ប្រវត្តិរូបសង្ខេប </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> ប្រវត្តិរូបសង្ខេប</span> </h3>
+                <!-- <h3 class="box-title"><span  style="font-family: 'Khmer OS System';"> </span> &#921; ប្រវត្តិរូបសង្ខេប </h3> -->
 
             </div>
             <!-- /.box-header -->
@@ -34,7 +35,7 @@
                             </div>
                         </div> -->
                         <div class="row">
-                            <div class="col-xl-12 col-lg-12" style="margin-top: 15px;">
+                            <div class="col-xl-12 col-lg-12" style="margin-top: 35px;">
                                 <div class="page-headers">
                                     <div class="text-center">
                                         <span class="khmer_os_header">ព្រះរាជាណាចក្រកម្ពុជា<br /><br />ជាតិ&#9;សាសនា&#9;ព្រះមហាក្សត្រ</span><br /><br /><br />
@@ -59,9 +60,9 @@
                                 <p>ជាអក្សរឡាតាំង៖ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->e_fname . '  ' . $user->e_lname ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                                 <p>ភេទ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $gender = $user->gender;
-                                                                                                                                $gender == 'Male' ? $g = 'ប្រុស' : $g = 'ស្រី';
-                                                                                                                                echo $g; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $gender = $user->gender;
+                                                                                            $gender == 'Male' ? $g = 'ប្រុស' : $g = 'ស្រី';
+                                                                                            echo $g; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>ថ្ងៃ-ខែ-ឆ្នាំកំណើត៖</p>
@@ -73,7 +74,7 @@
                                 <p>ជនជាតិ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;ខ្មែរ&nbsp;&nbsp;&nbsp;</h5>
                                 <p>សញ្ជាតិ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;ខ្មែរ&nbsp;;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;ខ្មែរ&nbsp;&nbsp;&nbsp;</h5>
                                 <p>កាន់សាសនា </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
@@ -101,7 +102,7 @@
                                 <p>មុខរបរ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->name ?>&nbsp;&nbsp;&nbsp;&nbsp; </h5>
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
 
@@ -191,10 +192,8 @@
 
 
                             </div>
-                            <div class="row" style="display: flex;">
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
-                            </div>
-                            <div class="top" ​ style="margin-right: 150px; float: right; margin-top: 60px;">
+
+                            <div class="top" style="margin-right: 150px; float: right; margin-top: 60px;">
                                 <p> </p>
                                 <p>រាជធានីភ្នំពេញ ថ្ងៃទី
                                 <h5>&nbsp;&nbsp;<?php echo date('d'); ?>&nbsp;&nbsp;</h5>

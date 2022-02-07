@@ -36,15 +36,17 @@ class Workers_reports extends CI_Controller {
         $this->load->view('included/scripts');
     }
     public function search(){
-       
+        $this->load->model('Model_NameList');
+        $this->load->helper('date');
         $userdata['user_name'] = $this->session->fname;
         $userdata['user_email'] = $this->session->email;
         $userdata['user_id'] = $this->session->id;
         $userdata['avata'] = $this->session->image_file;
 
-        $f_date = $this->input->post('from_date');
+        $f_date = $this->input->post('from_date'); 
         $t_date = $this->input->post('to_date');
-        $this->load->model('Model_NameList');
+        
+        
         $data['results'] = $this->Model_NameList->searchDate($f_date, $t_date);
 
         //print_r($data['groups']);
@@ -53,7 +55,7 @@ class Workers_reports extends CI_Controller {
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
         $this->load->view('included/aside');
-        $this->load->view('workers_reports/index', $data);
+        $this->load->view('workers_reports/report1', $data);
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }

@@ -228,7 +228,7 @@ class Model_NameList extends CI_Model {
         return $query->result();
     }
     public function searchDate($f_date,$t_date){
-        $query=$this->db->query("SELECT * FROM workers WHERE created_date > DATE_FORMAT('$f_date','%Y-%m-%d') and created_date < DATE_FORMAT('$t_date','%Y-%m-%d')");
+        $query=$this->db->query("SELECT * FROM workers WHERE created_date between '$f_date' and '$t_date'");
         return $query->result();
     }
     

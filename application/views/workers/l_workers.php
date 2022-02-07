@@ -75,16 +75,6 @@
 												<a class="dropdown-item" href="<?php echo site_url('Workers/update_detail/' . $worker['id']); ?>" target="_blank">
 													<span class="text-success">Edit Worker Detail</span></a>
 												<div class="dropdown-divider"></div>
-
-												<a class="dropdown-item" href="<?php echo site_url('Printing/f_bio/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Bio</span>
-												</a>
-												<a class="dropdown-item" href="<?php echo site_url('Printing/request/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Worker Request</span>
-												</a>
-												<a class="dropdown-item" href="<?php echo site_url('Printing/visa/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Visa</span>
-												</a>
 												<div class="dropdown-divider"></div>
 												<a class="dropdown-item" href="<?php //echo $baseurl; 
 																				?>delete_admin&&id=<?php //echo h($admin->id); 
@@ -222,15 +212,6 @@
 													<span class="text-success">Edit Worker Detail</span></a>
 												<div class="dropdown-divider"></div>
 
-												<a class="dropdown-item" href="<?php echo site_url('Printing/f_bio/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Bio</span>
-												</a>
-												<a class="dropdown-item" href="<?php echo site_url('Printing/request/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Worker Request</span>
-												</a>
-												<a class="dropdown-item" href="<?php echo site_url('Printing/visa/' . $worker['id']); ?>" target="_blank">
-													<span class="text-info">Print Visa</span>
-												</a>
 												<div class="dropdown-divider"></div>
 												<a class="dropdown-item" href="<?php //echo $baseurl; 
 																				?>delete_admin&&id=<?php //echo h($admin->id); 

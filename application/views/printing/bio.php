@@ -7,7 +7,8 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> </span> &#921; Prining Bio Interview </h3>
+                <h3 class="box-title"><span class="khmer_font" style="font-family: 'Khmer OS System'"> BIO</span> </h3>
+                <!-- <h3 class="box-title"><span class="khmer_font"> </span> &#921; Prining Bio Interview </h3> -->
             </div>
             <!-- /.box-header -->
             <div class="box-body">
