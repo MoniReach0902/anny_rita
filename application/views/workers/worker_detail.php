@@ -239,7 +239,7 @@
 				  <?php echo $district['name']; ?> &#8211; <?php echo $district['en_name']; ?>
 				  </option>
 				  <?php } ?>
-              </select>
+              </select> 
           </div>
       </div>
   </div>

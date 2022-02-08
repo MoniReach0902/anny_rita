@@ -80,7 +80,7 @@
                 <label for="email" class="col-sm-2 col-form-label text-right"><span class="khmer_font">សារអេឡិចត្រូនិច<br/></span>Email</label>
                 <div class="col-sm-10">
                   <?php if(!isset($employer['email'])) { $employer['email'] = NULL ; } ?>
-                  <input class="form-control" type="text" name="email" placeholder="Email" value="<?php echo $employer['email'] ?>" id="example-text-input">
+                  <input class="form-control" type="text" name="email" placeholder="Email" value="<?php if(!empty($employer['email'])){echo $employer['email'];}else{echo "armworkers@gmail.com ";} ?>" id="example-text-input">
                 </div>
               </div>
               <div class="form-group row">
