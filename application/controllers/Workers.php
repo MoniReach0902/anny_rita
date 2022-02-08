@@ -344,7 +344,7 @@ class Workers extends CI_Controller
 		$this->load->view('workers/worker_emergency', $data);
 		$this->load->view('workers/worker_education', $data);
 		$this->load->view('workers/worker_employment', $data);
-		$this->load->view('workers/body_foot');
+		$this->load->view('workers/body_foot'); 
 		$this->load->view('included/footer');
 		$this->load->view('included/scripts');
 	}
