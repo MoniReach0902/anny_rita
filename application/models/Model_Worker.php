@@ -19,7 +19,7 @@ class Model_Worker extends CI_Model
 	public function create($new_data)
 	{
 		$this->db->insert('workers', $new_data);
-		$last_id = $this->db->insert_id();
+		$last_id = $this->db->insert_id(); 
 		return $last_id;
 	//	$rseult =  $this->db->error();
 	//	return $rseult;

@@ -72,8 +72,14 @@
                                                 <td>
                                                     <h2>Name (ENG) : </h2>
                                                 </td>
+
                                                 <td>
                                                     <p><?php echo $info->e_fname . ' ' . $info->e_lname ?></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h2>Name (TH) : </h2>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -111,9 +117,15 @@
                                                 <td style="font-family: 'Khmer OS System';">តំណាងឈ្មោះ ៖ </td>
                                                 <td style="font-family: 'Khmer OS System';"><?php echo $info->aname ?></td>
                                             </tr>
-                                            <tr>
+                                            <tr width="150px" style="background-color: red;">
                                                 <td style="font-family: 'Khmer OS System';">ទូរស័ព្ទលេខ : </td>
-                                                <td></td>
+                                                <td>
+                                                    <p style="font-size: 18px;">
+                                                        Tel: (855)88 756 7777, (855)76 756 7777 <br>
+                                                        (855)69 46 7777 ,
+                                                        (+66)83 10 77770 <br>Facebook: Chamnan Sok
+                                                    </p>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Code No. : </td>

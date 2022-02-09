@@ -11,7 +11,7 @@
         </a>
       </div>
       <div class="image">
-        <img src="<?php echo base_url('images/user2-160x160.jpg'); ?>" class="rounded-circle" alt="User Image">
+        <img src="<?php echo base_url('images/arm_logo.png'); ?>" class="rounded-circle" alt="User Image">
       </div>
       <div class="info">
         <p><?php echo $user_name; ?></p>

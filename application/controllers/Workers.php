@@ -132,6 +132,14 @@ class Workers extends CI_Controller
 			echo $new_data['cur_add_commune'] . "c<br />";
 			echo $new_data['cur_add_village'] . "c<br />";
 			
+			$data[]=array(
+				'b_province' => $this->input->post('b_province'),
+				'b_district' => $this->input->post('b_district'),
+				'b_commune' => $this->input->post('b_commune'),
+				'b_village' => $this->input->post('b_village'),
+			);
+			// $new_data['xtra']=json_decode();
+			
 			$worker_id = $this->Model_Worker->create($new_data);
 			
 			$parent_data['worker_id']= $worker_id;
@@ -164,6 +172,7 @@ class Workers extends CI_Controller
 				$parent_data['pcur_add_commune']=$this->input->post('pcur_add_commune');
 				$parent_data['pcur_add_village']=$this->input->post('pcur_add_village');
 			}
+
 			
 //			echo $parent_data['pcur_add_province'] . "p<br />";
 //			echo $parent_data['pcur_add_district'] . "p<br />";
@@ -280,7 +289,7 @@ class Workers extends CI_Controller
 //			echo $emergency_data['sos_commune'] . "e<br />";
 //			echo $emergency_data['sos_village'] . "e<br />";
 			
-			$this->Model_Worker->create_emergency($emergency_data);
+			$this->Model_Worker->create_emergency($emergency_data); 
 			
 			$education_data['worker_id']= $worker_id;
 			$education_data['geducation']=$this->input->post('geducation');
