@@ -78,9 +78,10 @@
                                 <p>កាន់សាសនា </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
+                            <?php $xdata=json_decode($user->xtra); ?>
                             <div class="row" style="display: flex;">
                                 <p>ទីកន្លែងកំណើតនៅ៖ភូមិ ៖ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->v_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if(!empty($xdata->{'c_village'})){echo $xdata->{'c_village'};}else{ echo $user->v_name;}  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ឃុំ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->c_name ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ស្រុក </p>
@@ -175,14 +176,14 @@
                             <div class="row" style="display: flex;">
                                 <p>អាសយដ្ឋានបច្ចុប្បន្ន៖ ភូមិ </p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cv_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_village ?>&nbsp;&nbsp;&nbsp; </h5>
 
                                 <p>ឃុំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cc_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_commune ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ស្រុក </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cd_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_district ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ខេត្ត</p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cp_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_province ?>&nbsp;&nbsp;&nbsp; </h5>
                             </div>
                             <div class="row" style="display: flex;">
 

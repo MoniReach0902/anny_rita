@@ -48,13 +48,13 @@
                                                                         echo $g; ?></p>
                                 <p style=" top: 310px; left: 690px;">ខ្មែរ</p>
                                 <p style=" top: 310px; left: 860px;">ខ្មែរ</p>
-                                <p style=" top: 355px; left: 320px;"><?php echo $user->d_name ?></p>
-                                <p style=" top: 355px; left: 575px;"><?php echo $user->c_name ?></p>
+                                <p style=" top: 355px; left: 320px;"><?php echo $user->c_name ?></p>
+                                <p style=" top: 355px; left: 575px;"><?php echo $user->d_name ?></p>
                                 <p style=" top: 355px; left: 895px;"><?php echo $user->p_name ?></p>
-                                <p style=" top: 390px; left: 540px;"><?php echo $user->cv_name ?></p>
-                                <p style=" top: 390px; left: 895px;"><?php echo $user->cd_name ?></p>
-                                <p style=" top: 435px; left: 200px;"><?php echo $user->cc_name ?></p>
-                                <p style=" top: 435px; left: 570px;"><?php echo $user->cp_name ?></p>
+                                <p style=" top: 390px; left: 540px;"><?php echo $user->cur_add_village ?></p>
+                                <p style=" top: 390px; left: 895px;"><?php echo $user->cur_add_commune ?></p>
+                                <p style=" top: 435px; left: 200px;"><?php echo $user->cur_add_district ?></p>
+                                <p style=" top: 435px; left: 570px;"><?php echo $user->cur_add_province ?></p>
                                 <p style=" top: 475px; left: 180px;"><?php echo $user->name ?></p>
                                 <p style=" top: 475px; left: 890px;"><?php echo $user->mobile ?></p>
                                 <p style=" top: 595px; left: 280px;"><?php echo $user->marital == 'single' ? 'នៅលីវ' : '' ?></p>

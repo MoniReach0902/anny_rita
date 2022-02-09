@@ -117,7 +117,7 @@
                                                 <td style="font-family: 'Khmer OS System';">តំណាងឈ្មោះ ៖ </td>
                                                 <td style="font-family: 'Khmer OS System';"><?php echo $info->aname ?></td>
                                             </tr>
-                                            <tr width="150px" style="background-color: red;">
+                                            <tr width="150px">
                                                 <td style="font-family: 'Khmer OS System';">ទូរស័ព្ទលេខ : </td>
                                                 <td>
                                                     <p style="font-size: 18px;">

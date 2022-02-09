@@ -103,6 +103,8 @@ class Workers extends CI_Controller
 			$new_data['industry']=$this->input->post('industry');
 			$new_data['mobile']=$this->input->post('mobile');
 			$new_data['email']=$this->input->post('email');
+			$new_data['	branch'] = $this->input->post('branch');
+			$new_data['affiliate'] = $this->input->post('affiliate');
 			$new_data['birth_province']=$this->input->post('birth_province');
 			$new_data['birth_district']=$this->input->post('birth_district');
 			$new_data['birth_commune']=$this->input->post('birth_commune');
@@ -132,19 +134,23 @@ class Workers extends CI_Controller
 			echo $new_data['cur_add_commune'] . "c<br />";
 			echo $new_data['cur_add_village'] . "c<br />";
 			
-			$data[]=array(
+			$xdata=array(
 				'b_province' => $this->input->post('b_province'),
 				'b_district' => $this->input->post('b_district'),
 				'b_commune' => $this->input->post('b_commune'),
 				'b_village' => $this->input->post('b_village'),
+				'c_province' => $this->input->post('c_province'),
+				'c_district' => $this->input->post('c_district'),
+				'c_commune' => $this->input->post('c_commune'),
+				'c_village' => $this->input->post('c_village'),
 			);
-			// $new_data['xtra']=json_decode();
+			$new_data['xtra']=json_encode($xdata);
 			
 			$worker_id = $this->Model_Worker->create($new_data);
 			
 			$parent_data['worker_id']= $worker_id;
 			$parent_data['f_k_fname']=$this->input->post('f_k_fname');
-			$parent_data['f_k_lname']=$this->input->post('f_k_lname');
+			$parent_data['f_k_lname']=$this->input->post('f_k_lname'); 
 			$parent_data['f_e_fname']=$this->input->post('f_e_fname');
 			$parent_data['f_e_lname']=$this->input->post('f_e_lname');
 			$parent_data['f_dob']=$this->input->post('f_dob');

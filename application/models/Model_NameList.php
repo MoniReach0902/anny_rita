@@ -157,7 +157,7 @@ class Model_NameList extends CI_Model {
         }
     }
     public function getUserData($id){
-        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
+        $query=$this->db->query("SELECT workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province,workers.xtra,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
         workers.gender,workers.dob,workers.nationality,villages.name as v_name,communes.name as c_name,
         districts.name as d_name,provinces.name as p_name,worker_attached.number,job_title.name,
         workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,
@@ -202,7 +202,7 @@ class Model_NameList extends CI_Model {
          ct_year1='$ct_year1', ct_year2='$ct_year2' WHERE id='$id'");
     }
     public function ocw($id){
-        $query=$this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
+        $query=$this->db->query("SELECT workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province,workers.xtra,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
         workers.gender,workers.dob,workers.nationality,villages.name as v_name,communes.name as c_name,
         districts.name as d_name,provinces.name as p_name,worker_attached.number,job_title.name,
         workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,
