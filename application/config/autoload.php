@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Property', 'Model_Admins', 'Model_Admin_Roles', 'Model_Industry', 'Model_Employer', 'Model_Test', 'Model_Worker', 'Model_JobTitle', 'Model_Gazeetteer', 'Model_Others', 'Model_WorkStatus', 'Model_WorkerParent', 'Model_WorkerSpouse', 'Model_WorkerEmegency', 'Model_WorkerEducation', 'Model_WorkerEployment', 'Model_Home', 'Model_Group', 'Model_Job', 'Model_Branch', 'Model_Affiliate', 'Model_Login', 'Crud_model');
+$autoload['model'] = array('Property', 'Model_Admins', 'Model_Admin_Roles', 'Model_Industry', 'Model_Employer', 'Model_Test', 'Model_Worker', 'Model_JobTitle', 'Model_Gazeetteer', 'Model_Others', 'Model_WorkStatus', 'Model_WorkerParent', 'Model_WorkerSpouse', 'Model_WorkerEmegency', 'Model_WorkerEducation', 'Model_WorkerEployment', 'Model_Home', 'Model_Group', 'Model_Job', 'Model_Branch', 'Model_Affiliate', 'Model_Login', 'Crud_model', 'Model_NameList');

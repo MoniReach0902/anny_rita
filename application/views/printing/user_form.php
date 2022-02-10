@@ -3,7 +3,10 @@
 <link rel="stylesheet" href="<?php echo base_url('public/css/print_layout.css') ?>">
 <div class="content-wrapper">
     <!-- Main content -->
-
+    <?php
+    $call_method =  $this->router->fetch_method();
+    $call_class = $this->router->fetch_class();
+    ?>
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
@@ -78,16 +81,32 @@
                                 <p>កាន់សាសនា </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
-                            <?php $xdata=json_decode($user->xtra); ?>
+                            <?php $xdata = json_decode($user->xtra); ?>
                             <div class="row" style="display: flex;">
                                 <p>ទីកន្លែងកំណើតនៅ៖ភូមិ ៖ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php if(!empty($xdata->{'c_village'})){echo $xdata->{'c_village'};}else{ echo $user->v_name;}  ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_village'})) {
+                                                            echo $xdata->{'b_village'};
+                                                        } else {
+                                                            echo $user->v_name;
+                                                        }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ឃុំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->c_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_commune'})) {
+                                                            echo $xdata->{'b_commune'};
+                                                        } else {
+                                                            echo $user->c_name;
+                                                        }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ស្រុក </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->d_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_district'})) {
+                                                            echo $xdata->{'b_district'};
+                                                        } else {
+                                                            echo $user->d_name;
+                                                        }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ខេត្ត</p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->p_name ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_province'})) {
+                                                            echo $xdata->{'b_province'};
+                                                        } else {
+                                                            echo $user->p_name;
+                                                        }  ?>&nbsp;&nbsp;&nbsp; </h5>
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>សៀវភៅគ្រួសារ/អត្តសញ្ញាណប័ណ្ណ/លិខិតឆ្លងដែនលេខ </p>
@@ -176,14 +195,51 @@
                             <div class="row" style="display: flex;">
                                 <p>អាសយដ្ឋានបច្ចុប្បន្ន៖ ភូមិ </p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_village ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_village;
+                                                        $cur_add_village = $this->Model_NameList->getCurAddVillage($cur_village);
+                                                        if (!empty($xdata->{'c_village'})) {
+                                                            echo $xdata->{'c_village'};
+                                                        } else {
+                                                            if (!empty($cur_add_village['name'])) {
+                                                                echo $cur_add_village['name'];
+                                                            }
+                                                        }
+
+                                                        ?>&nbsp;&nbsp;&nbsp; </h5>
 
                                 <p>ឃុំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_commune ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_commune;
+                                                        $cur_add_village = $this->Model_NameList->getCurAddCommune($cur_village);
+                                                        if (!empty($xdata->{'c_commune'})) {
+                                                            echo $xdata->{'c_commune'};
+                                                        } else {
+                                                            if (!empty($cur_add_village['name'])) {
+                                                                echo $cur_add_village['name'];
+                                                            }
+                                                        }
+                                                        ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ស្រុក </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_district ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_district;
+                                                        $cur_add_village = $this->Model_NameList->getCurAddDistrict($cur_village);
+                                                        if (!empty($xdata->{'c_district'})) {
+                                                            echo $xdata->{'c_district'};
+                                                        } else {
+                                                            if (!empty($cur_add_village['name'])) {
+                                                                echo $cur_add_village['name'];
+                                                            }
+                                                        }
+                                                        ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ខេត្ត</p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo $user->cur_add_province ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_province;
+                                                        $cur_add_village = $this->Model_NameList->getCurAddProvince($cur_village);
+                                                        if (!empty($xdata->{'c_province'})) {
+                                                            echo $xdata->{'c_province'};
+                                                        } else {
+                                                            if (!empty($cur_add_village['name'])) {
+                                                                echo $cur_add_village['name'];
+                                                            }
+                                                        }
+                                                        ?>&nbsp;&nbsp;&nbsp; </h5>
                             </div>
                             <div class="row" style="display: flex;">
 
