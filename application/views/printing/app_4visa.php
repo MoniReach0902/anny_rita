@@ -89,8 +89,13 @@
                                                                     echo $company['mobile'];
                                                                 } ?> </p>
                         </div>
+                        <?php $user_id = $user->id;
+                        $image = $this->Model_NameList->getDocImage($user_id);
+                        ?>
                         <div class="visa-box">
-                            <img src="<?php echo base_url('/images/worker_docs/' . $user->file_name) ?>" alt="" style="height: 70%; margin-top: 130px; margin-left: 120px;">
+                            <img src="<?php if (!empty($image['file_name'])) {
+                                            echo base_url('/images/worker_docs/' . $image['file_name']);
+                                        } ?>" alt="" style="height: 70%; margin-top: 130px; margin-left: 120px;">
                         </div>
 
                         <!-- this row will not appear when printing -->

@@ -105,13 +105,48 @@
                                                                             }
                                                                         }
                                                                         ?></p>
-                                <p style=" top: 475px; left: 180px;"><?php echo $user->name ?></p>
+                                <p style=" top: 475px; left: 180px;"><?php $id = $user->job_title;
+                                                                        $user_job = $this->Model_NameList->getJob($id);
+                                                                        if (!empty($user_job['name'])) {
+                                                                            echo $user_job['name'];
+                                                                        } else {
+                                                                            echo " ";
+                                                                        }
+                                                                        ?></p>
                                 <p style=" top: 475px; left: 890px;"><?php echo $user->mobile ?></p>
                                 <p style=" top: 595px; left: 280px;"><?php echo $user->marital == 'single' ? 'នៅលីវ' : '' ?></p>
-                                <p style=" top: 640px; left: 190px;"><?php echo $user->f_k_fname . ' ' . $user->f_k_lname ?></p>
-                                <p style=" top: 685px; left: 190px;"><?php echo $user->m_k_fname . ' ' . $user->m_k_lname ?></p>
-                                <p style=" top: 765px; left: 490px;"><?php echo $user->sos_fname . ' ' . $user->sos_lname ?></p>
-                                <p style=" top: 807px; left: 880px;"><?php echo $user->contact ?></p>
+                                <p style=" top: 640px; left: 190px;"><?php $id = $user->id;
+                                                                        $user_parent = $this->Model_NameList->getParent($id);
+                                                                        if (!empty($user_parent['m_k_fname'])) {
+                                                                            echo $user_parent['m_k_fname'] . ' ' . $user_parent['m_k_lname'];
+                                                                        } else {
+                                                                            echo "";
+                                                                        }
+                                                                        ?></p>
+                                <p style=" top: 685px; left: 190px;"><?php $id = $user->id;
+                                                                        $user_parent = $this->Model_NameList->getParent($id);
+                                                                        if (!empty($user_parent['m_k_fname'])) {
+                                                                            echo $user_parent['m_k_fname'] . ' ' . $user_parent['m_k_lname'];
+                                                                        } else {
+                                                                            echo "";
+                                                                        }
+                                                                        ?></p>
+                                <p style=" top: 765px; left: 490px;"><?php $id = $user->id;
+                                                                        $user_parent = $this->Model_NameList->getEmc($id);
+                                                                        if ($user_parent['sos_fname']) {
+                                                                            echo $user_parent['sos_fname'] . ' ' . $user_parent['sos_lname'];
+                                                                        } else {
+                                                                            echo "";
+                                                                        }
+                                                                        ?></p>
+                                <p style=" top: 807px; left: 880px;"><?php $id = $user->id;
+                                                                        $user_parent = $this->Model_NameList->getEmc($id);
+                                                                        if ($user_parent['sos_mobile']) {
+                                                                            echo $user_parent['sos_mobile'];
+                                                                        } else {
+                                                                            echo "";
+                                                                        }
+                                                                        ?></p>
 
                                 <!-- this row will not appear when printing -->
 

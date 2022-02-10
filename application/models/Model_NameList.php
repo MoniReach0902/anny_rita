@@ -46,6 +46,53 @@ class Model_NameList extends CI_Model
             return $result_arr[0];
         }
     }
+    public function getDocImage($id)
+    {
+        $where = array(
+            'worker_id' => $id,
+            'doc_type' => 2,
+        );
+        $result_set = $this->db->get_where('worker_attached', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getUserEdu($id)
+    {
+        $where['worker_id'] = $id;
+        $result_set = $this->db->get_where('worker_education', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getJob($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('job_title', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getParent($id)
+    {
+        $where['worker_id'] = $id;
+        $result_set = $this->db->get_where('worker_parents', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getEmc($id){
+        $where['worker_id'] = $id;
+        $result_set = $this->db->get_where('worker_emergency', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
 
 
     public function fetch()
@@ -105,7 +152,7 @@ class Model_NameList extends CI_Model
 
     public function getDoc($id)
     {
-        $query = $this->db->query("SELECT worker_attached.file_name,worker_attached.number,workers.k_fname,
+        $query = $this->db->query("SELECT workers.xtra,workers.id,worker_attached.file_name,worker_attached.number,workers.k_fname,
         workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.dob,workers.birth_province,
         provinces.name,provinces.en_name,affiliates.name as aname FROM workers INNER JOIN worker_attached 
         ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
@@ -182,7 +229,7 @@ class Model_NameList extends CI_Model
     }
     public function getData($id)
     {
-        $query = $this->db->query("SELECT workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.marital,provinces.en_name,workers.dob,worker_attached.number,worker_attached.file_name,
+        $query = $this->db->query("SELECT workers.xtra,workers.id,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.marital,provinces.en_name,workers.dob,worker_attached.number,worker_attached.file_name,
                                     worker_attached.issue_date,worker_attached.expired_date,villages.en_name as c_village,
                                     communes.en_name as c_communes ,districts.en_name as c_districts,provinces.en_name as c_provinces,worker_attached.file_name 
                                     FROM workers 
@@ -207,22 +254,20 @@ class Model_NameList extends CI_Model
     }
     public function getUserData($id)
     {
-        $query = $this->db->query("SELECT workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province,workers.xtra,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
+        $query = $this->db->query("SELECT  workers.id,workers.xtra,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
         workers.gender,workers.dob,workers.nationality,villages.name as v_name,communes.name as c_name,
-        districts.name as d_name,provinces.name as p_name,worker_attached.number,job_title.name,
+        districts.name as d_name,provinces.name as p_name,worker_attached.number,
         workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,
-        districts.name as cd_name,provinces.name as cp_name,worker_parents.f_k_fname,worker_parents.f_k_lname,
-        worker_parents.m_k_fname,worker_parents.m_k_lname,worker_parents.f_mobile,worker_education.flanguage,worker_attached.issue_date
+        districts.name as cd_name,provinces.name as cp_name,workers.job_title,
+        worker_attached.issue_date,workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province
         FROM workers
         JOIN worker_attached on workers.id=worker_attached.worker_id 
         JOIN provinces ON workers.birth_province=provinces.id 
         JOIN communes on workers.birth_commune=communes.id
         JOIN districts on workers.birth_district=districts.id 
         JOIN villages on workers.birth_village=villages.id 
-        JOIN job_title on job_title.id = workers.job_title 
-        JOIN worker_parents on worker_parents.worker_id = workers.id 
-        JOIN worker_education on workers.id = worker_education.worker_id 
-        WHERE workers.name_list_id='$id' ORDER BY order_by ");
+  
+        WHERE workers.name_list_id='$id' ORDER BY order_by;");
         return $query->result();
     }
     public function r_form($id, $arm_num, $date1, $month1, $year1, $date2, $month2, $year2, $people)

@@ -120,13 +120,29 @@
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>មុខរបរ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->name ?>&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->job_title;
+                                                                    $user_job = $this->Model_NameList->getJob($id);
+                                                                    if (!empty($user_job['name'])) {
+                                                                        echo $user_job['name'];
+                                                                    } else {
+                                                                        echo " ";
+                                                                    }
+                                                                    ?>&nbsp;&nbsp;&nbsp;&nbsp; </h5>
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
-
-                                <p><?php $lang = $user->flanguage ?>អាចប្រើប្រាស់ភាសាបានក្រៅពីភាសាខ្មែរ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <?php
+                                $id = $user->id;
+                                $user_edu = $this->Model_NameList->getUserEdu($id);
+                                if (!empty($user_edu['flanguage'])) {
+                                    $lang = $user_edu['flanguage'];
+                                } else {
+                                    $lang = ' ';
+                                }
+                                ?>
+                                <p><?php echo $lang; ?></p>
+                                <p>អាចប្រើប្រាស់ភាសាបានក្រៅពីភាសាខ្មែរ &nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <i class="fa fa-<?php echo ($lang == 'th') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
                                 <p>ថៃ &nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <i class="fa fa-<?php echo ($lang == 'ch') ? 'check-' : ''; ?>square-o" aria-hidden="true" style="font-size: 25px;"></i>
@@ -157,7 +173,7 @@
                             </div>
                             <div class="row" style="display: flex;">
 
-                                <p>មុខរបរ កសិករ លេខទូរស័ព្ទទំនាក់ទំនង </p>
+                                <p> លេខទូរស័ព្ទទំនាក់ទំនង </p>
 
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
 
@@ -169,7 +185,14 @@
                             <div class="row" style="display: flex;">
                                 <p>ឪពុកឈ្មោះ </p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->f_k_fname . '  ' . $user->f_k_lname ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->id;
+                                                                                                                    $user_parent = $this->Model_NameList->getParent($id);
+                                                                                                                    if (!empty($user_parent['f_k_fname'])) {
+                                                                                                                        echo $user_parent['f_k_fname'] . ' ' . $user_parent['f_k_lname'];
+                                                                                                                    } else {
+                                                                                                                        echo "";
+                                                                                                                    }
+                                                                                                                    ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
 
                                 <p>អាយុ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
@@ -182,7 +205,14 @@
                             <div class="row" style="display: flex;">
                                 <p>ម្ដាយឈ្មោះ </p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->m_k_fname . '  ' . $user->m_k_lname ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->id;
+                                                                                                                    $user_parent = $this->Model_NameList->getParent($id);
+                                                                                                                    if (!empty($user_parent['m_k_fname'])) {
+                                                                                                                        echo $user_parent['m_k_fname'] . ' ' . $user_parent['m_k_lname'];
+                                                                                                                    } else {
+                                                                                                                        echo "";
+                                                                                                                    }
+                                                                                                                    ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
 
                                 <p>អាយុ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
@@ -245,7 +275,14 @@
 
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង គ្រួសារ</p>
 
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->f_mobile ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->id;
+                                                                                                                                                                                $user_parent = $this->Model_NameList->getEmc($id);
+                                                                                                                                                                                if ($user_parent['sos_mobile']) {
+                                                                                                                                                                                    echo $user_parent['sos_mobile'];
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    echo "";
+                                                                                                                                                                                }
+                                                                                                                                                                                ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
 
 
                             </div>

@@ -37,10 +37,14 @@
                         <div class="area" style="width: 100%; height: 100%; margin: 0;padding: 0;">
                             <div class="row">
                                 <div class="col-12">
-
+                                    <?php $user_id = $info->id;
+                                    $image = $this->Model_NameList->getDocImage($user_id);
+                                    ?>
                                     <div class="rotate">
                                         <div style="height: 50%;margin: 0;padding: 0; background-color: red;">
-                                            <img src="<?php echo base_url('/images/worker_docs/' . $info->file_name) ?>" alt="" style="width: 18cm;transform: rotate(90deg);height: 22cm;margin-left: 200px;float: left;border: 2px solid black;">
+                                            <img src="<?php if (!empty($image['file_name'])) {
+                                                            echo base_url('/images/worker_docs/' . $image['file_name']);
+                                                        } ?>" alt="" style="width: 18cm;transform: rotate(90deg);height: 22cm;margin-left: 200px;float: left;border: 2px solid black;">
                                         </div>
                                     </div>
 
@@ -102,8 +106,13 @@
                                                 <td>
                                                     <h2>Place of Birth : </h2>
                                                 </td>
+                                                <?php $xdata = json_decode($info->xtra); ?>
                                                 <td>
-                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->en_name ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php if (!empty($xdata->{'b_province'})) {
+                                                                                                    echo $xdata->{'b_province'};
+                                                                                                } else {
+                                                                                                    echo $info->name;
+                                                                                                }  ?></p>
                                                 </td>
                                             </tr>
 

@@ -419,7 +419,7 @@ class NameListPrint extends CI_Controller
         $userdata['avata'] = $this->session->image_file;
         $this->load->model('Model_NameList');
         $data['listId'] = $id;
-        $data['users'] = $this->Model_NameList->ocw($id);
+        $data['users'] = $this->Model_NameList->getUserData($id);
 
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
