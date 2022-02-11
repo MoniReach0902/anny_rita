@@ -147,21 +147,15 @@
                                                                             echo "";
                                                                         }
                                                                         ?></p>
-
                                 <!-- this row will not appear when printing -->
-
-
                                 <!-- /.content -->
                             </div>
                             <!-- /.box-body -->
                         </section>
                     <?php
                     } ?>
-
                 </div>
             </div>
     </section>
-
-
 </div>
 <!-- /.content-wrapper -->

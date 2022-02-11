@@ -18,7 +18,7 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <div class="table-responsive">
-                    <a href="<?php echo base_url('index.php/NameList/view_detail/'. $listId) ?>" class="btn btn-secondary">Back</a>
+                    <a href="<?php echo base_url('index.php/NameList/view_detail/' . $listId) ?>" class="btn btn-secondary">Back</a>
 
                     <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
                         <thead>
@@ -124,8 +124,20 @@
                                     <td><?php echo $worker['religion']; ?></td>
                                     <td><?php echo $worker['title']; ?></td>
                                     <td><?php echo $worker['marital']; ?></td>
-                                    <td><?php echo $worker['job_title']; ?></td>
-                                    <td><?php echo $worker['industry']; ?></td>
+                                    <td><?php $id = $worker['job_title'];
+                                        $user_job = $this->Model_NameList->getJob($id);
+                                        if (!empty($user_job['name'])) {
+                                            echo $user_job['name'];
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?></td>
+                                    <td><?php $id = $worker['industry'];
+                                        $industry = $this->Model_NameList->getIndustry($id);
+                                        if (!empty($industry['name'])) {
+                                            echo $industry['name'];
+                                        }
+                                        ?></td>
                                     <td><?php echo $worker['mobile']; ?></td>
                                     <td><?php echo $worker['email']; ?></td>
 

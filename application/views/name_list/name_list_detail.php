@@ -4,11 +4,11 @@
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
-                <h3 class="box-title"><span class="khmer_font"> តារាងឈ្មោះក្រុមនៃពលករនីមួយៗ </span> &#921; Group List for Workers </h3>
+                <h3 class="box-title"><span class="khmer_font"> </span> &#921; </h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <div class="table-responsive"> 
+                <div class="table-responsive">
 
                     <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
                         <thead>
@@ -153,13 +153,16 @@
                                             echo $aff_name['name'];
                                         }
                                         ?></td>
-                                    <td><?php $b_id = $aff_name['branch'];
-                                        echo $b_id;
-                                        $branch_name = $this->Model_Affiliate->get_affiliate_branch($b_id);
-                                        // if (!empty($branch_name)) {
-                                        //     echo $branch_name['branch_name '];
-                                        // }
-                                        ?></td>
+                                    <td>
+                                        <?php $b_id = $worker['branch'];
+                                        $brach = $this->Model_NameList->getBrach($b_id);
+                                        if (!empty($brach['name'])) {
+                                            echo $brach['name'];
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?>
+                                    </td>
                                     <?php $group_id = $worker['group_id']; ?>
                                     <?php $group_name = $this->Model_Group->get_group_by($group_id); ?>
                                     <td><?php if (!empty($group_name['name'])) {
@@ -187,8 +190,20 @@
 
 
 
-                                    <td><?php echo $worker['job_title']; ?></td>
-                                    <td><?php echo $worker['industry']; ?></td>
+                                    <td><?php $id = $worker['job_title'];
+                                        $user_job = $this->Model_NameList->getJob($id);
+                                        if (!empty($user_job['name'])) {
+                                            echo $user_job['name'];
+                                        } else {
+                                            echo "";
+                                        }
+                                        ?></td>
+                                    <td><?php $id = $worker['industry'];
+                                        $industry = $this->Model_NameList->getIndustry($id);
+                                        if (!empty($industry['name'])) {
+                                            echo $industry['name'];
+                                        }
+                                        ?></td>
                                     <td><?php echo $worker['mobile']; ?></td>
 
 

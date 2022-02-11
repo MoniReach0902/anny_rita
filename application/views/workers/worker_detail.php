@@ -251,7 +251,16 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="birth_province"><span class="khmer_font">ទីកន្លែងកំនើត &#47;</span> Place of Birth Province: <span class="danger">*</span> </label>
-                <input type="text" name="b_province" class="form-control" id="">
+                <?php
+                $id = $worker['id'];
+                $xdata = $this->Model_NameList->getXtra($id);
+                $new_xdata = json_decode($xdata['xtra']);
+                ?>
+                <input type="text" name="b_province" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_province'})) {
+                                                                                            echo $new_xdata->{'b_province'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="birth_province" name="birth_province">
                     <?php if (!isset($worker['birth_province'])) {
                         $worker['birth_province'] = NULL;
@@ -268,7 +277,11 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="birth_district"><span class="khmer_font">ស្រុក&#47;ខ័ណ្ឌ&#47;</span> District : <span class="danger">*</span> </label>
-                <input type="text" name="b_district" class="form-control" id="">
+                <input type="text" name="b_district" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_district'})) {
+                                                                                            echo $new_xdata->{'b_district'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="birth_district" name="birth_district">
                     <?php if (!isset($worker['birth_district'])) {
                         $worker['birth_district'] = NULL;
@@ -288,7 +301,11 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="b_commune" class="form-control" id="">
+                <input type="text" name="b_commune" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_commune'})) {
+                                                                                            echo $new_xdata->{'b_commune'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="birth_commune" name="birth_commune">
                     <?php if (!isset($worker['birth_commune'])) {
                         $worker['birth_commune'] = NULL;
@@ -306,7 +323,11 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="b_village" class="form-control" id="">
+                <input type="text" name="b_village" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_village'})) {
+                                                                                            echo $new_xdata->{'b_village'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="birth_village" name="birth_village">
                     <?php if (!isset($worker['birth_village'])) {
                         $worker['birth_village'] = NULL;
@@ -339,7 +360,11 @@
             <div class="form-group">
 
                 <label for="cur_add_province"><span class="khmer_font">ខេត្ត &#47;</span> Province: <span class="danger">*</span> </label>
-                <input type="text" name="c_province" class="form-control" id="">
+                <input type="text" name="c_province" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_province'})) {
+                                                                                            echo $new_xdata->{'c_province'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="cur_add_province" name="cur_add_province">
                     <?php if (!isset($worker['cur_add_province'])) {
                         $worker['cur_add_province'] = NULL;
@@ -356,7 +381,11 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="cur_add_district"><span class="khmer_font">ស្រុក&#47;ខ័ណ្ឌ&#47;</span> District : <span class="danger">*</span> </label>
-                <input type="text" name="c_district" class="form-control" id="">
+                <input type="text" name="c_district" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_district'})) {
+                                                                                            echo $new_xdata->{'c_district'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="cur_add_district" name="cur_add_district">
                     <?php if (!isset($worker['cur_add_district'])) {
                         $worker['cur_add_district'] = NULL;
@@ -376,7 +405,11 @@
     <div class="row" id="cur_add2">
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="c_commune" class="form-control" id="">
+                <input type="text" name="c_commune" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_commune'})) {
+                                                                                            echo $new_xdata->{'c_commune'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="cur_add_commune" name="cur_add_commune">
                     <?php if (!isset($worker['cur_add_commune'])) {
                         $worker['cur_add_commune'] = NULL;
@@ -394,7 +427,11 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="c_village" class="form-control" id="">
+                <input type="text" name="c_village" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_village'})) {
+                                                                                            echo $new_xdata->{'c_village'};
+                                                                                        } else {
+                                                                                            echo " ";
+                                                                                        } ?>">
                 <select class="custom-select form-control " id="cur_add_village" name="cur_add_village">
                     <?php if (!isset($worker['cur_add_village'])) {
                         $worker['cur_add_village'] = NULL;

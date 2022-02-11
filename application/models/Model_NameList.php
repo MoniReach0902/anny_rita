@@ -85,9 +85,37 @@ class Model_NameList extends CI_Model
             return $result_arr[0];
         }
     }
-    public function getEmc($id){
+    public function getEmc($id)
+    {
         $where['worker_id'] = $id;
         $result_set = $this->db->get_where('worker_emergency', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getIndustry($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('industries', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getBrach($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('branches', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getXtra($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('workers', $where);
         $result_arr = $result_set->result_array();
         if (!empty($result_arr)) {
             return $result_arr[0];

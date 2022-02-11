@@ -18,14 +18,14 @@
 			<!-- /.box-header -->
 			<div class="box-body">
 				<div class="table-responsive">
-					
+
 					<table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
 						<thead>
-							
+
 							<tr>
 								<?php
 								$theads = array(
-									
+
 									'Actions' => '',
 									'Photo' => 'រូបភាព',
 									'ID' => 'លេខកូដ', 'Group' => 'ក្រុម', 'Country' => 'ប្រទេស',
@@ -37,7 +37,7 @@
 									'Date of Birth' => 'ថ្ងៃខែឆ្នាំកំណើត',
 									'Nationality' => 'សញ្ជាតិ',
 									'Race' => 'ជនជាតិ',
-									'Religion' => 'សាសនា', 
+									'Religion' => 'សាសនា',
 									'Title' => 'ងារ',
 									'Marital Status' => 'ស្ថានភាពគ្រួសារ',
 									'Job Title' => 'តួនាទីការងារ',
@@ -60,14 +60,14 @@
 									<th><span class="khmer_font"><?php echo $thead; ?><br /></span><?php echo $key; ?></th>
 								<?php } ?>
 							</tr>
-						
+
 						</thead>
-						
+
 						<tbody>
-							
+
 							<?php foreach ($workers as $worker) { ?>
 								<tr>
-									
+
 									<td>
 										<div class="btn-group mb-5">
 											<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Actions</button>
@@ -125,8 +125,20 @@
 									<td><?php echo $worker['religion']; ?></td>
 									<td><?php echo $worker['title']; ?></td>
 									<td><?php echo $worker['marital']; ?></td>
-									<td><?php echo $worker['job_title']; ?></td>
-									<td><?php echo $worker['industry']; ?></td>
+									<td><?php $id = $worker['job_title'];
+										$user_job = $this->Model_NameList->getJob($id);
+										if (!empty($user_job['name'])) {
+											echo $user_job['name'];
+										} else {
+											echo "";
+										}
+										?></td>
+									<td><?php $id = $worker['industry'];
+										$industry = $this->Model_NameList->getIndustry($id);
+										if (!empty($industry['name'])) {
+											echo $industry['name'];
+										}
+										?></td>
 									<td><?php echo $worker['mobile']; ?></td>
 									<td><?php echo $worker['email']; ?></td>
 
