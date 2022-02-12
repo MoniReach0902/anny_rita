@@ -409,7 +409,7 @@ class Workers extends CI_Controller
 				'c_commune' => $this->input->post('c_commune'),
 				'c_village' => $this->input->post('c_village'),
 			);
-
+			$new_data['xtra'] = json_encode($xdata);
 			$this->Model_Worker->update($id, $new_data);
 
 			//$parent_data['worker_id']= $id;
@@ -466,7 +466,7 @@ class Workers extends CI_Controller
 				$spouse_data['scur_add_village'] = $this->input->post('scur_add_village');
 			}
 
-			$new_data['xtra'] = json_encode($xdata);
+
 
 			$this->Model_Worker->update_spouse($id, $spouse_data);
 
