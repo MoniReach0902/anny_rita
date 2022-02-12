@@ -254,7 +254,9 @@
                 <?php
                 $id = $worker['id'];
                 $xdata = $this->Model_NameList->getXtra($id);
-                $new_xdata = json_decode($xdata['xtra']);
+                if (!empty($xdata['xtra'])) {
+                    $new_xdata = json_decode($xdata['xtra']);
+                }
                 ?>
                 <input type="text" name="b_province" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_province'})) {
                                                                                             echo $new_xdata->{'b_province'};
