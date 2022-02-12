@@ -399,6 +399,16 @@ class Workers extends CI_Controller
 				$new_data['cur_add_commune'] = $this->input->post('cur_add_commune');
 				$new_data['cur_add_village'] = $this->input->post('cur_add_village');
 			}
+			$xdata = array(
+				'b_province' => $this->input->post('b_province'),
+				'b_district' => $this->input->post('b_district'),
+				'b_commune' => $this->input->post('b_commune'),
+				'b_village' => $this->input->post('b_village'),
+				'c_province' => $this->input->post('c_province'),
+				'c_district' => $this->input->post('c_district'),
+				'c_commune' => $this->input->post('c_commune'),
+				'c_village' => $this->input->post('c_village'),
+			);
 
 			$this->Model_Worker->update($id, $new_data);
 
@@ -455,16 +465,7 @@ class Workers extends CI_Controller
 				$spouse_data['scur_add_commune'] = $this->input->post('scur_add_commune');
 				$spouse_data['scur_add_village'] = $this->input->post('scur_add_village');
 			}
-			$xdata = array(
-				'b_province' => $this->input->post('b_province'),
-				'b_district' => $this->input->post('b_district'),
-				'b_commune' => $this->input->post('b_commune'),
-				'b_village' => $this->input->post('b_village'),
-				'c_province' => $this->input->post('c_province'),
-				'c_district' => $this->input->post('c_district'),
-				'c_commune' => $this->input->post('c_commune'),
-				'c_village' => $this->input->post('c_village'),
-			);
+
 			$new_data['xtra'] = json_encode($xdata);
 
 			$this->Model_Worker->update_spouse($id, $spouse_data);
