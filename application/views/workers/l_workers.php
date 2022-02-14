@@ -141,78 +141,135 @@
 										?></td>
 									<td><?php echo $worker['mobile']; ?></td>
 									<td><?php echo $worker['email']; ?></td>
+									<?php
+									$id = $worker['id'];
+									$newdata = $this->Model_NameList->getXtra($id);
+									if (!empty($newdata['xtra'])) {
+										$xdata = json_decode($newdata['xtra']);
+									}
+									// $xdata = json_decode($worker['xtra']);
+									?>
 
 									<?php if (!isset($worker['birth_province'])) {
 										$worker['birth_province'] = NULL;
 									} ?>
 									<?php $provinc = $worker['birth_province']; ?>
 									<?php $provinc = $this->Model_Worker->getpname($provinc); ?>
-									<td><span class="khmer_font"><?php if (!empty($provinc['name'])) {
-																		echo $provinc['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (!empty($xdata->{'b_province'})) {
+												echo $xdata->{'b_province'};
+											} else {
+												if (!empty($provinc['name'])) {
+													echo $provinc['name'];
+												}
+											}  ?>
+
+										</span></td>
 
 									<?php if (!isset($worker['birth_district'])) {
 										$worker['birth_district'] = NULL;
 									} ?>
 									<?php $district = $worker['birth_district']; ?>
 									<?php $district = $this->Model_Worker->getdname($district); ?>
-									<td><span class="khmer_font"><?php if (!empty($district)) {
-																		echo $district['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'b_commune'}))) {
+												echo $xdata->{'b_commune'};
+											} else {
+												if (!empty($district)) {
+													echo $district['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['birth_commune'])) {
 										$worker['birth_commune'] = NULL;
 									} ?>
 									<?php $commune = $worker['birth_commune']; ?>
 									<?php $commune = $this->Model_Worker->getcname($commune); ?>
-									<td><span class="khmer_font"><?php if (!empty($commune)) {
-																		echo $commune['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'b_district'}))) {
+												echo $xdata->{'b_district'};
+											} else {
+												if (!empty($commune)) {
+													echo $commune['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['birth_village'])) {
 										$worker['birth_village'] = NULL;
 									} ?>
 									<?php $village = $worker['birth_village']; ?>
 									<?php $village = $this->Model_Worker->getvname($village); ?>
-									<td><span class="khmer_font"><?php if (!empty($village)) {
-																		echo $village['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'b_village'}))) {
+												echo $xdata->{'b_village'};
+											} else {
+												if (!empty($village)) {
+													echo $village['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['cur_add_province'])) {
 										$worker['cur_add_province'] = NULL;
 									} ?>
 									<?php $cprovinc = $worker['cur_add_province']; ?>
 									<?php $cprovinc = $this->Model_Worker->getpname($cprovinc); ?>
-									<td><span class="khmer_font"><?php if (!empty($cprovinc)) {
-																		echo $cprovinc['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'c_province'}))) {
+												echo $xdata->{'c_province'};
+											} else {
+												if (!empty($cprovinc)) {
+													echo $cprovinc['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['cur_add_district'])) {
 										$worker['cur_add_district'] = NULL;
 									} ?>
 									<?php $cdistrictc = $worker['cur_add_district']; ?>
 									<?php $cdistrictc = $this->Model_Worker->getdname($cdistrictc); ?>
-									<td><span class="khmer_font"><?php if (!empty($cdistrictc)) {
-																		echo $cdistrictc['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'c_district'}))) {
+												echo $xdata->{'c_district'};
+											} else {
+												if (!empty($cdistrictc)) {
+													echo $cdistrictc['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['cur_add_commune'])) {
 										$worker['cur_add_commune'] = NULL;
 									} ?>
 									<?php $ccommunec = $worker['cur_add_commune']; ?>
 									<?php $ccommunec = $this->Model_Worker->getcname($ccommunec); ?>
-									<td><span class="khmer_font"><?php if (!empty($ccommunec)) {
-																		echo $ccommunec['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'c_commune'}))) {
+												echo $xdata->{'c_commune'};
+											} else {
+												if (!empty($ccommunec)) {
+													echo $ccommunec['name'];
+												}
+											}  ?>
+										</span></td>
 
 									<?php if (!isset($worker['cur_add_village'])) {
 										$worker['cur_add_village'] = NULL;
 									} ?>
 									<?php $cvillagec = $worker['cur_add_village']; ?>
 									<?php $cvillagec = $this->Model_Worker->getvname($cvillagec); ?>
-									<td><span class="khmer_font"><?php if (!empty($cvillagec)) {
-																		echo $cvillagec['name'];
-																	} ?></span></td>
+									<td><span class="khmer_font">
+											<?php if (trim(!empty($xdata->{'c_village'}))) {
+												echo $xdata->{'c_village'};
+											} else {
+												if (!empty($cvillagec)) {
+													echo $cvillagec['name'];
+												}
+											}  ?>
+										</span></td>
 									<td>
 										<a href="<?php echo site_url('workers/show_file/' . $worker['id']); ?>" target="_blank"><span class="text-info">File Detail</span></a>
 									</td>

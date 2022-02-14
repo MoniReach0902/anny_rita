@@ -123,6 +123,7 @@ class Model_NameList extends CI_Model
     }
 
 
+
     public function fetch()
     {
         // $this->db->from('name_list');
@@ -284,12 +285,12 @@ class Model_NameList extends CI_Model
     {
         $query = $this->db->query("SELECT  workers.id,workers.xtra,workers.k_fname,workers.k_lname,workers.e_fname,workers.e_lname,
         workers.gender,workers.dob,workers.nationality,villages.name as v_name,communes.name as c_name,
-        districts.name as d_name,provinces.name as p_name,worker_attached.number,
+        districts.name as d_name,provinces.name as p_name,
         workers.race,workers.mobile,workers.marital,villages.name as cv_name,communes.name as cc_name,
         districts.name as cd_name,provinces.name as cp_name,workers.job_title,
-        worker_attached.issue_date,workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province
+        workers.cur_add_village,workers.cur_add_commune,workers.cur_add_district,workers.cur_add_province
         FROM workers
-        JOIN worker_attached on workers.id=worker_attached.worker_id 
+       
         JOIN provinces ON workers.birth_province=provinces.id 
         JOIN communes on workers.birth_commune=communes.id
         JOIN districts on workers.birth_district=districts.id 

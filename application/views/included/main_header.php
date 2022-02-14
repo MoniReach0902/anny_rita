@@ -37,12 +37,12 @@
             <!-- User Account -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?php echo base_url('images/user5-128x128.jpg'); ?>" class="user-image rounded-circle" alt="User Image">
+                <img src="<?php echo base_url('images/arm_logo.png'); ?>" class="user-image rounded-circle" alt="User Image">
               </a>
               <ul class="dropdown-menu scale-up">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="<?php echo base_url('images/user5-128x128.jpg'); ?>" class="float-left rounded-circle" alt="User Image">
+                  <img src="<?php echo base_url('images/arm_logo.png'); ?>" class="float-left rounded-circle" alt="User Image">
 
                   <p>
                     <?php echo $user_name; ?>

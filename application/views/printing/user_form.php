@@ -84,45 +84,56 @@
                             <?php $xdata = json_decode($user->xtra); ?>
                             <div class="row" style="display: flex;">
                                 <p>ទីកន្លែងកំណើតនៅ៖ភូមិ ៖ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_village'})) {
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (trim(!empty($xdata->{'b_village'}))) {
                                                             echo $xdata->{'b_village'};
                                                         } else {
                                                             echo $user->v_name;
                                                         }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ឃុំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_commune'})) {
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (trim(!empty($xdata->{'b_commune'}))) {
                                                             echo $xdata->{'b_commune'};
                                                         } else {
                                                             echo $user->c_name;
                                                         }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ស្រុក </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_district'})) {
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (trim(!empty($xdata->{'b_district'}))) {
                                                             echo $xdata->{'b_district'};
                                                         } else {
                                                             echo $user->d_name;
                                                         }  ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ខេត្ត</p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($xdata->{'b_province'})) {
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (trim(!empty($xdata->{'b_province'}))) {
                                                             echo $xdata->{'b_province'};
                                                         } else {
                                                             echo $user->p_name;
                                                         }  ?>&nbsp;&nbsp;&nbsp; </h5>
                             </div>
                             <div class="row" style="display: flex;">
+                                <?php $id = $user->id;
+                                $file_workers = $this->Model_NameList->getDocImage($id);
+                                ?>
                                 <p>សៀវភៅគ្រួសារ/អត្តសញ្ញាណប័ណ្ណ/លិខិតឆ្លងដែនលេខ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $user->number ?>&nbsp;&nbsp;&nbsp; </h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php if (!empty($file_workers['number'])) {
+                                                                echo $file_workers['number'];
+                                                            } ?>&nbsp;&nbsp;&nbsp; </h5>
                                 <p>ចុះថ្ងៃទី </p>
-                                <h5>&nbsp;&nbsp;&nbsp;<?php echo date('d', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;<?php if (!empty($file_workers['issue_date'])) {
+                                                            echo date('d', strtotime($file_workers['issue_date']));
+                                                        } ?>&nbsp;&nbsp;&nbsp;</h5>
                                 <p> ខែ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date('m', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php if (!empty($file_workers['issue_date'])) {
+                                                                echo date('m', strtotime($file_workers['issue_date']));
+                                                            } ?>&nbsp;&nbsp;&nbsp;</h5>
                                 <p>ឆ្នាំ </p>
-                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo date('Y', strtotime($user->issue_date)) ?>&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<?php if (!empty($file_workers['issue_date'])) {
+                                                                echo date('Y', strtotime($file_workers['issue_date']));
+                                                            } ?>&nbsp;&nbsp;&nbsp;&nbsp;</h5>
                             </div>
                             <div class="row" style="display: flex;">
                                 <p>មុខរបរ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->job_title;
                                                                     $user_job = $this->Model_NameList->getJob($id);
-                                                                    if (!empty($user_job['name'])) {
+                                                                    if (trim(!empty($user_job['name']))) {
                                                                         echo $user_job['name'];
                                                                     } else {
                                                                         echo " ";
@@ -227,7 +238,7 @@
 
                                 <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_village;
                                                         $cur_add_village = $this->Model_NameList->getCurAddVillage($cur_village);
-                                                        if (!empty($xdata->{'c_village'})) {
+                                                        if (trim(!empty($xdata->{'c_village'}))) {
                                                             echo $xdata->{'c_village'};
                                                         } else {
                                                             if (!empty($cur_add_village['name'])) {
@@ -240,7 +251,7 @@
                                 <p>ឃុំ </p>
                                 <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_commune;
                                                         $cur_add_village = $this->Model_NameList->getCurAddCommune($cur_village);
-                                                        if (!empty($xdata->{'c_commune'})) {
+                                                        if (trim(!empty($xdata->{'c_commune'}))) {
                                                             echo $xdata->{'c_commune'};
                                                         } else {
                                                             if (!empty($cur_add_village['name'])) {
@@ -251,7 +262,7 @@
                                 <p>ស្រុក </p>
                                 <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_district;
                                                         $cur_add_village = $this->Model_NameList->getCurAddDistrict($cur_village);
-                                                        if (!empty($xdata->{'c_district'})) {
+                                                        if (trim(!empty($xdata->{'c_district'}))) {
                                                             echo $xdata->{'c_district'};
                                                         } else {
                                                             if (!empty($cur_add_village['name'])) {
@@ -262,7 +273,7 @@
                                 <p>ខេត្ត</p>
                                 <h5>&nbsp;&nbsp;&nbsp;<?php $cur_village = $user->cur_add_province;
                                                         $cur_add_village = $this->Model_NameList->getCurAddProvince($cur_village);
-                                                        if (!empty($xdata->{'c_province'})) {
+                                                        if (trim(!empty($xdata->{'c_province'}))) {
                                                             echo $xdata->{'c_province'};
                                                         } else {
                                                             if (!empty($cur_add_village['name'])) {
@@ -276,11 +287,10 @@
                                 <p>លេខទូរស័ព្ទទំនាក់ទំនង គ្រួសារ</p>
 
                                 <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $id = $user->id;
+
                                                                                                                                                                                 $user_parent = $this->Model_NameList->getEmc($id);
-                                                                                                                                                                                if ($user_parent['sos_mobile']) {
+                                                                                                                                                                                if (!empty($user_parent['sos_mobile'])) {
                                                                                                                                                                                     echo $user_parent['sos_mobile'];
-                                                                                                                                                                                } else {
-                                                                                                                                                                                    echo "";
                                                                                                                                                                                 }
                                                                                                                                                                                 ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
 

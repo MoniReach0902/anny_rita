@@ -127,16 +127,17 @@ class Workers extends CI_Controller
 			echo $new_data['cur_add_district'] . "c<br />";
 			echo $new_data['cur_add_commune'] . "c<br />";
 			echo $new_data['cur_add_village'] . "c<br />";
-
+			$new_data['name_list_id'] = 0;
+			$new_data['order_by'] = 0;
 			$xdata = array(
-				'b_province' => $this->input->post('b_province'),
-				'b_district' => $this->input->post('b_district'),
-				'b_commune' => $this->input->post('b_commune'),
-				'b_village' => $this->input->post('b_village'),
-				'c_province' => $this->input->post('c_province'),
-				'c_district' => $this->input->post('c_district'),
-				'c_commune' => $this->input->post('c_commune'),
-				'c_village' => $this->input->post('c_village'),
+				'b_province' => trim($this->input->post('b_province')),
+				'b_district' => trim($this->input->post('b_district')),
+				'b_commune' => trim($this->input->post('b_commune')),
+				'b_village' => trim($this->input->post('b_village')),
+				'c_province' => trim($this->input->post('c_province')),
+				'c_district' => trim($this->input->post('c_district')),
+				'c_commune' => trim($this->input->post('c_commune')),
+				'c_village' => trim($this->input->post('c_village')),
 			);
 			$new_data['xtra'] = json_encode($xdata);
 
@@ -292,7 +293,7 @@ class Workers extends CI_Controller
 			$education_data['vocalevel'] = $this->input->post('vocalevel');
 			$education_data['flanguage'] = $this->input->post('flanguage');
 			$education_data['flanguage_yes_no'] = $this->input->post('flanguage_yes_no');
-			$education_data['drivelic'] = $this->input->post('drivelic');
+			// $education_data['drivelic'] = $this->input->post('drivelic');
 
 			$this->Model_Worker->create_education($education_data);
 
@@ -400,14 +401,14 @@ class Workers extends CI_Controller
 				$new_data['cur_add_village'] = $this->input->post('cur_add_village');
 			}
 			$xdata = array(
-				'b_province' => $this->input->post('b_province'),
-				'b_district' => $this->input->post('b_district'),
-				'b_commune' => $this->input->post('b_commune'),
-				'b_village' => $this->input->post('b_village'),
-				'c_province' => $this->input->post('c_province'),
-				'c_district' => $this->input->post('c_district'),
-				'c_commune' => $this->input->post('c_commune'),
-				'c_village' => $this->input->post('c_village'),
+				'b_province' => trim($this->input->post('b_province')),
+				'b_district' => trim($this->input->post('b_district')),
+				'b_commune' => trim($this->input->post('b_commune')),
+				'b_village' => trim($this->input->post('b_village')),
+				'c_province' => trim($this->input->post('c_province')),
+				'c_district' => trim($this->input->post('c_district')),
+				'c_commune' => trim($this->input->post('c_commune')),
+				'c_village' => trim($this->input->post('c_village')),
 			);
 			$new_data['xtra'] = json_encode($xdata);
 			$this->Model_Worker->update($id, $new_data);

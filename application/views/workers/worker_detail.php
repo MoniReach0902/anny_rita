@@ -258,7 +258,7 @@
                     $new_xdata = json_decode($xdata['xtra']);
                 }
                 ?>
-                <input type="text" name="b_province" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_province'})) {
+                <input type="text" name="b_province" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'b_province'}))) {
                                                                                             echo $new_xdata->{'b_province'};
                                                                                         } else {
                                                                                             echo " ";
@@ -279,7 +279,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="birth_district"><span class="khmer_font">ស្រុក&#47;ខ័ណ្ឌ&#47;</span> District : <span class="danger">*</span> </label>
-                <input type="text" name="b_district" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_district'})) {
+                <input type="text" name="b_district" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'b_district'}))) {
                                                                                             echo $new_xdata->{'b_district'};
                                                                                         } else {
                                                                                             echo " ";
@@ -303,7 +303,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="b_commune" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_commune'})) {
+                <input type="text" name="b_commune" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'b_commune'}))) {
                                                                                             echo $new_xdata->{'b_commune'};
                                                                                         } else {
                                                                                             echo " ";
@@ -325,7 +325,7 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="b_village" class="form-control" id="" value="<?php if (!empty($new_xdata->{'b_village'})) {
+                <input type="text" name="b_village" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'b_village'}))) {
                                                                                             echo $new_xdata->{'b_village'};
                                                                                         } else {
                                                                                             echo " ";
@@ -362,7 +362,7 @@
             <div class="form-group">
 
                 <label for="cur_add_province"><span class="khmer_font">ខេត្ត &#47;</span> Province: <span class="danger">*</span> </label>
-                <input type="text" name="c_province" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_province'})) {
+                <input type="text" name="c_province" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'c_province'}))) {
                                                                                             echo $new_xdata->{'c_province'};
                                                                                         } else {
                                                                                             echo " ";
@@ -383,7 +383,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="cur_add_district"><span class="khmer_font">ស្រុក&#47;ខ័ណ្ឌ&#47;</span> District : <span class="danger">*</span> </label>
-                <input type="text" name="c_district" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_district'})) {
+                <input type="text" name="c_district" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'c_district'}))) {
                                                                                             echo $new_xdata->{'c_district'};
                                                                                         } else {
                                                                                             echo " ";
@@ -407,7 +407,7 @@
     <div class="row" id="cur_add2">
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="c_commune" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_commune'})) {
+                <input type="text" name="c_commune" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'c_commune'}))) {
                                                                                             echo $new_xdata->{'c_commune'};
                                                                                         } else {
                                                                                             echo " ";
@@ -429,7 +429,7 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <input type="text" name="c_village" class="form-control" id="" value="<?php if (!empty($new_xdata->{'c_village'})) {
+                <input type="text" name="c_village" class="form-control" id="" value="<?php if (trim(!empty($new_xdata->{'c_village'}))) {
                                                                                             echo $new_xdata->{'c_village'};
                                                                                         } else {
                                                                                             echo " ";
