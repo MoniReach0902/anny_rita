@@ -121,6 +121,24 @@ class Model_NameList extends CI_Model
             return $result_arr[0];
         }
     }
+    public function getEmp($id)
+    {
+        $where['worker_id'] = $id;
+        $result_set = $this->db->get_where('worker_employment', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getEmpList($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('employers', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
 
 
 

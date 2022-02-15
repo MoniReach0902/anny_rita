@@ -77,9 +77,13 @@
                                         <?php
                                         } else {
                                         ?>
+                                            <button class="btn btn-info add">Add Worker</button>
                                             <a href="<?php echo base_url('index.php/NameList/move/' . $worker['id'] . '/' . $listId . '/' . $order_by['order_by']) ?>"><button class="btn btn-info">Add</button></a>
                                         <?php
                                         } ?>
+                                        <input type="text" name="worker_id" id="worker_id" value="<?php echo $worker['id']; ?>">
+                                        <input type="text" name="listId" id="listId" value="<?php echo $listId; ?>" id="">
+                                        <input type="text" name="order_by" id="order_by" value="<?php echo $order_by['order_by']; ?>">
                                     </td>
                                     <td>
                                         <?php
@@ -259,11 +263,35 @@
 <!-- /.content-wrapper -->
 <script>
     $(document).ready(function() {
-        $('.addToGroup').click(function() {
+        $('.add').click(function() {
             var eThis = $(this).parents('tr');
             var ind = eThis.index() + 1;
-            var id = $(this).parents('table').find('tr:eq(' + ind + ') td:eq(3)').text();
-            alert(id);
+            var id = $(this).parents('table').find('tr:eq(' + ind + ') td:eq(2)').text();
+            var order_by = $('#order_by').val();
+            var listId = $('#listId').val();
+            var worker_id = $('#worker_id').val();
+            // alert(listId);
+
+            $.ajax({
+                url: '<?php echo base_url("index.php/NameList/move/") ?>',
+                type: 'POST',
+                data: {
+                    worker_id: id,
+                    order_by: order_by,
+                    listId: listId,
+
+                },
+                contentType: false,
+                cache: false,
+                processData: false,
+                // dataType: "json",
+
+                success: function(data) {
+                    //work after success
+                    alert("success");
+
+                }
+            });
         });
     });
 </script>

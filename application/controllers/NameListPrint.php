@@ -449,4 +449,25 @@ class NameListPrint extends CI_Controller
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }
+    public function worker_contract($id)
+    {
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+
+        $data['listId'] = $id;
+
+        $data['userDoc'] = $this->Model_NameList->getData($id);
+        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
+        $data['company'] = $this->Model_NameList->getCompanyName($id);
+
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/contract');
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
 }

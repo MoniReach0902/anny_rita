@@ -40,6 +40,7 @@
 									'Religion' => 'សាសនា',
 									'Title' => 'ងារ',
 									'Marital Status' => 'ស្ថានភាពគ្រួសារ',
+									'Company' => 'ក្រុមហ៊ុន',
 									'Job Title' => 'តួនាទីការងារ',
 									'Job Type' => 'ប្រភេទការងារ',
 									'Phone Number' => 'លេខទូរស័ព្ទ',
@@ -74,8 +75,12 @@
 											<div class="dropdown-menu">
 												<a class="dropdown-item" href="<?php echo site_url('Workers/update_detail/' . $worker['id']); ?>" target="_blank">
 													<span class="text-success">Edit Worker Detail</span></a>
-												<div class="dropdown-divider"></div>
-												<div class="dropdown-divider"></div>
+												<a class="dropdown-item"></a>
+												<a class="dropdown-item" href="<?php echo site_url('NameListPrint/worker_contract/' . $worker['id']); ?>" target="_blank">
+													<span class="text-success">Print Worker Contract</span></a>
+
+
+
 												<a class="dropdown-item" href="<?php //echo $baseurl; 
 																				?>delete_admin&&id=<?php //echo h($admin->id); 
 																									?>"><span class="text-danger">Deativate</span></a>
@@ -125,6 +130,18 @@
 									<td><?php echo $worker['religion']; ?></td>
 									<td><?php echo $worker['title']; ?></td>
 									<td><?php echo $worker['marital']; ?></td>
+									<td><?php
+										$emp = $this->Model_NameList->getEmp($worker['id']);
+										if (!empty($emp['employer_id'])) {
+											$emp_id = $emp['employer_id'];
+											// echo $emp_id;
+											$company = $this->Model_NameList->getEmpList($emp_id);
+											if (!empty($company['k_name'])) {
+												echo $company['k_name'];
+											}
+										}
+										?>
+									</td>
 									<td><?php $id = $worker['job_title'];
 										$user_job = $this->Model_NameList->getJob($id);
 										if (!empty($user_job['name'])) {

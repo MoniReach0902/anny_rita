@@ -23,7 +23,7 @@
                 <label for="working_status"><span class="khmer_font">ស្ថានភាពការងារ&#47;</span> Working Status : </label>
                 <select class="custom-select form-control" id="working_status" name="working_status">
                     <?php foreach ($work_statuss as $work_status) { ?>
-                        <option value="<?php echo $work_status['id']; ?>">
+                        <option value="<?php echo $work_status['id']; ?>" <?php echo ($work_status['id'] == $worker['status']) ? 'selected' : ''; ?>>
                             <?php echo $work_status['e_label']; ?>
                         </option>
                     <?php } ?>

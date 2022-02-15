@@ -131,6 +131,16 @@ class NameList extends CI_Controller
         $this->Model_NameList->move_toList($user_id, $nameList_id, $order_by);
         return redirect(base_url('index.php/NameList/add_worker/' . $nameList_id));
     }
+    public function moveOn()
+    {
+        // $data['call_method'] =  $this->router->fetch_method();
+        // $worker_id = $_POST['worker_id'];
+        // $listId = $_POST['listId'];
+        // $order_by = $_POST['order_by'];
+        // $this->load->model('Model_NameList');
+        // $this->Model_NameList->move_toList($worker_id, $listId, $order_by);
+        return redirect(base_url('index.php/NameList/add_worker/' . 5));
+    }
     public function cancel_move($user_id, $nameList_id)
     {
         $this->load->model('Model_NameList');
