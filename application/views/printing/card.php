@@ -33,8 +33,28 @@
                                 <h3 style="position: absolute;margin-left: 57px;margin-top: 110px;font-size: 26px;"><?php echo $totalCount['total'] ?></h3>
                                 <h3 style="position: absolute;margin-left: 40px;margin-top: 195px;"><?php echo ($key + 1) ?></h3>
                                 <p style="position: absolute;margin-left: 160px;margin-top: 183px;"><?php echo $user->k_fname . ' ' . $user->k_lname . '   ' . $user->e_fname . ' ' . $user->e_lname ?></p>
-                                <h5 style="position: absolute;margin-left: 190px;margin-top: 258px; font-size: 19px;"><?php echo $company['e_name'] ?></h5>
-                                <h5 style="position: absolute;margin-top: 280px; text-align: center;margin-right: 25px;width: 98%;font-size: 16px;"><?php echo $company['add1'] ?></h5>
+                                <h5 style="position: absolute;margin-left: 190px;margin-top: 258px; font-size: 19px;"><?php
+                                                                                                                        $emp = $this->Model_NameList->getEmp($user->id);
+                                                                                                                        if (!empty($emp['employer_id'])) {
+                                                                                                                            $emp_id = $emp['employer_id'];
+                                                                                                                            // echo $emp_id;
+                                                                                                                            $company = $this->Model_NameList->getEmpList($emp_id);
+                                                                                                                            if (!empty($company['e_name'])) {
+                                                                                                                                echo $company['e_name'];
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                        ?></h5>
+                                <h5 style="position: absolute;margin-top: 280px; text-align: center;margin-right: 25px;width: 98%;font-size: 16px;"><?php
+                                                                                                                                                    $emp = $this->Model_NameList->getEmp($user->id);
+                                                                                                                                                    if (!empty($emp['employer_id'])) {
+                                                                                                                                                        $emp_id = $emp['employer_id'];
+                                                                                                                                                        // echo $emp_id;
+                                                                                                                                                        $company = $this->Model_NameList->getEmpList($emp_id);
+                                                                                                                                                        if (!empty($company['add1'])) {
+                                                                                                                                                            echo $company['add1'];
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                    ?></h5>
                             </div>
                         <?php
                         } ?>

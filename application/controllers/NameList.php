@@ -133,13 +133,19 @@ class NameList extends CI_Controller
     }
     public function moveOn()
     {
-        // $data['call_method'] =  $this->router->fetch_method();
-        // $worker_id = $_POST['worker_id'];
-        // $listId = $_POST['listId'];
-        // $order_by = $_POST['order_by'];
-        // $this->load->model('Model_NameList');
-        // $this->Model_NameList->move_toList($worker_id, $listId, $order_by);
-        return redirect(base_url('index.php/NameList/add_worker/' . 5));
+        $data['call_method'] =  $this->router->fetch_method();
+        $this->load->model('Model_NameList');
+        $data = $this->Model_NameList->getOrderBy();
+        echo $new_data = $data['order_by'];
+        echo (int)$new_data + 1;
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }
+
+        if (isset($_GET['listId'])) {
+            $listId = $_GET['listId'];
+        }
+        $this->Model_NameList->move_toList($id, $listId, $new_data);
     }
     public function cancel_move($user_id, $nameList_id)
     {

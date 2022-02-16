@@ -11,7 +11,9 @@
                 } ?>
                 <select class="form-control" id="employer_id" name="employer_id">
                     <?php foreach ($employers as $employer) { ?>
-                        <option value="<?php echo $employer['id']; ?>" <?php echo ($employer['id'] == $employment['employer_id']) ? 'selected' : ''; ?>>
+                        <option value="<?php echo $employer['id']; ?>" <?php if (!empty($employment['employer_id'])) {
+                                                                            echo ($employer['id'] == $employment['employer_id']) ? 'selected' : '';
+                                                                        } ?>>
                             <span class="khmer_font"><?php echo $employer['k_name']; ?></span> &#8211; <?php echo $employer['e_name']; ?>
                         </option>
                     <?php } ?>

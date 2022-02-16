@@ -356,7 +356,7 @@ class Workers extends CI_Controller
 		$data['call_method'] =  $this->router->fetch_method();
 		$data['call_class'] = $this->router->fetch_class();
 
-		$data['call_'] =  $this->router->fetch_method();
+		// $data['call_'] =  $this->router->fetch_method();
 		$this->load->helper('form');
 
 		$userdata['user_name'] = $this->session->fname;
@@ -382,6 +382,8 @@ class Workers extends CI_Controller
 			$new_data['marital'] = $this->input->post('marital');
 			$new_data['job_title'] = $this->input->post('job_title');
 			$new_data['industry'] = $this->input->post('industry');
+			$new_data['	branch'] = $this->input->post('branch');
+			$new_data['affiliate'] = $this->input->post('affiliate');
 			$new_data['mobile'] = $this->input->post('mobile');
 			$new_data['email'] = $this->input->post('email');
 			$new_data['birth_province'] = $this->input->post('birth_province');
@@ -551,11 +553,12 @@ class Workers extends CI_Controller
 			$education_data['vocalevel'] = $this->input->post('vocalevel');
 			$education_data['flanguage'] = $this->input->post('flanguage');
 			$education_data['flanguage_yes_no'] = $this->input->post('flanguage_yes_no');
-			$education_data['drivelic'] = $this->input->post('drivelic');
+
 
 			$this->Model_Worker->update_education($id, $education_data);
 
 			//$employment_data['worker_id']= $id;
+			// $employment_data['worker_id'] = $worker_id;
 			$employment_data['employer_id'] = $this->input->post('employer_id');
 			$employment_data['working_status'] = $this->input->post('working_status');
 			$employment_data['wage'] = $this->input->post('wage');
@@ -798,6 +801,8 @@ class Workers extends CI_Controller
 
 			$this->Model_Worker->create_emergency($emergency_data);
 
+
+
 			$education_data['worker_id'] = $worker_id;
 			$education_data['geducation'] = $this->input->post('geducation');
 			$education_data['skill'] = $this->input->post('skill');
@@ -806,11 +811,11 @@ class Workers extends CI_Controller
 			$education_data['vocalevel'] = $this->input->post('vocalevel');
 			$education_data['flanguage'] = $this->input->post('flanguage');
 			$education_data['flanguage_yes_no'] = $this->input->post('flanguage_yes_no');
-			$education_data['drivelic'] = $this->input->post('drivelic');
 
 			$this->Model_Worker->create_education($education_data);
 
-			$employment_data['worker_id'] = $worker_id;
+
+
 			$employment_data['employer_id'] = $this->input->post('employer_id');
 			$employment_data['working_status'] = $this->input->post('working_status');
 			$employment_data['wage'] = $this->input->post('wage');

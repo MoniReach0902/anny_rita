@@ -65,7 +65,7 @@
                         </thead>
 
                         <tbody>
-
+                            <input type="text" name="" id="">
 
                             <?php foreach ($workers as $worker) { ?>
                                 <tr>
@@ -78,12 +78,12 @@
                                         } else {
                                         ?>
                                             <button class="btn btn-info add">Add Worker</button>
-                                            <a href="<?php echo base_url('index.php/NameList/move/' . $worker['id'] . '/' . $listId . '/' . $order_by['order_by']) ?>"><button class="btn btn-info">Add</button></a>
+
                                         <?php
                                         } ?>
-                                        <input type="text" name="worker_id" id="worker_id" value="<?php echo $worker['id']; ?>">
-                                        <input type="text" name="listId" id="listId" value="<?php echo $listId; ?>" id="">
-                                        <input type="text" name="order_by" id="order_by" value="<?php echo $order_by['order_by']; ?>">
+                                        <input type="hidden" name="worker_id" id="worker_id" value="<?php echo $w_id = $worker['id']; ?>">
+                                        <input type="hidden" name="listId" id="listId" value="<?php echo $listId; ?>" id="">
+                                        <input type="hidden" name="order_by" id="order_by" value="<?php echo $order_by['order_by']; ?>">
                                     </td>
                                     <td>
                                         <?php
@@ -269,26 +269,36 @@
             var id = $(this).parents('table').find('tr:eq(' + ind + ') td:eq(2)').text();
             var order_by = $('#order_by').val();
             var listId = $('#listId').val();
-            var worker_id = $('#worker_id').val();
-            // alert(listId);
 
             $.ajax({
-                url: '<?php echo base_url("index.php/NameList/move/") ?>',
-                type: 'POST',
+                url: "<?php echo site_url('/NameList/moveOn'); ?>",
+                type: 'GET',
+                contentType: 'application/json',
                 data: {
-                    worker_id: id,
+                    id: id,
                     order_by: order_by,
                     listId: listId,
 
                 },
                 contentType: false,
                 cache: false,
-                processData: false,
-                // dataType: "json",
-
+                beforeSend: function() {
+                    $('.add').eq(ind - 1).html('loading...');
+                    $('.add').eq(ind - 1).css({
+                        "pointer-events": "none",
+                        "background-color": "pink",
+                    });
+                },
                 success: function(data) {
                     //work after success
-                    alert("success");
+                    $('.add').eq(ind - 1).html('added');
+                    $('.add').eq(ind - 1).css({
+                        "pointer-events": "none",
+                        "background-color": "red",
+
+
+                    });
+
 
                 }
             });

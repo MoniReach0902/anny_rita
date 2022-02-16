@@ -210,8 +210,7 @@ class Model_NameList extends CI_Model
     public function getCount($id)
     {
         $query = $this->db->query("SELECT COUNT(*) as total FROM workers INNER JOIN worker_attached 
-        ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
-         JOIN affiliates ON affiliates.id=workers.affiliate WHERE worker_attached.doc_type=2 AND 
+        ON workers.id=worker_attached.worker_id WHERE worker_attached.doc_type=2 AND 
          workers.name_list_id='$id'");
         $result_arr = $query->result_array();
         if (!empty($result_arr)) {
