@@ -554,11 +554,9 @@ class Workers extends CI_Controller
 			$education_data['flanguage'] = $this->input->post('flanguage');
 			$education_data['flanguage_yes_no'] = $this->input->post('flanguage_yes_no');
 
-
 			$this->Model_Worker->update_education($id, $education_data);
 
-			//$employment_data['worker_id']= $id;
-			// $employment_data['worker_id'] = $worker_id;
+
 			$employment_data['employer_id'] = $this->input->post('employer_id');
 			$employment_data['working_status'] = $this->input->post('working_status');
 			$employment_data['wage'] = $this->input->post('wage');
@@ -578,6 +576,7 @@ class Workers extends CI_Controller
 		}
 
 		$data['branches'] = $this->Model_Branch->all();
+		// $data['branches'] = $this->Model_Branch->all();
 		$data['groups'] = $this->Model_Group->all_group();
 		$data['countries'] = $this->Model_Worker->all_country();
 		$data['job_titles'] = $this->Model_JobTitle->all();

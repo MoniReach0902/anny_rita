@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label for="employer_id"><span class="khmer_font">ឈ្មោះនយោជក&#47;</span> Employer : <span class="danger">&#9734;</span> </label>
                 <!-- select -->
-                <?php if (!isset($employers['id'])) {
+                <?php if (!isset($employer['id'])) {
                     $employers['id'] = NULL;
                 } ?>
                 <select class="form-control" id="employer_id" name="employer_id">
