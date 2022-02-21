@@ -30,7 +30,22 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <p style="font-size: 20px; font-family: 'Khmer OS System';">លេខៈ ARM21-TD0001</p>
+                            <p style="font-size: 20px; font-family: 'Khmer OS System';">លេខៈ <?php echo "ARM";
+                                                                                                echo date('y') . '-';
+                                                                                                $group = $this->Model_NameList->getGroup($worker['group_id']);
+                                                                                                if (!empty($group['name'])) {
+                                                                                                    echo $group['name'];
+                                                                                                }
+                                                                                                $group_num = $this->Model_NameList->getGroupNum($worker['group_id']);
+                                                                                                foreach ($group_num as $key => $num) {
+                                                                                                    if ($num->id == $worker['id']) {
+                                                                                                        echo $key + 1;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                ?>
+
+                            </p>
                             <h3 style="text-align: center;font-family: 'Khmer OS Muol Light';font-size: 26px;">ឧបសម្ព័ន្ធ</h3>
                             <h3 style="text-align: center;font-family: 'Khmer OS Muol Light';font-size: 22px;">
                                 នៃប្រកាសលេខ ២៥៣ក.ប/ប្រក ចុះថ្ងៃទី២៣ ខែកញ្ញា ឆ្នាំ២០១៣ ស្តីពីការដាក់
@@ -216,9 +231,23 @@
                             <span style=" margin-top: -670px; margin-left: 405px;z-index: 2;font-size: 23px;position: absolute; font-weight: bold;"><?php echo date('d'); ?></span>
                             <span style=" margin-top: -670px; margin-left: 485px;z-index: 2;font-size: 23px;position: absolute;font-weight: bold;"><?php echo date('m'); ?></span>
                             <span style=" margin-top: -670px; margin-left: 590px;z-index: 2;font-size: 23px;position: absolute;font-weight: bold;"><?php echo date('Y'); ?></span>
-                            <span style="  margin-top: -340px; margin-left: 730px;z-index: 2;font-size: 25px;position: absolute;font-family: 'Khmer OS Muol Light';"><?php if(!empty($worker['k_fname'])){echo $worker['k_fname'].' '.$worker['k_lname'];
-                            
-                            } ?></span>
+                            <span style="  margin-top: -340px; margin-left: 730px;z-index: 2;font-size: 25px;position: absolute;font-family: 'Khmer OS Muol Light';"><?php if (!empty($worker['k_fname'])) {
+                                                                                                                                                                            echo $worker['k_fname'] . ' ' . $worker['k_lname'];
+                                                                                                                                                                        } ?></span>
+                            <span style="z-index: 2;font-size: 23px;position: absolute; font-weight: bold;margin-top: -90px;margin-left: 30px;"><?php echo "ARM";
+                                                                                                                                                echo date('y') . '-';
+                                                                                                                                                $group = $this->Model_NameList->getGroup($worker['group_id']);
+                                                                                                                                                if (!empty($group['name'])) {
+                                                                                                                                                    echo $group['name'];
+                                                                                                                                                }
+                                                                                                                                                $group_num = $this->Model_NameList->getGroupNum($worker['group_id']);
+                                                                                                                                                foreach ($group_num as $key => $num) {
+                                                                                                                                                    if ($num->id == $worker['id']) {
+                                                                                                                                                        echo $key + 1;
+                                                                                                                                                    }
+                                                                                                                                                }
+
+                                                                                                                                                ?></span>
                         </div>
                     </div>
 

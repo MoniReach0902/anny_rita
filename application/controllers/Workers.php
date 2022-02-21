@@ -326,7 +326,7 @@ class Workers extends CI_Controller
 		$data['work_statuss'] = $this->Model_WorkStatus->work_statuss();
 		$data['industries'] = $this->Model_Industry->all();
 		$data['provinces'] = $this->Model_Gazeetteer->provinces();
-		//$data['worker'] = $this->Model_Worker->get_by('0');
+		$data['worker'] = $this->Model_Worker->get_by('0');
 		//$workers = $data['worker'];
 		//print_r($workers);
 		//$data['parent'] = $this->Model_WorkerParent->get_by('0');

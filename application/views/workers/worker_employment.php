@@ -6,8 +6,8 @@
             <div class="form-group">
                 <label for="employer_id"><span class="khmer_font">ឈ្មោះនយោជក&#47;</span> Employer : <span class="danger">&#9734;</span> </label>
                 <!-- select -->
-                <?php if (!isset($employer['id'])) {
-                    $employer['id'] = NULL;
+                <?php if (!isset($employers['id'])) {
+                    $employers['id'] = NULL;
                 } ?>
                 <select class="form-control" id="employer_id" name="employer_id">
                     <?php foreach ($employers as $employer) { ?>
@@ -25,7 +25,9 @@
                 <label for="working_status"><span class="khmer_font">ស្ថានភាពការងារ&#47;</span> Working Status : </label>
                 <select class="custom-select form-control" id="working_status" name="working_status">
                     <?php foreach ($work_statuss as $work_status) { ?>
-                        <option value="<?php echo $work_status['id']; ?>" <?php echo ($work_status['id'] == $worker['status']) ? 'selected' : ''; ?>>
+                        <option value="<?php echo $work_status['id']; ?>" <?php if (!empty($worker['status'])) {
+                                                                                echo ($work_status['id'] == $worker['status']) ? 'selected' : '';
+                                                                            } ?>>
                             <?php echo $work_status['e_label']; ?>
                         </option>
                     <?php } ?>

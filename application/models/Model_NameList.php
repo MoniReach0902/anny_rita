@@ -105,7 +105,7 @@ class Model_NameList extends CI_Model
         if (!empty($result_arr)) {
             return $result_arr[0];
         }
-    } 
+    }
     public function getIndustry($id)
     {
         $where['id'] = $id;
@@ -160,7 +160,21 @@ class Model_NameList extends CI_Model
             return $result_arr[0];
         }
     }
-
+    public function getGroup($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('groups', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getGroupNum($id)
+    {
+        $where['group_id'] = $id;
+        $result_set = $this->db->get_where('workers', $where);
+        return $result_set->result();
+    }
 
 
     public function fetch()
