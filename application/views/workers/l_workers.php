@@ -77,7 +77,9 @@
 													<span class="text-success">Edit Worker Detail</span></a>
 												<a class="dropdown-item"></a>
 												<a class="dropdown-item" href="<?php echo site_url('NameListPrint/worker_contract/' . $worker['id']); ?>" target="_blank">
-													<span class="text-success">Print Worker Contract</span></a>
+													<span class="text-success">ឧបសម្ព័ន្ធ</span></a>
+												<a class="dropdown-item" href="<?php echo site_url('NameListPrint/worker_annex/' . $worker['id']); ?>" target="_blank">
+													<span class="text-success">កិច្ចសន្យាការងារ</span></a>
 
 
 

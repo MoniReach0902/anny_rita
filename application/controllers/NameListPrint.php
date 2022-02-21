@@ -455,18 +455,29 @@ class NameListPrint extends CI_Controller
         $userdata['user_email'] = $this->session->email;
         $userdata['user_id'] = $this->session->id;
         $userdata['avata'] = $this->session->image_file;
-        $this->load->model('Model_NameList');
+        $this->load->model('Model_NameList'); 
 
-        $data['listId'] = $id;
-
-        $data['userDoc'] = $this->Model_NameList->getData($id);
-        // $data['company'] = $this->Model_NameList->getCompany4Visa($id);
-        $data['company'] = $this->Model_NameList->getCompanyName($id);
+       $data['worker']=$this->Model_NameList->getWorker($id);
 
         $this->load->view('included/head');
         $this->load->view('included/main_header', $userdata);
         $this->load->view('included/aside');
-        $this->load->view('printing/contract');
+        $this->load->view('printing/contract',$data);
+        $this->load->view('included/footer');
+        $this->load->view('included/scripts');
+    }
+    public function worker_annex($id)
+    {
+        $userdata['user_name'] = $this->session->fname;
+        $userdata['user_email'] = $this->session->email;
+        $userdata['user_id'] = $this->session->id;
+        $userdata['avata'] = $this->session->image_file;
+        $this->load->model('Model_NameList');
+        $data['worker'] = $this->Model_NameList->getWorker($id);
+        $this->load->view('included/head');
+        $this->load->view('included/main_header', $userdata);
+        $this->load->view('included/aside');
+        $this->load->view('printing/annex',$data);
         $this->load->view('included/footer');
         $this->load->view('included/scripts');
     }

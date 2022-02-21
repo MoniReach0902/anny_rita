@@ -58,6 +58,18 @@ class Model_NameList extends CI_Model
             return $result_arr[0];
         }
     }
+    public function getIdCard($id)
+    {
+        $where = array(
+            'worker_id' => $id,
+            'doc_type' => 1,
+        );
+        $result_set = $this->db->get_where('worker_attached', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
     public function getUserEdu($id)
     {
         $where['worker_id'] = $id;
@@ -93,7 +105,7 @@ class Model_NameList extends CI_Model
         if (!empty($result_arr)) {
             return $result_arr[0];
         }
-    }
+    } 
     public function getIndustry($id)
     {
         $where['id'] = $id;
@@ -134,6 +146,15 @@ class Model_NameList extends CI_Model
     {
         $where['id'] = $id;
         $result_set = $this->db->get_where('employers', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
+    public function getWorker($id)
+    {
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('workers', $where);
         $result_arr = $result_set->result_array();
         if (!empty($result_arr)) {
             return $result_arr[0];

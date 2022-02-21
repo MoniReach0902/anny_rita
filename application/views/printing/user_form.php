@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="<?php echo base_url('public/css/print_layout.css') ?>">
 <div class="content-wrapper">
     <!-- Main content -->
-    <?php
-    $call_method =  $this->router->fetch_method();
-    $call_class = $this->router->fetch_class();
-    ?>
+                        <?php
+                        $call_method =  $this->router->fetch_method();
+                        $call_class = $this->router->fetch_class();
+                        ?>
     <section class="content">
         <div class="box box-solid bg-dark">
             <div class="box-header with-border">
