@@ -576,7 +576,6 @@ class Workers extends CI_Controller
 		}
 
 		$data['branches'] = $this->Model_Branch->all();
-		// $data['branches'] = $this->Model_Branch->all();
 		$data['groups'] = $this->Model_Group->all_group();
 		$data['countries'] = $this->Model_Worker->all_country();
 		$data['job_titles'] = $this->Model_JobTitle->all();

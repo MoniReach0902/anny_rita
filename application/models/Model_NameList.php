@@ -175,6 +175,16 @@ class Model_NameList extends CI_Model
         $result_set = $this->db->get_where('workers', $where);
         return $result_set->result();
     }
+    public function getAff($id)
+    {
+
+        $where['id'] = $id;
+        $result_set = $this->db->get_where('affiliates', $where);
+        $result_arr = $result_set->result_array();
+        if (!empty($result_arr)) {
+            return $result_arr[0];
+        }
+    }
 
 
     public function fetch()
@@ -236,9 +246,9 @@ class Model_NameList extends CI_Model
     {
         $query = $this->db->query("SELECT workers.xtra,workers.id,worker_attached.file_name,worker_attached.number,workers.k_fname,
         workers.k_lname,workers.e_fname,workers.e_lname,workers.gender,workers.dob,workers.birth_province,
-        provinces.name,provinces.en_name,affiliates.name as aname FROM workers INNER JOIN worker_attached 
-        ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province
-         JOIN affiliates ON affiliates.id=workers.affiliate WHERE worker_attached.doc_type=2 AND 
+        provinces.name,provinces.en_name,workers.affiliate FROM workers INNER JOIN worker_attached 
+        ON workers.id=worker_attached.worker_id  JOIN provinces ON provinces.id=workers.birth_province 
+        WHERE worker_attached.doc_type=2 AND 
          workers.name_list_id='$id' ORDER BY order_by");
         return $query->result();
     }

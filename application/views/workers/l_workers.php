@@ -162,7 +162,7 @@
 									<td><?php echo $worker['email']; ?></td>
 									<?php
 									$id = $worker['id'];
-									$newdata = $this->Model_NameList->getXtra($id);
+									$newdata = $this->Model_NameList->getXtra($worker['id']);
 									if (!empty($newdata['xtra'])) {
 										$xdata = json_decode($newdata['xtra']);
 									}
@@ -173,13 +173,13 @@
 										$worker['birth_province'] = NULL;
 									} ?>
 									<?php $provinc = $worker['birth_province']; ?>
-									<?php $provinc = $this->Model_Worker->getpname($provinc); ?>
+									<?php $province = $this->Model_Worker->getpname($provinc); ?>
 									<td><span class="khmer_font">
 											<?php if (!empty($xdata->{'b_province'})) {
 												echo $xdata->{'b_province'};
 											} else {
-												if (!empty($provinc['name'])) {
-													echo $provinc['name'];
+												if (!empty($province['name'])) {
+													echo $province['name'];
 												}
 											}  ?>
 

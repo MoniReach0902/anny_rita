@@ -20,7 +20,7 @@
                 </div>
                 <?php foreach ($userDoc as $key => $info) {
                 ?>
-                    <section class="invoice printableArea">
+                    <section class="invoice printableArea" style="margin:0;padding: 0;">
                         <!-- title row -->
                         <!-- <div class="row">
                             <div class="col-xl-12 col-lg-12">
@@ -34,9 +34,10 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="area" style="width: 100%; height: 100%; margin: 0;padding: 0;">
+
+                        <div class="area">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12" style="padding: 0;">
 
                                     <div class="rotate">
                                         <div style="height: 50%;margin: 0;padding: 0; background-color: red;">
@@ -46,18 +47,20 @@
 
                                             <img src="<?php if (!empty($image['file_name'])) {
                                                             echo base_url('/images/worker_docs/' . $image['file_name']);
-                                                        } ?>" alt="" style="width: 18cm;transform: rotate(90deg);height: 22cm;margin-left: 200px;float: left;border: 2px solid black;">
+                                                        } ?>" alt="" style="margin-top: -4cm  ;width: 25.6cm;transform: rotate(90deg);height: 36cm;margin-left: 200px;float: left;border: 2px solid black;">
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                            <br><br><br><br><br><br><br><br>
+                            <br><br><br><br><br><br><br>
+
+
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="box_layout" style="float: left;">
+                                <div class="col-12" style="padding: 0;">
+                                    <div class="box_layout" style="float: left;height: 50%; ">
                                         <table id="bio">
-                                            <tr><img src="<?php echo base_url('/images/1.png') ?>" alt=""></tr>
+                                            <tr><img src="<?php echo base_url('/images/1.png') ?>" alt="" style="width: 90%;"></tr>
                                             <tr>
                                                 <td>
                                                     <h2>Passport No. : </h2>
@@ -112,11 +115,7 @@
                                                 </td>
                                                 <td>
                                                     <?php $xdata = json_decode($info->xtra); ?>
-                                                    <p style="font-family: 'Khmer OS System';"><?php if (!empty($xdata->{'b_province'})) {
-                                                                                                    echo $xdata->{'b_province'};
-                                                                                                } else {
-                                                                                                    echo $info->name;
-                                                                                                }  ?></p>
+                                                    <p style="font-family: 'Khmer OS System';"><?php echo $info->en_name; ?></p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -142,6 +141,7 @@
                     </section>
                 <?php
                 } ?>
+
                 <!-- /.content -->
             </div>
             <!-- /.box-body -->

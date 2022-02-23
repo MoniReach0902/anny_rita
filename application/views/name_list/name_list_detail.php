@@ -147,12 +147,6 @@
                                         ?>
                                     </td>
                                     <td><?php echo $worker['id']; ?></td>
-                                    <td><?php $aff_id = $worker['affiliate'];
-                                        $aff_name = $this->Model_Affiliate->get_affiliate_by($aff_id);
-                                        if (!empty($aff_name)) {
-                                            echo $aff_name['name'];
-                                        }
-                                        ?></td>
                                     <td>
                                         <?php $b_id = $worker['branch'];
                                         $brach = $this->Model_NameList->getBrach($b_id);
@@ -163,6 +157,13 @@
                                         }
                                         ?>
                                     </td>
+                                    <td><?php $aff_id = $worker['affiliate'];
+                                        $aff_name = $this->Model_Affiliate->get_affiliate_by($aff_id);
+                                        if (!empty($aff_name)) {
+                                            echo $aff_name['name'];
+                                        }
+                                        ?></td>
+
                                     <?php $group_id = $worker['group_id']; ?>
                                     <?php $group_name = $this->Model_Group->get_group_by($group_id); ?>
                                     <td><?php if (!empty($group_name['name'])) {
